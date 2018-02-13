@@ -1,0 +1,1623 @@
+<!-- Set this_pages_navbar  -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="http://tigera-docs.appspot.com//images/favicon.png">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto+Mono' type='text/css'>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/style.css"/>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/plugins/offcanvas.css"/>
+    <link href="https://www.projectcalico.org/wp-content/themes/dante/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://tigera-docs.appspot.com//js/jquery-2.2.0.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/bootstrap/bootstrap.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/script.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-52125893-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>IP Interconnect Fabrics in Calico</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="IP Interconnect Fabrics in Calico" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://docs.projectcalico.org/v3.0/reference/private-cloud/l3-interconnect-fabric" />
+<meta property="og:url" content="https://docs.projectcalico.org/v3.0/reference/private-cloud/l3-interconnect-fabric" />
+<script type="application/ld+json">
+{"headline":"IP Interconnect Fabrics in Calico","@type":"WebPage","url":"https://docs.projectcalico.org/v3.0/reference/private-cloud/l3-interconnect-fabric","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <section>
+      <nav id="toplevel-nav" class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <!-- Hamburger menu for mobile -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tigera-navbar" aria-expanded="false" aria-controls="tigera-navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Left brand image -->
+            <a class="navbar-brand" href="https://projectcalico.org/">
+              <img alt="Brand" src="http://tigera-docs.appspot.com//images/brand.png">
+            </a>
+          </div>
+          <div id="tigera-navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://projectcalico.org">Home</a></li>
+              <li class="active"><a href="https://projectcalico.org/resources"><span>Resources</span></a>
+                <ul>
+                    <li><a href="http://tigera-docs.appspot.com//latest/getting-started/"><i class="fa fa-tachometer" aria-hidden="true"></i> &nbsp; Getting Started</a></li>
+                    <li><a href="http://tigera-docs.appspot.com/"><i class="fa fa-book" aria-hidden="true"></i> &nbsp; Documentation</a></li>
+                    <!--<li><a href="https://www.projectcalico.org/tutorials"><i class="fa fa-file-code-o" aria-hidden="true"></i> &nbsp; Tutorials &amp; Examples</a></li>
+                    <li><a href=""><i class="fa fa-paper-plane-o" aria-hidden="true"></i> &nbsp; Online Workshops</a></li>-->
+                    <li><a href="https://www.projectcalico.org/videos"><i class="fa fa-video-camera" aria-hidden="true"></i> &nbsp; Videos &amp; Webinars</a></li>
+                    <li><a href="https://www.projectcalico.org/training"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp; Training</a></li>
+                    <li><a href="http://tigera-docs.appspot.com//latest/releases/"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp; Releases</a></li>
+                    <!-- <li><a href="/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li> -->
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/community">Community</a>
+                <ul>
+                    <li><a href="https://slack.projectcalico.org/"><i class="fa fa-slack" aria-hidden="true"></i> &nbsp; Slack</a></li>
+                    <!--<li><a href="https://stackoverflow.com/questions/tagged/project-calico" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i> &nbsp; StackOverflow</a></li>-->
+                    <li><a href="https://www.projectcalico.org/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li>
+                    <li><a href="https://www.projectcalico.org/community#events"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp; Upcoming Events</a></li>
+                    <li><a href="https://www.projectcalico.org/newsletters"><i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp; Newsletter</a></li>
+                    <li><a href="https://github.com/projectcalico" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> &nbsp; GitHub</a></li> 
+                    <li><a href="https://www.projectcalico.org/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i> &nbsp; Jobs</a></li>
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/mvp" style="font-weight: bold;">MVP</a></li>
+              <li><a href="https://www.projectcalico.org/support">Support</a></li>
+              <li class="hidden-xs"><a href="https://www.projectcalico.org/support">
+                <img class="desktopImage" width="30" align="absmiddle" src="https://www.projectcalico.org/images/tigera_trans_sm.png" alt="Tigera"></a>
+              </li>
+            </ul>
+            <form class="navbar-form visible-xs">
+              <ul class="nav navbar-nav navbar-right">
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v2.2/introduction">Introduction</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v2.2/getting-started">Getting Started</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v2.2/usage">Usage</a>
+                  </li>
+                
+                  <li  class="active">
+                    <a href="http://tigera-docs.appspot.com//v2.2/reference">Reference</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v2.2/releases">Releases</a>
+                  </li>
+                
+              </ul>
+            </form>
+            <ul class="visible-xs nav navbar-nav navbar-right">
+             <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (v2.2)<span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                 <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6 (latest)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (beta)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                 <li role="separator" class="divider"></li>
+               </ul>
+             </li>
+           </ul>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-inverse navbar-collapse collapse">
+          <div class="container">
+            <ul class="nav navbar-nav">
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v2.2/introduction"><span>Introduction</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v2.2/getting-started"><span>Getting Started</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v2.2/usage"><span>Usage</span></a>
+                </li>
+              
+                <li class="active">
+                  <a href="http://tigera-docs.appspot.com//v2.2/reference"><span>Reference</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v2.2/releases"><span>Releases</span></a>
+                </li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (v2.2)<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                   <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (latest)</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-sm-0"></div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+          <p class="pull-left visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+            <div class="row">
+              <script>
+                (function() {
+                  var cx = '015028447179048192876:xjzskk7awwe';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+                })();
+              </script>
+              <gcse:search></gcse:search>
+            </div>
+            <div id="sidebar">
+            	
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Reference" href="http://tigera-docs.appspot.com//v2.2/reference/">
+        Reference
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Supported Platforms" href="http://tigera-docs.appspot.com//v2.2/reference/supported-platforms">
+        Supported Platforms
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoctl" aria-expanded="false" aria-controls="nav-calicoctl">
+          calicoctl
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoctl">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoctl-commandreference" aria-expanded="false" aria-controls="nav-calicoctl-commandreference">
+          Command Reference
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoctl-commandreference">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/commands/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="create" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/commands/create">
+        create
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="replace" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/commands/replace">
+        replace
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="apply" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/commands/apply">
+        apply
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="delete" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/commands/delete">
+        delete
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="get" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/commands/get">
+        get
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="config" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/commands/config">
+        config
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoctl-commandreference-ipam" aria-expanded="false" aria-controls="nav-calicoctl-commandreference-ipam">
+          ipam
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoctl-commandreference-ipam">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/commands/ipam/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="release" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/commands/ipam/release">
+        release
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="show" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/commands/ipam/show">
+        show
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoctl-commandreference-node" aria-expanded="false" aria-controls="nav-calicoctl-commandreference-node">
+          node
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoctl-commandreference-node">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/commands/node/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="run" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/commands/node/run">
+        run
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="status" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/commands/node/status">
+        status
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="diags" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/commands/node/diags">
+        diags
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="checksystem" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/commands/node/checksystem">
+        checksystem
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="version" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/commands/version">
+        version
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoctl-resourcedefinitions" aria-expanded="false" aria-controls="nav-calicoctl-resourcedefinitions">
+          Resource Definitions
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoctl-resourcedefinitions">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/resources/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="BGP Peer" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/resources/bgppeer">
+        BGP Peer
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Host Endpoint" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/resources/hostendpoint">
+        Host Endpoint
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="IP Pool" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/resources/ippool">
+        IP Pool
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Node" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/resources/node">
+        Node
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Policy" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/resources/policy">
+        Policy
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Profile" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/resources/profile">
+        Profile
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Workload Endpoint" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/resources/workloadendpoint">
+        Workload Endpoint
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoctl-setup" aria-expanded="false" aria-controls="nav-calicoctl-setup">
+          Setup
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoctl-setup">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/setup/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="etcdv2 datastore" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/setup/etcdv2">
+        etcdv2 datastore
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="kubernetes api datastore" href="http://tigera-docs.appspot.com//v2.2/reference/calicoctl/setup/kubernetes">
+        kubernetes api datastore
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-caliconode" aria-expanded="false" aria-controls="nav-caliconode">
+          calico/node
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-caliconode">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuration" href="http://tigera-docs.appspot.com//v2.2/reference/node/configuration">
+        Configuration
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-felix" aria-expanded="false" aria-controls="nav-felix">
+          felix
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-felix">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuration" href="http://tigera-docs.appspot.com//v2.2/reference/felix/configuration">
+        Configuration
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Prometheus Statistics" href="http://tigera-docs.appspot.com//v2.2/reference/felix/prometheus">
+        Prometheus Statistics
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Calico CNI Plugins" href="http://tigera-docs.appspot.com//v2.2/reference/cni-plugin/configuration">
+        Calico CNI Plugins
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Calico Policy Controller" href="http://tigera-docs.appspot.com//v2.2/reference/policy-controller/configuration">
+        Calico Policy Controller
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-deployingonpubliccloud" aria-expanded="false" aria-controls="nav-deployingonpubliccloud">
+          Deploying on Public Cloud
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-deployingonpubliccloud">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="AWS" href="http://tigera-docs.appspot.com//v2.2/reference/public-cloud/aws">
+        AWS
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="GCE" href="http://tigera-docs.appspot.com//v2.2/reference/public-cloud/gce">
+        GCE
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-deployingonprivatecloud" aria-expanded="false" aria-controls="nav-deployingonprivatecloud">
+          Deploying on Private Cloud
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-deployingonprivatecloud">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Calico Over Ethernet Fabrics" href="http://tigera-docs.appspot.com//v2.2/reference/private-cloud/l2-interconnect-fabric">
+        Calico Over Ethernet Fabrics
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Calico Over IP Fabrics" href="http://tigera-docs.appspot.com//v2.2/reference/private-cloud/l3-interconnect-fabric">
+        Calico Over IP Fabrics
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-architecture" aria-expanded="false" aria-controls="nav-architecture">
+          Architecture
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-architecture">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Introduction" href="http://tigera-docs.appspot.com//v2.2/reference/architecture/">
+        Introduction
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="calico/node" href="http://tigera-docs.appspot.com//v2.2/reference/architecture/components">
+        calico/node
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Data Path" href="http://tigera-docs.appspot.com//v2.2/reference/architecture/data-path">
+        Data Path
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-advanced" aria-expanded="false" aria-controls="nav-advanced">
+          Advanced
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-advanced">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="RBAC for etcdv2" href="http://tigera-docs.appspot.com//v2.2/reference/advanced/etcd-rbac">
+        RBAC for etcdv2
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Repo Structure" href="http://tigera-docs.appspot.com//v2.2/reference/repo-structure">
+        Repo Structure
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Contribute" href="http://tigera-docs.appspot.com//v2.2/reference/contribute">
+        Contribute
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Involved" href="http://tigera-docs.appspot.com//v2.2/reference/involved">
+        Involved
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="License" href="http://tigera-docs.appspot.com//v2.2/reference/license">
+        License
+      </a>
+    </div>
+  
+
+
+			</div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9">
+            <div id="content-main">
+              <!-- TOP DOCUMENTATION PAGE NAVBAR -->
+              <div style="text-align: left; padding: 18px 0 9px 0; min-width: 500px; overflow-x: hidden;">
+              
+              <a data-proofer-ignore href="https://github.com/projectcalico/calico/tree/master/v2.2/reference/private-cloud/l3-interconnect-fabric.md" style="color: #999; text-decoration: none; float: right;" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit this page</a></div>
+              <!-- END TOP DOCUMENTATION PAGE NAVBAR -->
+              
+  <div class="alert alert-warning" role="alert">
+    <strong>Warning:</strong> You are viewing the v2.2 docs. <a href="http://tigera-docs.appspot.com//latest">Click here to view the docs for the latest release.</a>
+  </div>
+
+
+              <h1>IP Interconnect Fabrics in Calico</h1>
+              <p>Calico provides an end-to-end IP network that interconnects the
+endpoints <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> in a scale-out or cloud environment. To do that, it needs
+an <em>interconnect fabric</em> to provide the physical networking layer on
+which Calico operates <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>.</p>
+
+<p>While Calico is designed to work with any underlying interconnect fabric
+that can support IP traffic, the fabric that has the least
+considerations attached to its implementation is an Ethernet fabric as
+discussed in our earlier <a href="http://tigera-docs.appspot.com//v2.2/reference/private-cloud/l2-interconnect-fabric">technical note</a>.</p>
+
+<p>In most cases, the Ethernet fabric is the appropriate choice, but there
+are infrastructures where L3 (an IP fabric) has already been deployed,
+or will be deployed, and it makes sense for Calico to operate in those
+environments.</p>
+
+<p>However, since Calico is, itself, a routed infrastructure, there are
+more engineering, architecture, and operations considerations that have
+to be weighed when running Calico with an IP routed interconnection
+fabric. We will briefly outline those in the rest of this post. That
+said, Calico operates equally well with Ethernet or IP interconnect
+fabrics.</p>
+
+<h2 class="no_toc" id="in-this-post">In this post</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#background" id="markdown-toc-background">Background</a>    <ul>
+      <li><a href="#basic-calico-architecture-overview" id="markdown-toc-basic-calico-architecture-overview">Basic Calico architecture overview</a></li>
+      <li><a href="#overview-of-current-common-ip-scale-out-fabric-architectures" id="markdown-toc-overview-of-current-common-ip-scale-out-fabric-architectures">Overview of current common IP scale-out fabric architectures</a></li>
+      <li><a href="#bgp-only-interconnect-fabrics" id="markdown-toc-bgp-only-interconnect-fabrics">BGP-only interconnect fabrics</a></li>
+      <li><a href="#some-bgp-network-design-considerations" id="markdown-toc-some-bgp-network-design-considerations">Some BGP network design considerations</a></li>
+      <li><a href="#the-as-per-rack-model" id="markdown-toc-the-as-per-rack-model">The <em>AS Per Rack</em> model</a></li>
+      <li><a href="#the-as-per-compute-server-model" id="markdown-toc-the-as-per-compute-server-model">The <em>AS per Compute Server</em> model</a></li>
+      <li><a href="#the-downward-default-model" id="markdown-toc-the-downward-default-model">The <em>Downward Default</em> model</a></li>
+    </ul>
+  </li>
+  <li><a href="#recommendation" id="markdown-toc-recommendation">Recommendation</a></li>
+  <li><a href="#appendix" id="markdown-toc-appendix">Appendix</a>    <ul>
+      <li><a href="#other-options" id="markdown-toc-other-options">Other Options</a></li>
+      <li><a href="#ip-fabric-design-considerations" id="markdown-toc-ip-fabric-design-considerations">IP Fabric Design Considerations</a>        <ul>
+          <li><a href="#as-puddling" id="markdown-toc-as-puddling">AS puddling</a></li>
+          <li><a href="#next-hop-behavior" id="markdown-toc-next-hop-behavior">Next hop behavior</a></li>
+          <li><a href="#route-reflection" id="markdown-toc-route-reflection">Route reflection</a></li>
+          <li><a href="#endpoints" id="markdown-toc-endpoints">Endpoints</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="background">Background</h2>
+
+<h3 id="basic-calico-architecture-overview">Basic Calico architecture overview</h3>
+
+<p>A description of the Calico architecture can be found in our
+<a href="http://tigera-docs.appspot.com//v2.2/reference/architecture">architectural overview</a>.
+However, a brief discussion of the routing and data paths is useful for
+the discussion.</p>
+
+<p>In a Calico network, each compute server acts as a router for all of the
+endpoints that are hosted on that compute server. We call that function
+a vRouter. The data path is provided by the Linux kernel, the control
+plane by a BGP protocol server, and management plane by Calico’s
+on-server agent, <em>Felix</em>.</p>
+
+<p>Each endpoint can only communicate through its local vRouter, and the
+first and last <em>hop</em> in any Calico packet flow is an IP router hop
+through a vRouter. Each vRouter announces all of the endpoints it is
+attached to to all the other vRouters and other routers on the
+infrastructure fabric, using BGP, usually with BGP route reflectors to
+increase scale. A discussion of why we use BGP can be found in the <a href="https://www.projectcalico.org/why-bgp/">Why
+BGP?</a> blog post.</p>
+
+<p>Access control lists (ACLs) enforce security (and other) policy as
+directed by whatever cloud orchestrator is in use. There are other
+components in the Calico architecture, but they are irrelevant to the
+interconnect network fabric discussion.</p>
+
+<h3 id="overview-of-current-common-ip-scale-out-fabric-architectures">Overview of current common IP scale-out fabric architectures</h3>
+
+<p>There are two approaches to building an IP fabric for a scale-out
+infrastructure. However, all of them, to date, have assumed that the
+edge router in the infrastructure is the top of rack (TOR) switch. In
+the Calico model, that function is pushed to the compute server itself.</p>
+
+<p>Furthermore, in most current virtualized environments, the actual
+endpoint is not addressed by the fabric. If it is a VM, it is usually
+encapsulated in an overlay, and if it is a container, it may be
+encapsulated in an overlay, or NATed by some form of proxy, such as is
+done in the <a href="http://www.weave.works/">weave</a> project network model, or
+the router in standard <a href="http://www.docker.io/">docker</a> networking.</p>
+
+<p>The two approaches are outlined below, in this technical note, we will
+cover the second option, as it is more common in the scale-out world. If
+there is interest in the first approach, please contact Project Calico,
+and we can discuss, and if there is enough interest, maybe we will do
+another technical note on that approach. If you know of other approaches
+in use, we would be happy to host a guest technical note.</p>
+
+<ol>
+  <li>The routing infrastructure is based on some form of IGP. Due to the
+limitations in scale of IGP networks (see the <a href="https://www.projectcalico.org/why-bgp/">why BGP
+post</a> for discussion of this
+topic), the project Calico team does not believe that using an IGP
+to distribute endpoint reachability information will adequately
+scale in a Calico environment. However, it is possible to use a
+combination of IGP and BGP in the interconnect fabric, where an IGP
+communicates the path to the <em>next-hop</em> router (in Calico, this is
+often the destination compute server) and BGP is used to distribute
+the actual next-hop for a given endpoint. This is a valid model,
+and, in fact is the most common approach in a widely distributed IP
+network (say a carrier’s backbone network). The design of these
+networks is somewhat complex though, and will not be addressed
+further in this technical note. <sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></li>
+  <li>The other model, and the one that this note concerns itself with, is
+one where the routing infrastructure is based entirely on BGP. In
+this model, the IP network is “tight enough” or has a small enough
+diameter that BGP can be used to distribute endpoint routes, and the
+paths to the next-hops for those routes is known to all of the
+routers in the network (in a Calico network this includes the
+compute servers). This is the network model that this note
+will address.</li>
+</ol>
+
+<h3 id="bgp-only-interconnect-fabrics">BGP-only interconnect fabrics</h3>
+
+<p>There are multiple methods to build a BGP-only interconnect fabric. We
+will focus on three models, each with two widely viable variations.
+There are other options, and we will briefly touch on why we didn’t
+include some of them in the <a href="#other-options">Other Options appendix</a>.</p>
+
+<p>The two methods are:</p>
+
+<ol>
+  <li>A BGP fabric where each of the TOR switches (and their subsidiary
+compute servers) are a unique <a href="https://en.wikipedia.org/wiki/Autonomous_System_(Internet)">Autonomous
+System (AS)</a>
+and they are interconnected via either an Ethernet switching plane
+provided by the spine switches in a
+<a href="http://bradhedlund.com/2012/10/24/video-a-basic-introduction-to-the-leafspine-data-center-networking-fabric-design/">leaf/spine</a>
+architecture, or via a set of spine switches, each of which is also
+a unique AS. We’ll refer to this as the <em>AS per rack</em> model. This
+model is detailed in <a href="https://tools.ietf.org/html/draft-ietf-rtgwg-bgp-routing-large-dc">this IETF working group draft</a>.</li>
+  <li>A BGP fabric where each of the compute servers is a unique AS, and
+the TOR switches make up a transit AS. We’ll refer to this as the
+<em>AS per server</em> model.</li>
+</ol>
+
+<p>Each of these models can either have an Ethernet or IP spine. In the
+case of an Ethernet spine, each spine switch provides an isolated
+Ethernet connection <em>plane</em> as in the Calico Ethernet interconnect
+fabric model and each TOR switch is connected to each spine switch.</p>
+
+<p>Another model is where each spine switch is a unique AS, and each TOR
+switch BGP peers with each spine switch. In both cases, the TOR switches
+use ECMP to load-balance traffic between all available spine switches.</p>
+
+<h3 id="some-bgp-network-design-considerations">Some BGP network design considerations</h3>
+
+<p>Contrary to popular opinion, BGP is actually a fairly simple protocol.
+For example, the BGP configuration on a Calico compute server is
+approximately sixty lines long, not counting comments. The perceived
+complexity is due to the things that you can <em>do</em> with BGP. Many uses of
+BGP involve complex policy rules, where the behavior of BGP can be
+modified to meet technical (or business, financial, political, <em>etc.</em>)
+requirements. A default Calico network does not venture into those
+areas, <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup> and therefore is fairly straight forward.</p>
+
+<p>That said, there are a few design rules for BGP that need to be kept in
+mind when designing an IP fabric that will interconnect nodes in a
+Calico network. These BGP design requirements <em>can</em> be worked around, if
+necessary, but doing so takes the designer out of the standard BGP
+<em>envelope</em> and should only be done by an implementer who is <em>very</em>
+comfortable with advanced BGP design.</p>
+
+<p>These considerations are:</p>
+
+<dl>
+  <dt>AS continuity</dt>
+  <dd>
+    <p>or <em>AS puddling</em> Any router in an AS <em>must</em> be able to communicate
+with any other router in that same AS without transiting another AS.</p>
+  </dd>
+  <dt>Next hop behavior</dt>
+  <dd>
+    <p>By default BGP routers do not change the <em>next hop</em> of a route if it
+is peering with another router in its same AS. The inverse is also
+true, a BGP router will set itself as the <em>next hop</em> of a route if
+it is peering with a router in another AS.</p>
+  </dd>
+  <dt>Route reflection</dt>
+  <dd>
+    <p>All BGP routers in a given AS must <em>peer</em> with all the other routers
+in that AS. This is referred to a <em>complete BGP mesh</em>. This can
+become problematic as the number of routers in the AS scales up. The
+use of <em>route reflectors</em> reduce the need for the complete BGP mesh.
+However, route reflectors also have scaling considerations.</p>
+  </dd>
+  <dt>Endpoints</dt>
+  <dd>
+    <p>In a Calico network, each endpoint is a route. Hardware networking
+platforms are constrained by the number of routes they can learn.
+This is usually in range of 10,000’s or 100,000’s of routes. Route
+aggregation can help, but that is usually dependent on the
+capabilities of the scheduler used by the orchestration software
+(<em>e.g.</em> OpenStack).</p>
+  </dd>
+</dl>
+
+<p>A deeper discussion of these considerations can be found in the IP
+Fabric Design Considerations_ appendix.</p>
+
+<p>The designs discussed below address these considerations.</p>
+
+<h3 id="the-as-per-rack-model">The <em>AS Per Rack</em> model</h3>
+
+<p>This model is the closest to the model suggested by the <a href="https://tools.ietf.org/html/draft-ietf-rtgwg-bgp-routing-large-dc">IETF’s Routing
+Area Working Group draft on BGP use in data
+centers</a>.</p>
+
+<p>As mentioned earlier, there are two versions of this model, one with an
+set of Ethernet planes interconnecting the ToR switches, and the other
+where the core planes are also routers. The following diagrams may be
+useful for the discussion.</p>
+
+<p><img src="http://tigera-docs.appspot.com//images/l3-fabric-diagrams-as-rack-l2-spine.png" alt="" /></p>
+
+<blockquote>
+  <p>This diagram shows the <em>AS per rack model</em> where the ToR switches are
+physically meshed via a set of Ethernet switching planes.</p>
+</blockquote>
+
+<p><img src="http://tigera-docs.appspot.com//images/l3-fabric-diagrams-as-rack-l3-spine.png" alt="" /></p>
+
+<blockquote>
+  <p>This diagram shows the <em>AS per rack model</em> where the ToR switches are
+physically meshed via a set of discrete BGP spine routers, each in
+their own AS.</p>
+</blockquote>
+
+<p>In this approach, every ToR-ToR or ToR-Spine (in the case of an AS per
+spine) link is an eBGP peering which means that there is no
+route-reflection possible (using standard BGP route reflectors) <em>north</em>
+of the ToR switches.</p>
+
+<p>If the L2 spine option is used, the result of this is that each ToR must
+either peer with every other ToR switch in the cluster (which could be
+hundreds of peers).</p>
+
+<p>If the AS per spine option is used, then each ToR only has to peer with
+each spine (there are usually somewhere between two and sixteen spine
+switches in a pod). However, the spine switches must peer with all ToR
+switches (again, that would be hundreds, but most spine switches have
+more control plane capacity than the average ToR, so this might be more
+scalable in many circumstances).</p>
+
+<p>Within the rack, the configuration is the same for both variants, and is
+somewhat different than the configuration north of the ToR.</p>
+
+<p>Every router within the rack, which, in the case of Calico is every
+compute server, shares the same AS as the ToR that they are connected
+to. That connection is in the form of an Ethernet switching layer. Each
+router in the rack must be directly connected to enable the AS to remain
+contiguous. The ToR’s <em>router</em> function is then connected to that
+Ethernet switching layer as well. The actual configuration of this is
+dependent on the ToR in use, but usually it means that the ports that
+are connected to the compute servers are treated as <em>subnet</em> or
+<em>segment</em> ports, and then the ToR’s <em>router</em> function has a single
+interface into that subnet.</p>
+
+<p>This configuration allows each compute server to connect to each other
+compute server in the rack without going through the ToR router, but it
+will, of course, go through the ToR switching function. The compute
+servers and the ToR router could all be directly meshed, or a route
+reflector could be used within the rack, either hosted on the ToR
+itself, or as a virtual function hosted on one or more compute servers
+within the rack.</p>
+
+<p>The ToR, as the eBGP router redistributes all of the routes from other
+ToRs as well as routes external to the data center to the compute
+servers that are in its AS, and announces all of the routes from within
+the AS (rack) to the other ToRs and the larger world. This means that
+each compute server will see the ToR as the next hop for all external
+routes, and the individual compute servers are the next hop for all
+routes internal to the rack.</p>
+
+<h3 id="the-as-per-compute-server-model">The <em>AS per Compute Server</em> model</h3>
+
+<p>This model takes the concept of an AS per rack to its logical
+conclusion. In the earlier referenced <a href="https://tools.ietf.org/html/draft-ietf-rtgwg-bgp-routing-large-dc">IETF
+draft</a>
+the assumption in the overall model is that the ToR is first tier
+aggregating and routing element. In Calico, the ToR, if it is an L3
+router, is actually the second tier. Remember, in Calico, the compute
+server is always the first/last router for an endpoint, and is also the
+first/last point of aggregation.</p>
+
+<p>Therefore, if we follow the architecture of the draft, the compute
+server, not the ToR should be the AS boundary. The differences can be
+seen in the following two diagrams.</p>
+
+<p><img src="http://tigera-docs.appspot.com//images/l3-fabric-diagrams-as-server-l2-spine.png" alt="" /></p>
+
+<blockquote>
+  <p>This diagram shows the <em>AS per compute server model</em> where the ToR
+switches are physically meshed via a set of Ethernet switching planes.</p>
+</blockquote>
+
+<p><img src="http://tigera-docs.appspot.com//images/l3-fabric-diagrams-as-server-l3-spine.png" alt="" /></p>
+
+<blockquote>
+  <p>This diagram shows the <em>AS per compute server model</em> where the ToR
+switches are physically connected to a set of independent routing
+planes.</p>
+</blockquote>
+
+<p>As can be seen in these diagrams, there are still the same two variants
+as in the <em>AS per rack</em> model, one where the spine switches provide a
+set of independent Ethernet planes to interconnect the ToR switches, and
+the other where that is done by a set of independent routers.</p>
+
+<p>The real difference in this model, is that the compute servers as well
+as the ToR switches are all independent autonomous systems. To make this
+work at scale, the use of four byte AS numbers as discussed in
+<a href="http://www.faqs.org/rfcs/rfc4893.html" title="RFC 4893">RFC 4893</a>. Without
+using four byte AS numbering, the total number of ToRs and compute
+servers in a calico fabric would be limited to the approximately five
+thousand available private AS <sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> numbers. If four byte AS numbers are
+used, there are approximately ninety-two million private AS numbers
+available. This should be sufficient for any given Calico fabric.</p>
+
+<p>The other difference in this model <em>vs.</em> the AS per rack model, is that
+there are no route reflectors used, as all BGP peerings are eBGP. In
+this case, each compute server in a given rack peers with its ToR switch
+which is also acting as an eBGP router. For two servers within the same
+rack to communicate, they will be routed through the ToR. Therefore,
+each server will have one peering to each ToR it is connected to, and
+each ToR will have a peering with each compute server that it is
+connected to (normally, all the compute servers in the rack).</p>
+
+<p>The inter-ToR connectivity considerations are the same in scale and
+scope as in the AS per rack model.</p>
+
+<h3 id="the-downward-default-model">The <em>Downward Default</em> model</h3>
+
+<p>The final model is a bit different. Whereas, in the previous models, all
+of the routers in the infrastructure carry full routing tables, and
+leave their AS paths intact, this model <sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup> removes the AS numbers at
+each stage of the routing path. This is to prevent routes from other
+nodes in the network from not being installed due to it coming from the
+<em>local</em> AS (since they share the source and dest of the route share the
+same AS).</p>
+
+<p>The following diagram will show the AS relationships in this model.</p>
+
+<p><img src="http://tigera-docs.appspot.com//images/l3-fabric-downward-default.png" alt="" /></p>
+
+<blockquote>
+  <p>In this diagram, we are showing that all Calico nodes share the same
+AS number, as do all ToR switches. However, those ASs are different
+(<em>A1</em> is not the same network as <em>A2</em>, even though the both share the
+same AS number <em>A</em> ).</p>
+</blockquote>
+
+<p>While the use of a single AS for all ToR switches, and another for all
+compute servers simplifies deployment (standardized configuration), the
+real benefit comes in the offloading of the routing tables in the ToR
+switches.</p>
+
+<p>In this model, each router announces all of its routes to its upstream
+peer (the Calico routers to their ToR, the ToRs to the spine switches).
+However, in return, the upstream router only announces a default route.
+In this case, a given Calico router only has routes for the endpoints
+that are locally hosted on it, as well as the default from the ToR.
+Since the ToR is the only route for the Calico network the rest of the
+network, this matches reality. The same happens between the ToR switches
+and the spine. This means that the ToR only has to install the routes
+that are for endpoints that are hosted on its downstream Calico nodes.
+Even if we were to host 200 endpoints per Calico node, and stuff 80
+Calico nodes in each rack, that would still limit the routing table on
+the ToR to a maximum of 16,000 entries (well within the capabilities of
+even the most modest of switches).</p>
+
+<p>Since the default is originated by the Spine (originally) there is no
+chance for a downward announced route to originate from the recipient’s
+AS, preventing the <em>AS puddling</em> problem.</p>
+
+<p>There is one (minor) drawback to this model, in that all traffic that is
+destined for an invalid destination (the destination IP does not exist)
+will be forwarded to the spine switches before they are dropped.</p>
+
+<p>It should also be noted that the spine switches do need to carry all of
+the Calico network routes, just as they do in the routed spines in the
+previous examples. In short, this model imposes no more load on the
+spines than they already would have, and substantially reduces the
+amount of routing table space used on the ToR switches. It also reduces
+the number of routes in the Calico nodes, but, as we have discussed
+before, that is not a concern in most deployments as the amount of
+memory consumed by a full routing table in Calico is a fraction of the
+total memory available on a modern compute server.</p>
+
+<h2 id="recommendation">Recommendation</h2>
+
+<p>The Project Calico team recommends the use of the <a href="#the-as-per-rack-model">AS per rack</a> model if
+the resultant routing table size can be accommodated by the ToR and
+spine switches, remembering to account for projected growth.</p>
+
+<p>If there is concern about the route table size in the ToR switches, the
+team recommends the <a href="#the-downward-default-model">Downward Default</a> model.</p>
+
+<p>If there are concerns about both the spine and ToR switch route table
+capacity, or there is a desire to run a very simple L2 fabric to connect
+the Calico nodes, then the user should consider the Ethernet fabric as
+detailed in <a href="http://tigera-docs.appspot.com//v2.2/reference/private-cloud/l2-interconnect-fabric">this post</a>.</p>
+
+<p>If a Calico user is interested in the AS per compute server, the Project
+Calico team would be very interested in discussing the deployment of
+that model.</p>
+
+<h2 id="appendix">Appendix</h2>
+
+<h3 id="other-options">Other Options</h3>
+
+<p>The way the physical and logical connectivity is laid out in this note,
+and the <a href="http://tigera-docs.appspot.com//v2.2/reference/private-cloud/l2-interconnect-fabric">Ethernet fabric note</a>,
+The next hop router for a given route is always directly connected to
+the router receiving that route. This makes the need for another
+protocol to distribute the next hop routes unnecessary.</p>
+
+<p>However, in many (or most) WAN BGP networks, the routers within a given
+AS may not be directly adjacent. Therefore, a router may receive a route
+with a next hop address that it is not directly adjacent to. In those
+cases, an IGP, such as OSPF or IS-IS, is used by the routers within a
+given AS to determine the path to the BGP next hop route.</p>
+
+<p>There may be Calico architectures where there are similar models where
+the routers within a given AS are not directly adjacent. In those
+models, the use of an IGP in Calico may be warranted. The configuration
+of those protocols are, however, beyond the scope of this technical
+note.</p>
+
+<h3 id="ip-fabric-design-considerations">IP Fabric Design Considerations</h3>
+
+<h4 id="as-puddling">AS puddling</h4>
+
+<p>The first consideration is that an AS must be kept contiguous. This
+means that any two nodes in a given AS must be able to communicate
+without traversing any other AS. If this rule is not observed, the
+effect is often referred to as <em>AS puddling</em> and the network will <em>not</em>
+function correctly.</p>
+
+<p>A corollary of that rule is that any two administrative regions that
+share the same AS number, are in the same AS, even if that was not the
+desire of the designer. BGP has no way of identifying if an AS is local
+or foreign other than the AS number. Therefore re-use of an AS number
+for two <em>networks</em> that are not directly connected, but only connected
+through another <em>network</em> or AS number will not work without a lot of
+policy changes to the BGP routers.</p>
+
+<p>Another corollary of that rule is that a BGP router will not propagate a
+route to a peer if the route has an AS in its path that is the same AS
+as the peer. This prevents loops from forming in the network. The effect
+of this prevents two routers in the same AS from transiting another
+router (either in that AS or not).</p>
+
+<h4 id="next-hop-behavior">Next hop behavior</h4>
+
+<p>Another consideration is based on the differences between iBGP and eBGP.
+BGP operates in two modes, if two routers are BGP peers, but share the
+same AS number, then they are considered to be in an <em>internal</em> BGP (or
+iBGP) peering relationship. If they are members of different AS’s, then
+they are in an <em>external</em> or eBGP relationship.</p>
+
+<p>BGP’s original design model was that all BGP routers within a given AS
+would know how to get to one another (via static routes, IGP <sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>
+routing protocols, or the like), and that routers in different ASs would
+not know how to reach one another unless they were directly connected.</p>
+
+<p>Based on that design point, routers in an iBGP peering relationship
+assume that they do not transit traffic for other iBGP routers in a
+given AS (i.e. A can communicate with C, and therefore will not need to
+route through B), and therefore, do not change the <em>next hop</em> attribute
+in BGP <sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>.</p>
+
+<p>A router with an eBGP peering, on the other hand, assumes that its eBGP
+peer will not know how to reach the next hop route, and then will
+substitute its own address in the next hop field. This is often referred
+to as <em>next hop self</em>.</p>
+
+<p>In the Calico <a href="http://tigera-docs.appspot.com//v2.2/reference/private-cloud/l2-interconnect-fabric">Ethernet fabric</a>
+model, all of the compute servers (the routers in a Calico network) are
+directly connected over one or more Ethernet network(s) and therefore
+are directly reachable. In this case, a router in the Calico network
+does not need to set <em>next hop self</em> within the Calico fabric.</p>
+
+<p>The models we present in this technical note insure that all routes that
+may traverse a non-Calico router are eBGP routes, and therefore <em>next
+hop self</em> is automatically set correctly. If a deployment of Calico in
+an IP interconnect fabric does not satisfy that constraint, then <em>next
+hop self</em> must be appropriately configured.</p>
+
+<h4 id="route-reflection">Route reflection</h4>
+
+<p>As mentioned above, BGP expects that all of the iBGP routers in a
+network can see (and speak) directly to one another, this is referred to
+as a <em>BGP full mesh</em>. In small networks this is not a problem, but it
+does become interesting as the number of routers increases. For example,
+if you have 99 BGP routers in an AS and wish to add one more, you would
+have to configure the peering to that new router on each of the 99
+existing routers. Not only is this a problem at configuration time, it
+means that each router is maintaining 100 protocol adjacencies, which
+can start being a drain on constrained resources in a router. While this
+might be <em>interesting</em> at 100 routers, it becomes an impossible task
+with 1000’s or 10,000’s of routers (the potential size of a Calico
+network).</p>
+
+<p>Conveniently, large scale/Internet scale networks solved this problem
+almost 20 years ago by deploying BGP route reflection as described in
+<a href="http://www.faqs.org/rfcs/rfc1966.html" title="RFC 1966">RFC 1966</a>. This is a
+technique supported by almost all BGP routers today. In a large network,
+a number of route reflectors <sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup> are evenly distributed and each iBGP
+router is <em>peered</em> with one or more route reflectors (usually 2 or 3).
+Each route reflector can handle 10’s or 100’s of route reflector clients
+(in Calico’s case, the compute server), depending on the route reflector
+being used. Those route reflectors are, in turn, peered with each other.
+This means that there are an order of magnitude less route reflectors
+that need to be completely meshed, and each route reflector client is
+only configured to peer to 2 or 3 route reflectors. This is much easier
+to manage.</p>
+
+<p>Other route reflector architectures are possible, but those are beyond
+the scope of this document.</p>
+
+<h4 id="endpoints">Endpoints</h4>
+
+<p>The final consideration is the number of endpoints in a Calico network.
+In the <a href="http://tigera-docs.appspot.com//v2.2/reference/private-cloud/l2-interconnect-fabric">Ethernet fabric</a>
+case the number of endpoints is not constrained by the interconnect
+fabric, as the interconnect fabric does not <em>see</em> the actual endpoints,
+it only <em>sees</em> the actual vRouters, or compute servers. This is not the
+case in an IP fabric, however. IP networks forward by using the
+destination IP address in the packet, which, in Calico’s case, is the
+destination endpoint. That means that the IP fabric nodes (ToR switches
+and/or spine switches, for example) must know the routes to each
+endpoint in the network. They learn this by participating as route
+reflector clients in the BGP mesh, just as the Calico vRouter/compute
+server does.</p>
+
+<p>However, unlike a compute server which has a relatively unconstrained
+amount of memory, a physical switch is either memory constrained, or
+quite expensive. This means that the physical switch has a limit on how
+many <em>routes</em> it can handle. The current industry standard for modern
+commodity switches is in the range of 128,000 routes. This means that,
+without other routing <em>tricks</em>, such as aggregation, a Calico
+installation that uses an IP fabric will be limited to the routing table
+size of its constituent network hardware, with a reasonable upper limit
+today of 128,000 endpoints.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>In Calico’s terminology, an endpoint is an IP address and
+interface. It could refer to a VM, a container, or even a process
+bound to an IP address running on a bare metal server. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>This interconnect fabric provides the connectivity between the
+Calico (v)Router (in almost all cases, the compute servers) nodes,
+as well as any other elements in the fabric (<em>e.g.</em> bare metal
+servers, border routers, and appliances). <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>If there is interest in a discussion of this approach, please let
+us know. The Project Calico team could either arrange a discussion,
+or if there was enough interest, publish a follow-up tech note. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>However those tools are available if a given Calico instance needs
+to utilize those policy constructs. <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>The two byte AS space reserves approximately the last five
+thousand AS numbers for private use. There is no technical reason
+why other AS numbers could not be used. However the re-use of global
+scope AS numbers within a private infrastructure is strongly
+discouraged. The chance for routing system failure or incorrect
+routing is substantial, and not restricted to the entity that is
+doing the reuse. <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>We first saw this design in a customer’s lab, and thought it
+innovative enough to share (we asked them first, of course). Similar
+<em>AS Path Stripping</em> approaches are used in ISP networks, however. <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>An Interior Gateway Protocol is a local routing protocol that does
+not cross an AS boundary. The primary IGPs in use today are OSPF and
+IS-IS. While complex iBGP networks still use IGP routing protocols,
+a data center is normally a fairly simple network, even if it has
+many routers in it. Therefore, in the data center case, the use of
+an IGP can often be disposed of. <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>A Next hop is an attribute of a route announced by a routing
+protocol. In simple terms a route is defined by a <em>target</em>, or the
+destination that is to be reached, and a <em>next hop</em>, which is the
+next router in the path to reach that target. There are many other
+characteristics in a route, but those are well beyond the scope of
+this post. <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p>A route reflector may be a physical router, a software appliance,
+or simply a BGP daemon. It only processes routing messages, and does
+not pass actual data plane traffic. However, some route reflectors
+are co-resident on regular routers that do pass data plane traffic.
+While they may sit on one platform, the functions are distinct. <a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+              
+              <!-- BOTTOM DOCUMENTATION PAGE NAVBAR -->
+              <div style="margin-top: 60px; margin-bottom: 40px; padding-top: 20px; border-top: 1px solid #999; text-align: left; color: #999;">Rate this Page: <div class="rw-ui-container" style="margin-top: -5px;"></div> <a href="https://www.projectcalico.org/contact?type=docs&file=v2.2/reference/private-cloud/l3-interconnect-fabric.md" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> Provide Feedback</a> <a href="https://www.projectcalico.org/community#slack" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-slack" aria-hidden="true"></i> Get Help via Slack</a> <a href="https://www.projectcalico.org/mvp" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-trophy" aria-hidden="true"></i> Ask our MVPs</a> <a href="https:/tigera.io/training" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Training</a></div>
+              <!-- END BOTTOM DOCUMENTATION PAGE NAVBAR -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Start Visual Website Optimizer Asynchronous Code -->
+    <script type='text/javascript'>
+      var _vwo_code=(function(){
+      var account_id=287573,
+      settings_tolerance=2000,
+      library_tolerance=2500,
+      use_existing_jquery=false,
+      /* DO NOT EDIT BELOW THIS LINE */
+      f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+    </script>
+    <!-- End Visual Website Optimizer Asynchronous Code -->
+    <!-- DOCUMENTATION RATING ANALYTICS -->
+   <script type="text/javascript">(function(d, t, e, m){
+    // Async Rating-Widget initialization.
+    window.RW_Async_Init = function(){
+        RW.init({
+            huid: "368439",
+            uid: "33da22c0dff384767b5074aaf10ebc50",
+            source: "website",
+            options: {
+                "advanced": {
+					"font": {
+						"color": "#999999"
+					},
+                    "layout": {
+                        "align": {
+                            "hor": "left"
+                        }
+                    },
+                    "text": {
+                        "rateThis": "Rate this"
+                    }
+                },
+				"label": {
+					"background": "#FFFFFF"
+				},
+				"reVote": true,
+				"showInfo": false,
+				/*"showTooltip": false,*/
+				"hideRecommendations": false,
+				"showReport": false,
+				"showLoader": false,
+                "style": "oxygen",
+                "isDummy": false
+            } 
+        });
+        RW.render();
+    };
+        // Append Rating-Widget JavaScript library.
+    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
+        l = d.location, ck = "Y" + t.getFullYear() + 
+        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
+        f = ((l.search.indexOf("DBG=") > -1) ? "" : ".min"),
+        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
+    if (d.getElementById(id)) return;              
+    rw = d.createElement(e);
+    rw.id = id; rw.async = true; rw.type = "text/javascript";
+    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
+    s.parentNode.insertBefore(rw, s);
+    }(document, new Date(), "script", "rating-widget.com/"));</script>
+    <!-- END DOCUMENTATION RATING ANALYTICS -->
+  </body>
+</html>

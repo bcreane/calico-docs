@@ -1,0 +1,1006 @@
+<!-- Set this_pages_navbar  -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="http://tigera-docs.appspot.com//images/favicon.png">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto+Mono' type='text/css'>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/style.css"/>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/plugins/offcanvas.css"/>
+    <link href="https://www.projectcalico.org/wp-content/themes/dante/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://tigera-docs.appspot.com//js/jquery-2.2.0.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/bootstrap/bootstrap.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/script.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-52125893-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Service IPs</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="Service IPs" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://docs.projectcalico.org/v2.6/usage/openstack/service-ips" />
+<meta property="og:url" content="https://docs.projectcalico.org/v2.6/usage/openstack/service-ips" />
+<script type="application/ld+json">
+{"headline":"Service IPs","@type":"WebPage","url":"https://docs.projectcalico.org/v2.6/usage/openstack/service-ips","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <section>
+      <nav id="toplevel-nav" class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <!-- Hamburger menu for mobile -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tigera-navbar" aria-expanded="false" aria-controls="tigera-navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Left brand image -->
+            <a class="navbar-brand" href="https://projectcalico.org/">
+              <img alt="Brand" src="http://tigera-docs.appspot.com//images/brand.png">
+            </a>
+          </div>
+          <div id="tigera-navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://projectcalico.org">Home</a></li>
+              <li class="active"><a href="https://projectcalico.org/resources"><span>Resources</span></a>
+                <ul>
+                    <li><a href="http://tigera-docs.appspot.com//latest/getting-started/"><i class="fa fa-tachometer" aria-hidden="true"></i> &nbsp; Getting Started</a></li>
+                    <li><a href="http://tigera-docs.appspot.com/"><i class="fa fa-book" aria-hidden="true"></i> &nbsp; Documentation</a></li>
+                    <!--<li><a href="https://www.projectcalico.org/tutorials"><i class="fa fa-file-code-o" aria-hidden="true"></i> &nbsp; Tutorials &amp; Examples</a></li>
+                    <li><a href=""><i class="fa fa-paper-plane-o" aria-hidden="true"></i> &nbsp; Online Workshops</a></li>-->
+                    <li><a href="https://www.projectcalico.org/videos"><i class="fa fa-video-camera" aria-hidden="true"></i> &nbsp; Videos &amp; Webinars</a></li>
+                    <li><a href="https://www.projectcalico.org/training"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp; Training</a></li>
+                    <li><a href="http://tigera-docs.appspot.com//latest/releases/"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp; Releases</a></li>
+                    <!-- <li><a href="/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li> -->
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/community">Community</a>
+                <ul>
+                    <li><a href="https://slack.projectcalico.org/"><i class="fa fa-slack" aria-hidden="true"></i> &nbsp; Slack</a></li>
+                    <!--<li><a href="https://stackoverflow.com/questions/tagged/project-calico" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i> &nbsp; StackOverflow</a></li>-->
+                    <li><a href="https://www.projectcalico.org/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li>
+                    <li><a href="https://www.projectcalico.org/community#events"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp; Upcoming Events</a></li>
+                    <li><a href="https://www.projectcalico.org/newsletters"><i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp; Newsletter</a></li>
+                    <li><a href="https://github.com/projectcalico" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> &nbsp; GitHub</a></li> 
+                    <li><a href="https://www.projectcalico.org/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i> &nbsp; Jobs</a></li>
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/mvp" style="font-weight: bold;">MVP</a></li>
+              <li><a href="https://www.projectcalico.org/support">Support</a></li>
+              <li class="hidden-xs"><a href="https://www.projectcalico.org/support">
+                <img class="desktopImage" width="30" align="absmiddle" src="https://www.projectcalico.org/images/tigera_trans_sm.png" alt="Tigera"></a>
+              </li>
+            </ul>
+            <form class="navbar-form visible-xs">
+              <ul class="nav navbar-nav navbar-right">
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//master/introduction">Introduction</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//master/getting-started">Getting Started</a>
+                  </li>
+                
+                  <li  class="active">
+                    <a href="http://tigera-docs.appspot.com//master/usage">Usage</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//master/reference">Reference</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//master/releases">Releases</a>
+                  </li>
+                
+              </ul>
+            </form>
+            <ul class="visible-xs nav navbar-nav navbar-right">
+             <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (nightly)<span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                 <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6 (latest)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (beta)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                 <li role="separator" class="divider"></li>
+               </ul>
+             </li>
+           </ul>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-inverse navbar-collapse collapse">
+          <div class="container">
+            <ul class="nav navbar-nav">
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//master/introduction"><span>Introduction</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//master/getting-started"><span>Getting Started</span></a>
+                </li>
+              
+                <li class="active">
+                  <a href="http://tigera-docs.appspot.com//master/usage"><span>Usage</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//master/reference"><span>Reference</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//master/releases"><span>Releases</span></a>
+                </li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (nightly)<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                   <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (latest)</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-sm-0"></div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+          <p class="pull-left visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+            <div class="row">
+              <script>
+                (function() {
+                  var cx = '015028447179048192876:xjzskk7awwe';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+                })();
+              </script>
+              <gcse:search></gcse:search>
+            </div>
+            <div id="sidebar">
+            	
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Using Calico" href="http://tigera-docs.appspot.com//master/usage/">
+        Using Calico
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoctl" aria-expanded="false" aria-controls="nav-calicoctl">
+          calicoctl
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoctl">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Installing calicoctl" href="http://tigera-docs.appspot.com//master/usage/calicoctl/install">
+        Installing calicoctl
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoctl-configuringcalicoctl" aria-expanded="false" aria-controls="nav-calicoctl-configuringcalicoctl">
+          Configuring calicoctl
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoctl-configuringcalicoctl">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//master/usage/calicoctl/configure/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="etcd datastore options" href="http://tigera-docs.appspot.com//master/usage/calicoctl/configure/etcd">
+        etcd datastore options
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Kubernetes API datastore options" href="http://tigera-docs.appspot.com//master/usage/calicoctl/configure/kdd">
+        Kubernetes API datastore options
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Running calico/node with an init system" href="http://tigera-docs.appspot.com//master/usage/configuration/as-service">
+        Running calico/node with an init system
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuring BGP Peers" href="http://tigera-docs.appspot.com//master/usage/configuration/bgp">
+        Configuring BGP Peers
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-routereflector" aria-expanded="false" aria-controls="nav-routereflector">
+          Route Reflector
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-routereflector">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuring BIRD" href="http://tigera-docs.appspot.com//master/usage/routereflector/bird-rr-config">
+        Configuring BIRD
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="The calico/routereflector container" href="http://tigera-docs.appspot.com//master/usage/routereflector/calico-routereflector">
+        The calico/routereflector container
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="IPv6" href="http://tigera-docs.appspot.com//master/usage/ipv6">
+        IPv6
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="External Connectivity" href="http://tigera-docs.appspot.com//master/usage/external-connectivity">
+        External Connectivity
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuring IP-in-IP" href="http://tigera-docs.appspot.com//master/usage/configuration/ip-in-ip">
+        Configuring IP-in-IP
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuring a Node IP Address and Subnet" href="http://tigera-docs.appspot.com//master/usage/configuration/node">
+        Configuring a Node IP Address and Subnet
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuring MTU" href="http://tigera-docs.appspot.com//master/usage/configuration/mtu">
+        Configuring MTU
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Decommissioning a Node" href="http://tigera-docs.appspot.com//master/usage/decommissioning-a-node">
+        Decommissioning a Node
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuring Conntrack" href="http://tigera-docs.appspot.com//master/usage/configuration/conntrack">
+        Configuring Conntrack
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoforopenstack" aria-expanded="false" aria-controls="nav-calicoforopenstack">
+          Calico for OpenStack
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoforopenstack">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuration" href="http://tigera-docs.appspot.com//master/usage/openstack/configuration">
+        Configuration
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Detailed Semantics" href="http://tigera-docs.appspot.com//master/usage/openstack/semantics">
+        Detailed Semantics
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Floating IPs" href="http://tigera-docs.appspot.com//master/usage/openstack/floating-ips">
+        Floating IPs
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Service IPs" href="http://tigera-docs.appspot.com//master/usage/openstack/service-ips">
+        Service IPs
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Host routes" href="http://tigera-docs.appspot.com//master/usage/openstack/host-routes">
+        Host routes
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Kuryr" href="http://tigera-docs.appspot.com//master/usage/openstack/kuryr">
+        Kuryr
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Troubleshooting" href="http://tigera-docs.appspot.com//master/usage/troubleshooting/">
+        Troubleshooting
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Logging" href="http://tigera-docs.appspot.com//master/usage/troubleshooting/logging">
+        Logging
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Frequently Asked Questions" href="http://tigera-docs.appspot.com//master/usage/troubleshooting/faq">
+        Frequently Asked Questions
+      </a>
+    </div>
+  
+
+
+			</div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9">
+            <div id="content-main">
+              <!-- TOP DOCUMENTATION PAGE NAVBAR -->
+              <div style="text-align: left; padding: 18px 0 9px 0; min-width: 500px; overflow-x: hidden;">
+              
+              <a data-proofer-ignore href="https://github.com/projectcalico/calico/tree/master/master/usage/openstack/service-ips.md" style="color: #999; text-decoration: none; float: right;" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit this page</a></div>
+              <!-- END TOP DOCUMENTATION PAGE NAVBAR -->
+              
+  <div class="alert alert-warning" role="alert">
+    <strong>Warning:</strong> You are viewing the master docs. <a href="http://tigera-docs.appspot.com//latest">Click here to view the docs for the latest release.</a>
+  </div>
+
+
+              <h1>Service IPs</h1>
+              <p>Calico supports two approaches for assigning a service IP to a 
+Calico-networked VM:</p>
+
+<ul>
+  <li>
+    <p>using a floating IP</p>
+  </li>
+  <li>
+    <p>using an additional fixed IP on the relevant Neutron port.</p>
+  </li>
+</ul>
+
+<p>Both of these are standard Neutron practice - in other words, operations that
+have long been supported on the Neutron API.  They are not Calico-specific,
+except insofar as the Calico driver needs to implement some of the low-level
+operations that are needed to make the expected semantics work.</p>
+
+<p>The key semantic difference between those approaches is that:</p>
+
+<ul>
+  <li>
+    <p>With a floating IP, the target VM itself is not aware of the service IP.
+Instead, data sent to the floating IP is DNAT’d, to the target VM’s fixed IP,
+before that data reaches the target VM.  So the target VM only ever sees data
+addressed to its fixed IP.</p>
+  </li>
+  <li>
+    <p>With the service IP as an additional fixed IP, the target VM is (and must be)
+aware of the service IP, because data addressed to the service IP reaches the
+target VM without any DNAT.</p>
+  </li>
+</ul>
+
+<p>The use of floating IPs is already well known, so we won’t labour how to use
+those here.  For some additional information on how Calico supports floating
+IPs, see <a href="http://tigera-docs.appspot.com//master/usage/openstack/floating-ips">Floating
+IPs</a>.</p>
+
+<p>The use and maintainance of additional fixed IPs, however, is not so well
+known, so in the following transcripts we demonstrate this approach for
+assigning a service IP to a Calico-networked VM.</p>
+
+<p>We begin by creating a test VM that will be the target of the service IP.</p>
+
+<h2 id="creating-a-test-vm">Creating a test VM</h2>
+
+<p>Check name of the available CirrOS image:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>core@access-node$ nova image-list
+WARNING: Command image-list is deprecated and will be removed after Nova 15.0.0 is released. Use python-glanceclient or openstackclient instead.
++--------------------------------------+---------------------+--------+--------+
+| ID                                   | Name                | Status | Server |
++--------------------------------------+---------------------+--------+--------+
+| b69ab3bd-2bbc-4086-b4ae-f01d9f6b5078 | cirros-0.3.2-x86_64 | ACTIVE |        |
+| 866879b9-532b-44c6-a547-ac59de68df2d | ipv6_enabled_image  | ACTIVE |        |
++--------------------------------------+---------------------+--------+--------+
+</code></pre></div></div>
+
+<p>Boot a VM:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>core@access-node$ nova boot --flavor m1.tiny --image cirros-0.3.2-x86_64 --nic net-name=demo-net testvm1
++--------------------------------------+------------------------------------------------------------+
+| Property                             | Value                                                      |
++--------------------------------------+------------------------------------------------------------+
+| OS-DCF:diskConfig                    | MANUAL                                                     |
+| OS-EXT-AZ:availability_zone          | nova                                                       |
+| OS-EXT-SRV-ATTR:host                 | -                                                          |
+| OS-EXT-SRV-ATTR:hypervisor_hostname  | -                                                          |
+| OS-EXT-SRV-ATTR:instance_name        | instance-0000000d                                          |
+| OS-EXT-STS:power_state               | 0                                                          |
+| OS-EXT-STS:task_state                | scheduling                                                 |
+| OS-EXT-STS:vm_state                  | building                                                   |
+| OS-SRV-USG:launched_at               | -                                                          |
+| OS-SRV-USG:terminated_at             | -                                                          |
+| accessIPv4                           |                                                            |
+| accessIPv6                           |                                                            |
+| adminPass                            | HKLzcUT5L52B                                               |
+| config_drive                         |                                                            |
+| created                              | 2017-01-13T13:50:32Z                                       |
+| flavor                               | m1.tiny (1)                                                |
+| hostId                               |                                                            |
+| id                                   | b6d8a3c4-9674-4972-9151-11107b60d622                       |
+| image                                | cirros-0.3.2-x86_64 (b69ab3bd-2bbc-4086-b4ae-f01d9f6b5078) |
+| key_name                             | -                                                          |
+| metadata                             | {}                                                         |
+| name                                 | testvm1                                                    |
+| os-extended-volumes:volumes_attached | []                                                         |
+| progress                             | 0                                                          |
+| security_groups                      | default                                                    |
+| status                               | BUILD                                                      |
+| tenant_id                            | 26778b0f745143c5a9b0c7e1a621bb80                           |
+| updated                              | 2017-01-13T13:50:32Z                                       |
+| user_id                              | 7efbea74c20a4eeabc00b7740aa4d353                           |
++--------------------------------------+------------------------------------------------------------+
+</code></pre></div></div>
+
+<p>Check when the VM has booted:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>core@access-node$ nova list
++--------------------------------------+---------+--------+------------+-------------+----------------------------------------------+
+| ID                                   | Name    | Status | Task State | Power State | Networks                                     |
++--------------------------------------+---------+--------+------------+-------------+----------------------------------------------+
+| b6d8a3c4-9674-4972-9151-11107b60d622 | testvm1 | ACTIVE | -          | Running     | demo-net=10.28.0.13, fd5f:5d21:845:1c2e:2::d |
++--------------------------------------+---------+--------+------------+-------------+----------------------------------------------+
+
+core@access-node$ nova show testvm1
++--------------------------------------+------------------------------------------------------------+
+| Property                             | Value                                                      |
++--------------------------------------+------------------------------------------------------------+
+| OS-DCF:diskConfig                    | MANUAL                                                     |
+| OS-EXT-AZ:availability_zone          | neil-fv-0-ubuntu-kilo-compute-node01                       |
+| OS-EXT-SRV-ATTR:host                 | neil-fv-0-ubuntu-kilo-compute-node01                       |
+| OS-EXT-SRV-ATTR:hypervisor_hostname  | neil-fv-0-ubuntu-kilo-compute-node01                       |
+| OS-EXT-SRV-ATTR:instance_name        | instance-0000000d                                          |
+| OS-EXT-STS:power_state               | 1                                                          |
+| OS-EXT-STS:task_state                | -                                                          |
+| OS-EXT-STS:vm_state                  | active                                                     |
+| OS-SRV-USG:launched_at               | 2017-01-13T13:50:39.000000                                 |
+| OS-SRV-USG:terminated_at             | -                                                          |
+| accessIPv4                           |                                                            |
+| accessIPv6                           |                                                            |
+| config_drive                         |                                                            |
+| created                              | 2017-01-13T13:50:32Z                                       |
+| demo-net network                     | 10.28.0.13, fd5f:5d21:845:1c2e:2::d                        |
+| flavor                               | m1.tiny (1)                                                |
+| hostId                               | bf3ce3c7146ba6cafd43be03886de8755e2b5c8e9f71aa9bfafde9a0   |
+| id                                   | b6d8a3c4-9674-4972-9151-11107b60d622                       |
+| image                                | cirros-0.3.2-x86_64 (b69ab3bd-2bbc-4086-b4ae-f01d9f6b5078) |
+| key_name                             | -                                                          |
+| metadata                             | {}                                                         |
+| name                                 | testvm1                                                    |
+| os-extended-volumes:volumes_attached | []                                                         |
+| progress                             | 0                                                          |
+| security_groups                      | default                                                    |
+| status                               | ACTIVE                                                     |
+| tenant_id                            | 26778b0f745143c5a9b0c7e1a621bb80                           |
+| updated                              | 2017-01-13T13:50:39Z                                       |
+| user_id                              | 7efbea74c20a4eeabc00b7740aa4d353                           |
++--------------------------------------+------------------------------------------------------------+
+</code></pre></div></div>
+
+<p>The VM has been given a fixed IP of 10.28.0.13.  Let’s look at the corresponding Neutron port:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>core@access-node$ neutron port-list
++--------------------------------------+------+-------------------+------------------------------------------------------------------------------------------------+
+| id                                   | name | mac_address       | fixed_ips                                                                                      |
++--------------------------------------+------+-------------------+------------------------------------------------------------------------------------------------+
+| 656b3617-570d-473e-a5dd-90b61cb0c49f |      | fa:16:3e:4d:d5:25 |                                                                                                |
+| 9a7e0868-da7a-419e-a7ad-9d37e11091b8 |      | fa:16:3e:28:a9:a4 | {"subnet_id": "0a1221f2-e6ed-413d-a040-62a266bd0d8f", "ip_address": "10.28.0.13"}              |
+|                                      |      |                   | {"subnet_id": "345fec2e-6493-44de-a489-97b755c16dd4", "ip_address": "fd5f:5d21:845:1c2e:2::d"} |
+| a4b26bcc-ba94-4033-a9fc-edaf151c0c20 |      | fa:16:3e:74:46:bd |                                                                                                |
+| a772a5e1-2f13-4fc3-96d5-fa1c29717637 |      | fa:16:3e:c9:c6:8f |                                                                                                |
++--------------------------------------+------+-------------------+------------------------------------------------------------------------------------------------+
+</code></pre></div></div>
+
+<p>Adding a service IP to the Neutron port as an extra fixed IP</p>
+<pre><code class="language-~~~~~~~~~~~~~~~~~~~~~~~~~">
+Now we want to set up a service IP - let's say `10.28.0.23` - that
+initially points to that VM, `testvm1`.  One way to do that is to add the
+service IP as a second 'fixed IP' on the Neutron port:
+
+    core@access-node$ neutron port-update --fixed-ip subnet_id=0a1221f2-e6ed-413d-a040-62a266bd0d8f,ip_address=10.28.0.13 --fixed-ip subnet_id=0a1221f2-e6ed-413d-a040-62a266bd0d8f,ip_address=10.28.0.23 9a7e0868-da7a-419e-a7ad-9d37e11091b8
+    Updated port: 9a7e0868-da7a-419e-a7ad-9d37e11091b8
+
+    core@access-node$ neutron port-show 9a7e0868-da7a-419e-a7ad-9d37e11091b8
+    +-----------------------+-----------------------------------------------------------------------------------+
+    | Field                 | Value                                                                             |
+    +-----------------------+-----------------------------------------------------------------------------------+
+    | admin_state_up        | True                                                                              |
+    | allowed_address_pairs |                                                                                   |
+    | binding:host_id       | neil-fv-0-ubuntu-kilo-compute-node01                                              |
+    | binding:profile       | {}                                                                                |
+    | binding:vif_details   | {"port_filter": true, "mac_address": "00:61:fe:ed:ca:fe"}                         |
+    | binding:vif_type      | tap                                                                               |
+    | binding:vnic_type     | normal                                                                            |
+    | device_id             | b6d8a3c4-9674-4972-9151-11107b60d622                                              |
+    | device_owner          | compute:None                                                                      |
+    | extra_dhcp_opts       |                                                                                   |
+    | fixed_ips             | {"subnet_id": "0a1221f2-e6ed-413d-a040-62a266bd0d8f", "ip_address": "10.28.0.13"} |
+    |                       | {"subnet_id": "0a1221f2-e6ed-413d-a040-62a266bd0d8f", "ip_address": "10.28.0.23"} |
+    | id                    | 9a7e0868-da7a-419e-a7ad-9d37e11091b8                                              |
+    | mac_address           | fa:16:3e:28:a9:a4                                                                 |
+    | name                  |                                                                                   |
+    | network_id            | 60651076-af2a-4c6d-8d64-500b53a4e547                                              |
+    | security_groups       | 75fccd0a-ef3d-44cd-91ec-ef22941f50f5                                              |
+    | status                | ACTIVE                                                                            |
+    | tenant_id             | 26778b0f745143c5a9b0c7e1a621bb80                                                  |
+    +-----------------------+-----------------------------------------------------------------------------------+
+
+Now look at local IP routes, and we see that we have a route to `10.28.0.23`:
+
+    core@access-node$ ip r
+    default via 10.240.0.1 dev eth0  proto static  metric 100
+    10.28.0.13 via 192.168.8.3 dev l2tpeth8-1  proto bird
+    10.28.0.23 via 192.168.8.3 dev l2tpeth8-1  proto bird
+    [...]
+
+Note that, on the machine where we're running these commands:
+
+- BIRD is running, peered with the BIRDs that Calico runs on each compute node.
+  That is what causes VM routes (including `10.28.0.23`) to appear here.
+
+- 192.168.8.3 is the IP of the compute node that is hosting `testvm1`.
+
+We can also double check that `10.28.0.23` has appeared as a local device
+route on the relevant compute node:
+
+    core@access-node$ ssh core@192.168.8.3 ip r
+    default via 10.240.0.1 dev eth0
+    10.28.0.13 dev tap9a7e0868-da  scope link
+    10.28.0.23 dev tap9a7e0868-da  scope link
+    10.240.0.1 dev eth0  scope link
+    192.168.8.0/24 dev l2tpeth8-3  proto kernel  scope link  src 192.168.8.3
+    192.168.122.0/24 dev virbr0  proto kernel  scope link  src 192.168.122.1
+
+We also need - because with this approach, data that is addressed to
+`10.28.0.23` will be routed to the VM without any NAT - to tell the VM
+itself that it has the extra `10.28.0.23` address:
+
+    core@access-node$ ssh cirros@10.28.0.13
+    cirros@10.28.0.13's password:
+    $ ip a
+    1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 16436 qdisc noqueue
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+        inet6 ::1/128 scope host
+           valid_lft forever preferred_lft forever
+    2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast qlen 1000
+        link/ether fa:16:3e:28:a9:a4 brd ff:ff:ff:ff:ff:ff
+        inet 10.28.0.13/16 brd 10.28.255.255 scope global eth0
+        inet6 fe80::f816:3eff:fe28:a9a4/64 scope link
+           valid_lft forever preferred_lft forever
+    $ sudo ip a a 10.28.0.23/16 dev eth0
+    $ ip a
+    1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 16436 qdisc noqueue
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+        inet6 ::1/128 scope host
+           valid_lft forever preferred_lft forever
+    2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast qlen 1000
+        link/ether fa:16:3e:28:a9:a4 brd ff:ff:ff:ff:ff:ff
+        inet 10.28.0.13/16 brd 10.28.255.255 scope global eth0
+        inet 10.28.0.23/16 scope global secondary eth0
+        inet6 fe80::f816:3eff:fe28:a9a4/64 scope link
+           valid_lft forever preferred_lft forever
+    $ Connection to 10.28.0.13 closed.
+
+And now we can access the VM on its service IP:
+
+    core@access-node$ ssh cirros@10.28.0.23
+    The authenticity of host '10.28.0.23 (10.28.0.23)' can't be established.
+    RSA key fingerprint is 65:a5:b0:0c:e2:c4:ac:94:2a:0c:64:b8:bc:5a:aa:66.
+    Are you sure you want to continue connecting (yes/no)? yes
+
+    Warning: Permanently added '10.28.0.23' (RSA) to the list of known hosts.
+    cirros@10.28.0.23's password:
+    $
+
+(Note that we already have security set up that allows SSH to the instance from
+our access machine (`192.168.8.1`):
+
+    core@access-node$ neutron security-group-list
+    +--------------------------------------+---------+----------------------------------------------------------------------+
+    | id                                   | name    | security_group_rules                                                 |
+    +--------------------------------------+---------+----------------------------------------------------------------------+
+    | 75fccd0a-ef3d-44cd-91ec-ef22941f50f5 | default | egress, IPv4                                                         |
+    |                                      |         | egress, IPv6                                                         |
+    |                                      |         | ingress, IPv4, 22/tcp, remote_ip_prefix: 192.168.8.1/32              |
+    |                                      |         | ingress, IPv4, remote_group_id: 75fccd0a-ef3d-44cd-91ec-ef22941f50f5 |
+    |                                      |         | ingress, IPv6, remote_group_id: 75fccd0a-ef3d-44cd-91ec-ef22941f50f5 |
+    | 903d9936-ce72-4756-a2cc-7c95a846e7e5 | default | egress, IPv4                                                         |
+    |                                      |         | egress, IPv6                                                         |
+    |                                      |         | ingress, IPv4, 22/tcp, remote_ip_prefix: 192.168.8.1/32              |
+    |                                      |         | ingress, IPv4, remote_group_id: 903d9936-ce72-4756-a2cc-7c95a846e7e5 |
+    |                                      |         | ingress, IPv6, remote_group_id: 903d9936-ce72-4756-a2cc-7c95a846e7e5 |
+    +--------------------------------------+---------+----------------------------------------------------------------------+
+
+)
+
+Moving the service IP to another VM
+</code></pre>
+
+<p>Service IPs are often used for HA, so need to be moved to target a different VM
+if the first one fails for some reason (or if the HA system just decides to
+cycle the active VM).</p>
+
+<p>To demonstrate that we create a second test VM:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>core@access-node$ nova boot --flavor m1.tiny --image cirros-0.3.2-x86_64 --nic net-name=demo-net testvm2
+[...]
+core@access-node$ nova list
++--------------------------------------+---------+--------+------------+-------------+----------------------------------------------+
+| ID                                   | Name    | Status | Task State | Power State | Networks                                     |
++--------------------------------------+---------+--------+------------+-------------+----------------------------------------------+
+| b6d8a3c4-9674-4972-9151-11107b60d622 | testvm1 | ACTIVE | -          | Running     | demo-net=10.28.0.13, 10.28.0.23              |
+| bb4ef5e3-dc77-472e-af6f-3f0d8c3e5a6d | testvm2 | ACTIVE | -          | Running     | demo-net=10.28.0.14, fd5f:5d21:845:1c2e:2::e |
++--------------------------------------+---------+--------+------------+-------------+----------------------------------------------+
+core@access-node$ neutron port-list
++--------------------------------------+------+-------------------+------------------------------------------------------------------------------------------------+
+| id                                   | name | mac_address       | fixed_ips                                                                                      |
++--------------------------------------+------+-------------------+------------------------------------------------------------------------------------------------+
+| 656b3617-570d-473e-a5dd-90b61cb0c49f |      | fa:16:3e:4d:d5:25 |                                                                                                |
+| 7627a298-a2db-4a1a-bc07-9f0f10f58363 |      | fa:16:3e:8e:dc:33 | {"subnet_id": "0a1221f2-e6ed-413d-a040-62a266bd0d8f", "ip_address": "10.28.0.14"}              |
+|                                      |      |                   | {"subnet_id": "345fec2e-6493-44de-a489-97b755c16dd4", "ip_address": "fd5f:5d21:845:1c2e:2::e"} |
+| 9a7e0868-da7a-419e-a7ad-9d37e11091b8 |      | fa:16:3e:28:a9:a4 | {"subnet_id": "0a1221f2-e6ed-413d-a040-62a266bd0d8f", "ip_address": "10.28.0.13"}              |
+|                                      |      |                   | {"subnet_id": "0a1221f2-e6ed-413d-a040-62a266bd0d8f", "ip_address": "10.28.0.23"}              |
+| a4b26bcc-ba94-4033-a9fc-edaf151c0c20 |      | fa:16:3e:74:46:bd |                                                                                                |
+| a772a5e1-2f13-4fc3-96d5-fa1c29717637 |      | fa:16:3e:c9:c6:8f |                                                                                                |
++--------------------------------------+------+-------------------+------------------------------------------------------------------------------------------------+
+</code></pre></div></div>
+
+<p>Remove the service IP from the first VM:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>core@access-node$ neutron port-update --fixed-ip subnet_id=0a1221f2-e6ed-413d-a040-62a266bd0d8f,ip_address=10.28.0.13 9a7e0868-da7a-419e-a7ad-9d37e11091b8
+</code></pre></div></div>
+
+<p>And add it to the second:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>core@access-node$ neutron port-update --fixed-ip subnet_id=0a1221f2-e6ed-413d-a040-62a266bd0d8f,ip_address=10.28.0.14 --fixed-ip subnet_id=0a1221f2-e6ed-413d-a040-62a266bd0d8f,ip_address=10.28.0.23 7627a298-a2db-4a1a-bc07-9f0f10f58363
+</code></pre></div></div>
+
+<p>And tell <code class="highlighter-rouge">testvm2</code> that it now has the service IP <code class="highlighter-rouge">10.28.0.23</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>core@access-node$ ssh cirros@10.28.0.14
+The authenticity of host '10.28.0.14 (10.28.0.14)' can't be established.
+RSA key fingerprint is 6a:02:7f:3a:bf:0c:91:de:c4:d6:e7:f6:81:3f:6a:85.
+Are you sure you want to continue connecting (yes/no)? yes
+
+Warning: Permanently added '10.28.0.14' (RSA) to the list of known hosts.
+cirros@10.28.0.14's password:
+$ sudo ip a a 10.28.0.23/16 dev eth0
+</code></pre></div></div>
+
+<p>Now connections to <code class="highlighter-rouge">10.28.0.23</code> go to <code class="highlighter-rouge">testvm2</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>core@access-node$ ssh cirros@10.28.0.23
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+6a:02:7f:3a:bf:0c:91:de:c4:d6:e7:f6:81:3f:6a:85.
+Please contact your system administrator.
+Add correct host key in /home/core/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /home/core/.ssh/known_hosts:4
+RSA host key for 10.28.0.23 has changed and you have requested strict checking.
+Host key verification failed.
+core@access-node$ rm ~/.ssh/known_hosts
+core@access-node$ ssh cirros@10.28.0.23
+The authenticity of host '10.28.0.23 (10.28.0.23)' can't be established.
+RSA key fingerprint is 6a:02:7f:3a:bf:0c:91:de:c4:d6:e7:f6:81:3f:6a:85.
+Are you sure you want to continue connecting (yes/no)? yes
+
+Warning: Permanently added '10.28.0.23' (RSA) to the list of known hosts.
+cirros@10.28.0.23's password:
+$ hostname
+testvm2
+$ ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 16436 qdisc noqueue
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast qlen 1000
+    link/ether fa:16:3e:8e:dc:33 brd ff:ff:ff:ff:ff:ff
+    inet 10.28.0.14/16 brd 10.28.255.255 scope global eth0
+    inet 10.28.0.23/16 scope global secondary eth0
+    inet6 fe80::f816:3eff:fe8e:dc33/64 scope link
+       valid_lft forever preferred_lft forever
+$
+</code></pre></div></div>
+
+              
+              <!-- BOTTOM DOCUMENTATION PAGE NAVBAR -->
+              <div style="margin-top: 60px; margin-bottom: 40px; padding-top: 20px; border-top: 1px solid #999; text-align: left; color: #999;">Rate this Page: <div class="rw-ui-container" style="margin-top: -5px;"></div> <a href="https://www.projectcalico.org/contact?type=docs&file=master/usage/openstack/service-ips.md" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> Provide Feedback</a> <a href="https://www.projectcalico.org/community#slack" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-slack" aria-hidden="true"></i> Get Help via Slack</a> <a href="https://www.projectcalico.org/mvp" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-trophy" aria-hidden="true"></i> Ask our MVPs</a> <a href="https:/tigera.io/training" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Training</a></div>
+              <!-- END BOTTOM DOCUMENTATION PAGE NAVBAR -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Start Visual Website Optimizer Asynchronous Code -->
+    <script type='text/javascript'>
+      var _vwo_code=(function(){
+      var account_id=287573,
+      settings_tolerance=2000,
+      library_tolerance=2500,
+      use_existing_jquery=false,
+      /* DO NOT EDIT BELOW THIS LINE */
+      f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+    </script>
+    <!-- End Visual Website Optimizer Asynchronous Code -->
+    <!-- DOCUMENTATION RATING ANALYTICS -->
+   <script type="text/javascript">(function(d, t, e, m){
+    // Async Rating-Widget initialization.
+    window.RW_Async_Init = function(){
+        RW.init({
+            huid: "368439",
+            uid: "33da22c0dff384767b5074aaf10ebc50",
+            source: "website",
+            options: {
+                "advanced": {
+					"font": {
+						"color": "#999999"
+					},
+                    "layout": {
+                        "align": {
+                            "hor": "left"
+                        }
+                    },
+                    "text": {
+                        "rateThis": "Rate this"
+                    }
+                },
+				"label": {
+					"background": "#FFFFFF"
+				},
+				"reVote": true,
+				"showInfo": false,
+				/*"showTooltip": false,*/
+				"hideRecommendations": false,
+				"showReport": false,
+				"showLoader": false,
+                "style": "oxygen",
+                "isDummy": false
+            } 
+        });
+        RW.render();
+    };
+        // Append Rating-Widget JavaScript library.
+    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
+        l = d.location, ck = "Y" + t.getFullYear() + 
+        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
+        f = ((l.search.indexOf("DBG=") > -1) ? "" : ".min"),
+        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
+    if (d.getElementById(id)) return;              
+    rw = d.createElement(e);
+    rw.id = id; rw.async = true; rw.type = "text/javascript";
+    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
+    s.parentNode.insertBefore(rw, s);
+    }(document, new Date(), "script", "rating-widget.com/"));</script>
+    <!-- END DOCUMENTATION RATING ANALYTICS -->
+  </body>
+</html>

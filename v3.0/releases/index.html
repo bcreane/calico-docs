@@ -1,0 +1,1227 @@
+<!-- Set this_pages_navbar  -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="http://tigera-docs.appspot.com//images/favicon.png">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto+Mono' type='text/css'>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/style.css"/>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/plugins/offcanvas.css"/>
+    <link href="https://www.projectcalico.org/wp-content/themes/dante/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://tigera-docs.appspot.com//js/jquery-2.2.0.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/bootstrap/bootstrap.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/script.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-52125893-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Releases</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="Releases" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://docs.projectcalico.org/v3.0/releases/" />
+<meta property="og:url" content="https://docs.projectcalico.org/v3.0/releases/" />
+<script type="application/ld+json">
+{"headline":"Releases","@type":"WebPage","url":"https://docs.projectcalico.org/v3.0/releases/","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <section>
+      <nav id="toplevel-nav" class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <!-- Hamburger menu for mobile -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tigera-navbar" aria-expanded="false" aria-controls="tigera-navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Left brand image -->
+            <a class="navbar-brand" href="https://projectcalico.org/">
+              <img alt="Brand" src="http://tigera-docs.appspot.com//images/brand.png">
+            </a>
+          </div>
+          <div id="tigera-navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://projectcalico.org">Home</a></li>
+              <li class="active"><a href="https://projectcalico.org/resources"><span>Resources</span></a>
+                <ul>
+                    <li><a href="http://tigera-docs.appspot.com//latest/getting-started/"><i class="fa fa-tachometer" aria-hidden="true"></i> &nbsp; Getting Started</a></li>
+                    <li><a href="http://tigera-docs.appspot.com/"><i class="fa fa-book" aria-hidden="true"></i> &nbsp; Documentation</a></li>
+                    <!--<li><a href="https://www.projectcalico.org/tutorials"><i class="fa fa-file-code-o" aria-hidden="true"></i> &nbsp; Tutorials &amp; Examples</a></li>
+                    <li><a href=""><i class="fa fa-paper-plane-o" aria-hidden="true"></i> &nbsp; Online Workshops</a></li>-->
+                    <li><a href="https://www.projectcalico.org/videos"><i class="fa fa-video-camera" aria-hidden="true"></i> &nbsp; Videos &amp; Webinars</a></li>
+                    <li><a href="https://www.projectcalico.org/training"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp; Training</a></li>
+                    <li><a href="http://tigera-docs.appspot.com//latest/releases/"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp; Releases</a></li>
+                    <!-- <li><a href="/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li> -->
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/community">Community</a>
+                <ul>
+                    <li><a href="https://slack.projectcalico.org/"><i class="fa fa-slack" aria-hidden="true"></i> &nbsp; Slack</a></li>
+                    <!--<li><a href="https://stackoverflow.com/questions/tagged/project-calico" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i> &nbsp; StackOverflow</a></li>-->
+                    <li><a href="https://www.projectcalico.org/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li>
+                    <li><a href="https://www.projectcalico.org/community#events"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp; Upcoming Events</a></li>
+                    <li><a href="https://www.projectcalico.org/newsletters"><i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp; Newsletter</a></li>
+                    <li><a href="https://github.com/projectcalico" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> &nbsp; GitHub</a></li> 
+                    <li><a href="https://www.projectcalico.org/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i> &nbsp; Jobs</a></li>
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/mvp" style="font-weight: bold;">MVP</a></li>
+              <li><a href="https://www.projectcalico.org/support">Support</a></li>
+              <li class="hidden-xs"><a href="https://www.projectcalico.org/support">
+                <img class="desktopImage" width="30" align="absmiddle" src="https://www.projectcalico.org/images/tigera_trans_sm.png" alt="Tigera"></a>
+              </li>
+            </ul>
+            <form class="navbar-form visible-xs">
+              <ul class="nav navbar-nav navbar-right">
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v3.0/introduction">Introduction</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v3.0/getting-started">Getting Started</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v3.0/usage">Usage</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v3.0/reference">Reference</a>
+                  </li>
+                
+                  <li  class="active">
+                    <a href="http://tigera-docs.appspot.com//v3.0/releases">Releases</a>
+                  </li>
+                
+              </ul>
+            </form>
+            <ul class="visible-xs nav navbar-nav navbar-right">
+             <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (v3.0)<span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                 <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6 (latest)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (beta)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                 <li role="separator" class="divider"></li>
+               </ul>
+             </li>
+           </ul>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-inverse navbar-collapse collapse">
+          <div class="container">
+            <ul class="nav navbar-nav">
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v3.0/introduction"><span>Introduction</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v3.0/getting-started"><span>Getting Started</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v3.0/usage"><span>Usage</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v3.0/reference"><span>Reference</span></a>
+                </li>
+              
+                <li class="active">
+                  <a href="http://tigera-docs.appspot.com//v3.0/releases"><span>Releases</span></a>
+                </li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (v3.0)<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                   <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (latest)</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-sm-0"></div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+          <p class="pull-left visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+            <div class="row">
+              <script>
+                (function() {
+                  var cx = '015028447179048192876:xjzskk7awwe';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+                })();
+              </script>
+              <gcse:search></gcse:search>
+            </div>
+            <div id="sidebar">
+            	
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Releases" href="http://tigera-docs.appspot.com//v3.0/releases/">
+        Releases
+      </a>
+    </div>
+  
+
+
+			</div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9">
+            <div id="content-main">
+              <!-- TOP DOCUMENTATION PAGE NAVBAR -->
+              <div style="text-align: left; padding: 18px 0 9px 0; min-width: 500px; overflow-x: hidden;">
+              
+              <a data-proofer-ignore href="https://github.com/projectcalico/calico/tree/master/v3.0/releases/index.md" style="color: #999; text-decoration: none; float: right;" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit this page</a></div>
+              <!-- END TOP DOCUMENTATION PAGE NAVBAR -->
+              
+
+              <h1>Releases</h1>
+              <p>The following table shows component versioning for Calico  <strong>v3.0</strong>.</p>
+
+<p>Use the version selector at the top-right of this page to view a different release.</p>
+
+<h2 id="v302">v3.0.2</h2>
+
+<p><a href="https://github.com/projectcalico/calico/releases/download/v3.0.2/release-v3.0.2.tgz">Release archive</a> with Kubernetes manifests, Docker images and binaries.</p>
+
+<p>09 February 2018</p>
+
+<blockquote class="alert alert-danger">
+  <p><strong>Important</strong>: <a href="https://docs.projectcalico.org/v3.0/getting-started/kubernetes/upgrade/">Review the documentation</a> carefully before attempting an upgrade. 
+You must upgrade to Calico v2.6.5 or later before you can upgrade to Calico v3.0.2.</p>
+</blockquote>
+
+<h4 id="bug-fixes">Bug Fixes</h4>
+
+<ul>
+  <li>
+    <p>Fixed a bug where Calico would silently lose its connection to etcd and never recover when the etcd server was terminated. <a href="https://github.com/projectcalico/libcalico-go/pull/780">libcalico-go #780</a> (@caseydavenport)</p>
+  </li>
+  <li>
+    <p>Fixed a bug when multiple nodes are restarted simultaneously and swap IP addresses <a href="https://github.com/projectcalico/calico/pull/1681">calico #1681</a> (@caseydavenport)</p>
+  </li>
+  <li>
+    <p>Fixed a route scan issue where upon startup bird did not notice that tunneled routes needed to be updated to be non-tunneled. <a href="https://github.com/projectcalico/calico/pull/1679">calico #1679</a> (@caseydavenport)</p>
+  </li>
+  <li>
+    <p>Enable Kubernetes node references for automatic cleanup of Node resources in etcd. <a href="https://github.com/projectcalico/calico/pull/1678">calico #1678</a> (@caseydavenport)</p>
+  </li>
+  <li>
+    <p>Fixed a panic when BGP is disabled. <a href="https://github.com/projectcalico/calico/pull/1674">calico #1674</a> (@tmjd)</p>
+  </li>
+  <li>
+    <p>Kubernetes self-hosted manifests now enable BGP IP address auto-detection by default. <a href="https://github.com/projectcalico/calico/pull/1588">calico #1588</a> (@caseydavenport)</p>
+  </li>
+</ul>
+
+<h4 id="limitations">Limitations</h4>
+
+<ul>
+  <li>
+    <p><strong>Offers only Kubernetes, OpenShift, and host endpoint integrations</strong>: the 
+OpenStack, Mesos, DC/OS, rkt, and Docker orchestrators have not been tested 
+and are not supported. (Calico still supports Docker and rkt containers.) 
+We plan to resume support for the OpenStack, Mesos, DC/OS, and Docker 
+orchestrators in a future release.</p>
+  </li>
+  <li>
+    <p><strong>GoBGP not supported</strong>: Setting the <code class="highlighter-rouge">CALICO_NETWORKING_BACKEND</code> environment 
+variable to <code class="highlighter-rouge">gobgp</code> is not supported. See <a href="https://docs.projectcalico.org/v3.0/reference/node/configuration">Configuring calico/node</a> 
+for more information. We plan to resume support for GoBPG in a future release.</p>
+  </li>
+  <li>
+    <p><strong>Route reflectors cannot be clustered</strong>: We plan to resume support for
+this in a future release.</p>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>felix</td>
+      <td><a href="https://github.com/projectcalico/felix/releases/tag/3.0.2">3.0.2</a></td>
+    </tr>
+    <tr>
+      <td>typha</td>
+      <td><a href="https://github.com/projectcalico/typha/releases/tag/v0.6.1">v0.6.1</a></td>
+    </tr>
+    <tr>
+      <td>calicoctl</td>
+      <td><a href="https://github.com/projectcalico/calicoctl/releases/tag/v2.0.0">v2.0.0</a></td>
+    </tr>
+    <tr>
+      <td>calico/node</td>
+      <td><a href="https://github.com/projectcalico/calico/releases/tag/v3.0.2">v3.0.2</a></td>
+    </tr>
+    <tr>
+      <td>calico/cni</td>
+      <td><a href="https://github.com/projectcalico/cni-plugin/releases/tag/v2.0.0">v2.0.0</a></td>
+    </tr>
+    <tr>
+      <td>calico/kube-controllers</td>
+      <td><a href="https://github.com/projectcalico/k8s-policy/releases/tag/v2.0.0">v2.0.0</a></td>
+    </tr>
+    <tr>
+      <td>confd</td>
+      <td><a href="https://github.com/projectcalico/confd/releases/tag/v1.0.1">v1.0.1</a></td>
+    </tr>
+    <tr>
+      <td>calico-bird</td>
+      <td><a href="https://github.com/projectcalico/calico-bird/releases/tag/v0.3.2">v0.3.2</a></td>
+    </tr>
+    <tr>
+      <td>calico/routereflector</td>
+      <td><a href="https://github.com/projectcalico/routereflector/releases/tag/v0.5.0">v0.5.0</a></td>
+    </tr>
+    <tr>
+      <td>calico-bgp-daemon</td>
+      <td><a href="https://github.com/projectcalico/calico-bgp-daemon/releases/tag/v0.2.1">v0.2.1</a></td>
+    </tr>
+    <tr>
+      <td>libnetwork-plugin</td>
+      <td><a href="https://github.com/projectcalico/libnetwork-plugin/releases/tag/v1.1.0">v1.1.0</a></td>
+    </tr>
+    <tr>
+      <td>networking-calico</td>
+      <td><a href="http://git.openstack.org/cgit/openstack/networking-calico/commit/?h=1.4.3">1.4.3</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="v301">v3.0.1</h2>
+
+<p><a href="https://github.com/projectcalico/calico/releases/download/v3.0.1/release-v3.0.1.tgz">Release archive</a> with Kubernetes manifests, Docker images and binaries.</p>
+
+<p>22 December 2017</p>
+
+<blockquote class="alert alert-danger">
+  <p><strong>Important</strong>: This release includes breaking changes to the data and 
+resource model. <a href="https://docs.projectcalico.org/v3.0/getting-started/kubernetes/upgrade/">Review the documentation</a> carefully before attempting an upgrade. 
+Some highlights include:</p>
+  <ul>
+    <li>You must upgrade to Calico v2.6.5 before you can upgrade to v3.0.1.</li>
+    <li>Calico deployments that access the etcd datastore directly must complete 
+a one-time migration.</li>
+    <li>You must convert any customized Calico manifests via <code class="highlighter-rouge">calicoctl convert</code> 
+before you can use them with v3.0.1.</li>
+  </ul>
+</blockquote>
+
+<h4 id="whats-new">What’s new</h4>
+
+<h5 id="support-for-etcdv3">Support for etcdv3</h5>
+
+<ul>
+  <li>Calico now stores its data in <a href="https://coreos.com/blog/etcd3-a-new-etcd.html">etcd version 3</a>.</li>
+</ul>
+
+<h5 id="support-for-windows-in-policy-only-mode">Support for Windows in policy-only mode</h5>
+
+<ul>
+  <li>Felix now compiles and runs on Windows in policy-only mode. <a href="https://github.com/projectcalico/felix/pull/1638">felix #1638</a> (@nwoodmsft)</li>
+</ul>
+
+<h5 id="migration-and-upgrade-from-v265">Migration and upgrade from v2.6.5</h5>
+
+<ul>
+  <li>This version of Calico supports <a href="/v3.0/getting-started/kubernetes/upgrade/">migration and upgrade</a> from Calico v2.6.5.</li>
+</ul>
+
+<h5 id="calicoctl-enhancements">calicoctl enhancements</h5>
+
+<ul>
+  <li>
+    <p>Those using the Kubernetes API datastore can now use <code class="highlighter-rouge">calicoctl</code> to 
+create, read, update, and delete Calico policies.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">calicoctl</code> features two new resources: <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/bgpconfig">BGP Configuration</a> 
+and <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/felixconfig">Felix Configuration</a>.</p>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">calicoctl</code> policy resource has been split into new <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/networkpolicy">network policy</a> 
+and <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/globalnetworkpolicy">global network policy</a> resources.</p>
+  </li>
+  <li>
+    <p><a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/networkpolicy">Network policy</a> 
+resources can include a <code class="highlighter-rouge">namespace</code> value, allowing you to create policies that 
+only apply to <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/workloadendpoint">workload endpoint resources</a> 
+in the same namespace.</p>
+  </li>
+  <li>
+    <p>You can now specify <code class="highlighter-rouge">namespaceSelector</code> expressions in 
+<a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/networkpolicy">network policy</a> 
+and <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/globalnetworkpolicy">global network policy</a> rules to select one or more namespaces in their entirety.</p>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">get</code>, <code class="highlighter-rouge">apply</code>, <code class="highlighter-rouge">create</code>, <code class="highlighter-rouge">delete</code>, and <code class="highlighter-rouge">replace</code> commands of <code class="highlighter-rouge">calicoctl</code> 
+now include an optional <code class="highlighter-rouge">--namespace=&lt;NS&gt;</code> flag. Refer to the <code class="highlighter-rouge">calicoctl</code> 
+<a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/commands/">Command reference</a> section for more details.</p>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">get</code> command of <code class="highlighter-rouge">calicoctl</code> now includes optional <code class="highlighter-rouge">--all-namespaces</code> 
+and <code class="highlighter-rouge">--export</code> flags. Refer to the <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/commands/get">calicoctl get</a> 
+section for more information.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">calicoctl</code> no longer accepts the following flags in <code class="highlighter-rouge">get</code> commands: 
+<code class="highlighter-rouge">--node=&lt;NODE&gt;</code>, <code class="highlighter-rouge">--orchestrator=&lt;ORCH&gt;</code>, <code class="highlighter-rouge">--workload=&lt;WORKLOAD&gt;</code>, and 
+<code class="highlighter-rouge">--scope=&lt;SCOPE&gt;</code>. These options are now a part of the individual resources.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">calicoctl</code> no longer includes a <code class="highlighter-rouge">config</code> command. To achieve the equivalent 
+functionality, refer to <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/commands/#modifying-low-level-component-configurations">Modifying low-level component configurations</a>.</p>
+  </li>
+  <li>
+    <p>You can now name <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/hostendpoint#endpointport">host</a>
+and <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/workloadendpoint#endpointport">workload</a> 
+endpoint ports and reference them by name in your <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/networkpolicy#ports">policy rules</a>.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">calicoctl</code> now allows a <code class="highlighter-rouge">0</code> value for ICMP entries in policy resources, 
+enabling <code class="highlighter-rouge">ping</code> responses. In addition, it now rejects <code class="highlighter-rouge">255</code> values in the 
+<code class="highlighter-rouge">type</code> field due to lack of kernel support. Refer to the reference documentation 
+of the <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/networkpolicy#icmp">network policy</a> 
+and <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/globalnetworkpolicy#icmp">global network policy</a> 
+resources for more information.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">calicoctl</code> now offers a new <code class="highlighter-rouge">convert</code> command, allowing 2.6.x manifests stored under 
+version control to be converted to the v3.x format. <a href="https://github.com/projectcalico/calicoctl/pull/1782">calicoctl #1782</a> (@gunjan5)</p>
+  </li>
+</ul>
+
+<h5 id="host-endpoint-policies-can-be-applied-to-forwarded-traffic">Host endpoint policies can be applied to forwarded traffic</h5>
+
+<ul>
+  <li>The new <code class="highlighter-rouge">ApplyOnForward</code> flag allows you to specify if a host endpoint policy should 
+apply to forwarded traffic or not. Forwarded traffic includes traffic forwarded between 
+host endpoints and traffic forwarded between a host endpoint and a workload endpoint on 
+the same host. Refer to <a href="https://docs.projectcalico.org/v3.0/getting-started/bare-metal/bare-metal">Using Calico to secure host interfaces</a> 
+for more details.</li>
+</ul>
+
+<h5 id="cni-plugin-changes">CNI plugin changes</h5>
+
+<ul>
+  <li>
+    <p>Calico now assigns the host side of veth pairs a MAC address of <code class="highlighter-rouge">ee:ee:ee:ee:ee:ee</code>.
+If this fails, it uses a kernel-generated MAC address as before. For more information, 
+refer to the <a href="https://docs.projectcalico.org/v2.6/usage/troubleshooting/">Troubleshooting FAQ</a>. <a href="https://github.com/projectcalico/cni-plugin/pull/436">cni-plugin #436</a> (@tmjd)</p>
+  </li>
+  <li>
+    <p>The CNI plugin now offers an optional environment variable called <code class="highlighter-rouge">CNI_OLD_CONF_NAME</code>.
+If set, the CNI plug-in cleans up old configuration data during an upgrade, making it 
+easier to migrate to a new <code class="highlighter-rouge">CNI_CONF_NAME</code> value. <a href="https://github.com/projectcalico/cni-plugin/pull/392">cni-plugin #392</a>(@weikinhuang)</p>
+  </li>
+  <li>
+    <p>The CNI plugin no longer throws a <code class="highlighter-rouge">file exists</code> message when programming routes. 
+<a href="https://github.com/projectcalico/cni-plugin/pull/406">cni-plugin #406</a> (@gunjan5)</p>
+  </li>
+  <li>
+    <p>After a period of deprecation, this release removes support for the <code class="highlighter-rouge">ETCD_AUTHORITY</code> 
+and <code class="highlighter-rouge">ETCD_SCHEME</code> environment variables. Calico no longer reads these values. If you have 
+not transitioned to <code class="highlighter-rouge">ETCD_ENDPOINTS</code>, you must do so as of v3.0. Refer to 
+<a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/setup/etcdv3">Configuring <code class="highlighter-rouge">calicoctl</code> - etcdv3 datastore</a> for more information.</p>
+  </li>
+  <li>
+    <p>A new node controller for Kubernetes deployments clears data associated with deleted 
+nodes from the Calico datastore, preventing conflicts that can lead to crash loops. Refer 
+to <a href="https://docs.projectcalico.org/v3.0/reference/kube-controllers/configuration">Configuring the Calico Kubernetes controllers</a> for more information.</p>
+  </li>
+</ul>
+
+<h5 id="other-changes">Other changes</h5>
+
+<ul>
+  <li>
+    <p>Calico now works with Kubernetes network services proxy with IPVS/LVS. Calico enforces 
+network policies with kube-proxy running in IPVS mode for Kubernetes clusters. Currently 
+only workload ingress policy is supported.</p>
+  </li>
+  <li>
+    <p>Rolling update is now enabled by default in the Kubernetes self-hosted manifests. 
+<a href="https://github.com/projectcalico/calico/pull/1506">calico #1506</a> (@caseydavenport)</p>
+  </li>
+  <li>
+    <p>The CoreOS version used for the Kubernetes Vagrant tutorial has been updated, resolving
+an issue causing <code class="highlighter-rouge">kubectl</code> to hang. <a href="https://github.com/projectcalico/calico/pull/1487">calico #1487</a> (@2ffs2nns)</p>
+  </li>
+  <li>
+    <p>Typha no longer sends incorrect <code class="highlighter-rouge">updateTypes</code> to Felix, increasing the accuracy of 
+Felix statistics. <a href="https://github.com/projectcalico/typha/pull/70">typha #70</a> (@fasaxc)</p>
+  </li>
+  <li>
+    <p>The CNI plugin now offers an optional environment variable called <code class="highlighter-rouge">CNI_OLD_CONF_NAME</code>.
+If set, the CNI plug-in cleans up old configuration data during an upgrade, making it
+easier to migrate to a new <code class="highlighter-rouge">CNI_CONF_NAME</code> value. <a href="https://github.com/projectcalico/cni-plugin/pull/392">cni-plugin #392</a>(@weikinhuang)</p>
+  </li>
+</ul>
+
+<h4 id="limitations-1">Limitations</h4>
+
+<ul>
+  <li>
+    <p><strong>Offers only Kubernetes, OpenShift, and host endpoint integrations</strong>: the 
+OpenStack, Mesos, DC/OS, rkt, and Docker orchestrators have not been tested 
+and are not supported. (Calico still supports Docker and rkt containers.) 
+We plan to resume support for the OpenStack, Mesos, DC/OS, and Docker 
+orchestrators in a future release.</p>
+  </li>
+  <li>
+    <p><strong>GoBGP not supported</strong>: Setting the <code class="highlighter-rouge">CALICO_NETWORKING_BACKEND</code> environment 
+variable to <code class="highlighter-rouge">gobgp</code> is not supported. See <a href="https://docs.projectcalico.org/v3.0/reference/node/configuration">Configuring calico/node</a> 
+for more information. We plan to resume support for GoBPG in a future release.</p>
+  </li>
+  <li>
+    <p><strong>Route reflectors cannot be clustered</strong>: We plan to resume support for
+this in a future release.</p>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>felix</td>
+      <td><a href="https://github.com/projectcalico/felix/releases/tag/3.0.1">3.0.1</a></td>
+    </tr>
+    <tr>
+      <td>typha</td>
+      <td><a href="https://github.com/projectcalico/typha/releases/tag/v0.6.0">v0.6.0</a></td>
+    </tr>
+    <tr>
+      <td>calicoctl</td>
+      <td><a href="https://github.com/projectcalico/calicoctl/releases/tag/v2.0.0">v2.0.0</a></td>
+    </tr>
+    <tr>
+      <td>calico/node</td>
+      <td><a href="https://github.com/projectcalico/calico/releases/tag/v3.0.1">v3.0.1</a></td>
+    </tr>
+    <tr>
+      <td>calico/cni</td>
+      <td><a href="https://github.com/projectcalico/cni-plugin/releases/tag/v2.0.0">v2.0.0</a></td>
+    </tr>
+    <tr>
+      <td>calico/kube-controllers</td>
+      <td><a href="https://github.com/projectcalico/k8s-policy/releases/tag/v2.0.0">v2.0.0</a></td>
+    </tr>
+    <tr>
+      <td>confd</td>
+      <td><a href="https://github.com/projectcalico/confd/releases/tag/v1.0.0">v1.0.0</a></td>
+    </tr>
+    <tr>
+      <td>calico-bird</td>
+      <td><a href="https://github.com/projectcalico/calico-bird/releases/tag/v0.3.1">v0.3.1</a></td>
+    </tr>
+    <tr>
+      <td>calico/routereflector</td>
+      <td><a href="https://github.com/projectcalico/routereflector/releases/tag/v0.5.0">v0.5.0</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="v300">v3.0.0</h2>
+
+<p><a href="https://github.com/projectcalico/calico/releases/download/v3.0.0/release-v3.0.0.tgz">Release archive</a> with Kubernetes manifests, Docker images and binaries.</p>
+
+<p>21 December 2017</p>
+
+<blockquote class="alert alert-danger">
+  <p><strong>Important</strong>: Due to a known issue in this release that can cause potential
+brief losses of connectivity after upgrading from v2.6.4, this release is 
+deprecated. Use v3.0.1 instead. This issue does not affect those using the 
+Kubernetes API datastore or running in policy-only mode.</p>
+</blockquote>
+
+<h4 id="whats-new-1">What’s new</h4>
+
+<h5 id="support-for-etcdv3-1">Support for etcdv3</h5>
+
+<ul>
+  <li>Calico now stores its data in <a href="https://coreos.com/blog/etcd3-a-new-etcd.html">etcd version 3</a>.</li>
+</ul>
+
+<h5 id="migration-and-upgrade-from-v264">Migration and upgrade from v2.6.4</h5>
+
+<ul>
+  <li>This version of Calico supports <a href="/v3.0/getting-started/kubernetes/upgrade/">migration and upgrade</a> from Calico v2.6.4.</li>
+</ul>
+
+<h5 id="calicoctl-enhancements-1">calicoctl enhancements</h5>
+
+<ul>
+  <li>
+    <p>Those using the Kubernetes API datastore can now use <code class="highlighter-rouge">calicoctl</code> to 
+create, read, update, and delete Calico policies.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">calicoctl</code> features two new resources: <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/bgpconfig">BGP Configuration</a> 
+and <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/felixconfig">Felix Configuration</a>.</p>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">calicoctl</code> policy resource has been split into new <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/networkpolicy">network policy</a> 
+and <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/globalnetworkpolicy">global network policy</a> resources.</p>
+  </li>
+  <li>
+    <p><a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/networkpolicy">Network policy</a> 
+resources can include a <code class="highlighter-rouge">namespace</code> value, allowing you to create policies that 
+only apply to <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/workloadendpoint">workload endpoint resources</a> 
+in the same namespace.</p>
+  </li>
+  <li>
+    <p>You can now specify <code class="highlighter-rouge">namespaceSelector</code> expressions in 
+<a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/networkpolicy">network policy</a> 
+and <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/globalnetworkpolicy">global network policy</a> rules to select one or more namespaces in their entirety.</p>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">get</code>, <code class="highlighter-rouge">apply</code>, <code class="highlighter-rouge">create</code>, <code class="highlighter-rouge">delete</code>, and <code class="highlighter-rouge">replace</code> commands of <code class="highlighter-rouge">calicoctl</code> 
+now include an optional <code class="highlighter-rouge">--namespace=&lt;NS&gt;</code> flag. Refer to the <code class="highlighter-rouge">calicoctl</code> 
+<a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/commands/">Command reference</a> section for more details.</p>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">get</code> command of <code class="highlighter-rouge">calicoctl</code> now includes optional <code class="highlighter-rouge">--all-namespaces</code> 
+and <code class="highlighter-rouge">--export</code> flags. Refer to the <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/commands/get">calicoctl get</a> 
+section for more information.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">calicoctl</code> no longer accepts the following flags in <code class="highlighter-rouge">get</code> commands: 
+<code class="highlighter-rouge">--node=&lt;NODE&gt;</code>, <code class="highlighter-rouge">--orchestrator=&lt;ORCH&gt;</code>, <code class="highlighter-rouge">--workload=&lt;WORKLOAD&gt;</code>, and 
+<code class="highlighter-rouge">--scope=&lt;SCOPE&gt;</code>. These options are now a part of the individual resources.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">calicoctl</code> no longer includes a <code class="highlighter-rouge">config</code> command. To achieve the equivalent 
+functionality, refer to <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/commands/#modifying-low-level-component-configurations">Modifying low-level component configurations</a>.</p>
+  </li>
+  <li>
+    <p>You can now name <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/hostendpoint#endpointport">host</a>
+and <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/workloadendpoint#endpointport">workload</a> 
+endpoint ports and reference them by name in your <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/networkpolicy#ports">policy rules</a>.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">calicoctl</code> now allows a <code class="highlighter-rouge">0</code> value for ICMP entries in policy resources, 
+enabling <code class="highlighter-rouge">ping</code> responses. In addition, it now rejects <code class="highlighter-rouge">255</code> values in the 
+<code class="highlighter-rouge">type</code> field due to lack of kernel support. Refer to the reference documentation 
+of the <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/networkpolicy#icmp">network policy</a> 
+and <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/globalnetworkpolicy#icmp">global network policy</a> 
+resources for more information.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">calicoctl</code> now offers a new <code class="highlighter-rouge">convert</code> command, allowing 2.6.x manifests stored under 
+version control to be converted to the v3.x format. <a href="https://github.com/projectcalico/calicoctl/pull/1782">calicoctl #1782</a> (@gunjan5)</p>
+  </li>
+</ul>
+
+<h5 id="host-endpoint-policies-can-be-applied-to-forwarded-traffic-1">Host endpoint policies can be applied to forwarded traffic</h5>
+
+<ul>
+  <li>The new <code class="highlighter-rouge">ApplyOnForward</code> flag allows you to specify if a host endpoint policy should 
+apply to forwarded traffic or not. Forwarded traffic includes traffic forwarded between 
+host endpoints and traffic forwarded between a host endpoint and a workload endpoint on 
+the same host. Refer to <a href="https://docs.projectcalico.org/v3.0/getting-started/bare-metal/bare-metal">Using Calico to secure host interfaces</a> 
+for more details.</li>
+</ul>
+
+<h5 id="cni-plugin-changes-1">CNI plugin changes</h5>
+
+<ul>
+  <li>
+    <p>Calico now assigns the host side of veth pairs a MAC address of <code class="highlighter-rouge">ee:ee:ee:ee:ee:ee</code>.
+If this fails, it uses a kernel-generated MAC address as before. For more information, 
+refer to the <a href="https://docs.projectcalico.org/v2.6/usage/troubleshooting/">Troubleshooting FAQ</a>. <a href="https://github.com/projectcalico/cni-plugin/pull/436">cni-plugin #436</a> (@tmjd)</p>
+  </li>
+  <li>
+    <p>The CNI plugin now offers an optional environment variable called <code class="highlighter-rouge">CNI_OLD_CONF_NAME</code>.
+If set, the CNI plug-in cleans up old configuration data during an upgrade, making it 
+easier to migrate to a new <code class="highlighter-rouge">CNI_CONF_NAME</code> value. <a href="https://github.com/projectcalico/cni-plugin/pull/392">cni-plugin #392</a>(@weikinhuang)</p>
+  </li>
+  <li>
+    <p>The CNI plugin no longer throws a <code class="highlighter-rouge">file exists</code> message when programming routes. 
+<a href="https://github.com/projectcalico/cni-plugin/pull/406">cni-plugin #406</a> (@gunjan5)</p>
+  </li>
+  <li>
+    <p>After a period of deprecation, this release removes support for the <code class="highlighter-rouge">ETCD_AUTHORITY</code> 
+and <code class="highlighter-rouge">ETCD_SCHEME</code> environment variables. Calico no longer reads these values. If you have 
+not transitioned to <code class="highlighter-rouge">ETCD_ENDPOINTS</code>, you must do so as of v3.0. Refer to 
+<a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/setup/etcdv3">Configuring <code class="highlighter-rouge">calicoctl</code> - etcdv3 datastore</a> for more information.</p>
+  </li>
+  <li>
+    <p>A new node controller for Kubernetes deployments clears data associated with deleted 
+nodes from the Calico datastore, preventing conflicts that can lead to crash loops. Refer 
+to <a href="https://docs.projectcalico.org/v3.0/reference/kube-controllers/configuration">Configuring the Calico Kubernetes controllers</a> for more information.</p>
+  </li>
+</ul>
+
+<h5 id="other-changes-1">Other changes</h5>
+
+<ul>
+  <li>
+    <p>Felix now compiles and runs on Windows in policy-only mode. <a href="https://github.com/projectcalico/felix/pull/1638">felix #1638</a> (@nwoodmsft)</p>
+  </li>
+  <li>
+    <p>Calico now works with Kubernetes network services proxy with IPVS/LVS. Calico enforces 
+network policies with kube-proxy running in IPVS mode for Kubernetes clusters. Currently 
+only workload ingress policy is supported.</p>
+  </li>
+  <li>
+    <p>Rolling update is now enabled by default in the Kubernetes self-hosted manifests. 
+<a href="https://github.com/projectcalico/calico/pull/1506">calico #1506</a> (@caseydavenport)</p>
+  </li>
+  <li>
+    <p>The CoreOS version used for the Kubernetes Vagrant tutorial has been updated, resolving
+an issue causing <code class="highlighter-rouge">kubectl</code> to hang. <a href="https://github.com/projectcalico/calico/pull/1487">calico #1487</a> (@2ffs2nns)</p>
+  </li>
+  <li>
+    <p>Typha no longer sends incorrect <code class="highlighter-rouge">updateTypes</code> to Felix, increasing the accuracy of 
+Felix statistics. <a href="https://github.com/projectcalico/typha/pull/70">typha #70</a> (@fasaxc)</p>
+  </li>
+</ul>
+
+<h4 id="limitations-2">Limitations</h4>
+
+<ul>
+  <li>
+    <p><strong>Offers only Kubernetes, OpenShift, and host endpoint integrations</strong>: the 
+OpenStack, Mesos, DC/OS, rkt, and Docker orchestrators have not been tested 
+and are not supported. (Calico still supports Docker and rkt containers.) 
+We plan to resume support for the OpenStack, Mesos, DC/OS, and Docker 
+orchestrators in a future release.</p>
+  </li>
+  <li>
+    <p><strong>GoBGP not supported</strong>: Setting the <code class="highlighter-rouge">CALICO_NETWORKING_BACKEND</code> environment 
+variable to <code class="highlighter-rouge">gobgp</code> is not supported. See <a href="https://docs.projectcalico.org/v3.0/reference/node/configuration">Configuring calico/node</a> 
+for more information. We plan to resume support for GoBPG in a future release.</p>
+  </li>
+  <li>
+    <p><strong>Route reflectors cannot be clustered</strong>: We plan to resume support for
+this in a future release.</p>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>felix</td>
+      <td><a href="https://github.com/projectcalico/felix/releases/tag/3.0.0">3.0.0</a></td>
+    </tr>
+    <tr>
+      <td>typha</td>
+      <td><a href="https://github.com/projectcalico/typha/releases/tag/v0.6.0">v0.6.0</a></td>
+    </tr>
+    <tr>
+      <td>calicoctl</td>
+      <td><a href="https://github.com/projectcalico/calicoctl/releases/tag/v2.0.0">v2.0.0</a></td>
+    </tr>
+    <tr>
+      <td>calico/node</td>
+      <td><a href="https://github.com/projectcalico/calico/releases/tag/v3.0.0">v3.0.0</a></td>
+    </tr>
+    <tr>
+      <td>calico/cni</td>
+      <td><a href="https://github.com/projectcalico/cni-plugin/releases/tag/v2.0.0">v2.0.0</a></td>
+    </tr>
+    <tr>
+      <td>calico/kube-controllers</td>
+      <td><a href="https://github.com/projectcalico/k8s-policy/releases/tag/v2.0.0">v2.0.0</a></td>
+    </tr>
+    <tr>
+      <td>confd</td>
+      <td><a href="https://github.com/projectcalico/confd/releases/tag/v1.0.0">v1.0.0</a></td>
+    </tr>
+    <tr>
+      <td>calico-bird</td>
+      <td><a href="https://github.com/projectcalico/calico-bird/releases/tag/v0.3.1">v0.3.1</a></td>
+    </tr>
+    <tr>
+      <td>calico/routereflector</td>
+      <td><a href="https://github.com/projectcalico/routereflector/releases/tag/v0.5.0">v0.5.0</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="v300-beta1">v3.0.0-beta1</h2>
+
+<p><a href="https://github.com/projectcalico/calico/releases/download/v3.0.0-beta1/release-v3.0.0-beta1.tgz">Release archive</a> with Kubernetes manifests, Docker images and binaries.</p>
+
+<p>17 November 2017</p>
+
+<p>This is a pre-release of v3.0.0. This release is intended for testing purposes only and is NOT to be used on production systems.</p>
+
+<h4 id="whats-new-2">What’s new</h4>
+
+<ul>
+  <li>
+    <p>Support for <a href="https://coreos.com/blog/etcd3-a-new-etcd.html">etcd version 3</a>.</p>
+  </li>
+  <li>
+    <p>Two new <code class="highlighter-rouge">calicoctl</code> resources: <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/bgpconfig">BGP Configuration</a> and <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/felixconfig">Felix Configuration</a>.</p>
+  </li>
+  <li>
+    <p>Those using the Kubernetes API datastore can now use <code class="highlighter-rouge">calicoctl</code> to create, read, update, and delete Calico policies.</p>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">calicoctl</code> policy resource has been split into new <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/networkpolicy">network policy</a> and <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/globalnetworkpolicy">global network policy</a> resources.</p>
+  </li>
+  <li>
+    <p><a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/networkpolicy">Network policy</a> resources can include a <code class="highlighter-rouge">namespace</code> value, allowing you to create policies that only apply to <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/workloadendpoint">workload endpoint resources</a> in the same namespace.</p>
+  </li>
+  <li>
+    <p>You can now specify <code class="highlighter-rouge">namespaceSelector</code> expressions in <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/networkpolicy">network policy</a> and <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/globalnetworkpolicy">global network policy</a> rules to select one or more namespaces in their entirety.</p>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">get</code>, <code class="highlighter-rouge">apply</code>, <code class="highlighter-rouge">create</code>, <code class="highlighter-rouge">delete</code>, and <code class="highlighter-rouge">replace</code> commands of <code class="highlighter-rouge">calicoctl</code> now include an optional <code class="highlighter-rouge">--namespace=&lt;NS&gt;</code> flag. Refer to the <code class="highlighter-rouge">calicoctl</code> <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/commands/">Command reference</a> section for more details.</p>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">get</code> command of <code class="highlighter-rouge">calicoctl</code> now includes optional <code class="highlighter-rouge">--all-namespaces</code> and <code class="highlighter-rouge">--export</code> flags. Refer to the <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/commands/get">calicoctl get</a> section for more information.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">calicoctl</code> no longer accepts the following flags in <code class="highlighter-rouge">get</code> commands: <code class="highlighter-rouge">--node=&lt;NODE&gt;</code>, <code class="highlighter-rouge">--orchestrator=&lt;ORCH&gt;</code>, <code class="highlighter-rouge">--workload=&lt;WORKLOAD&gt;</code>, and <code class="highlighter-rouge">--scope=&lt;SCOPE&gt;</code>. These options are now a part of the individual resources.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">calicoctl</code> no longer includes a <code class="highlighter-rouge">config</code> command. To achieve the equivalent functionality, refer to <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/commands/#modifying-low-level-component-configurations">Modifying low-level component configurations</a>.</p>
+  </li>
+  <li>
+    <p>You can now name <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/hostendpoint#endpointport">host</a> and <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/workloadendpoint#endpointport">workload</a> endpoint ports and reference them by name in your <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/networkpolicy#ports">policy rules</a>.</p>
+  </li>
+  <li>
+    <p>The new <code class="highlighter-rouge">ApplyOnForward</code> flag allows you to specify if a host endpoint policy should apply to forwarded traffic or not. Forwarded traffic includes traffic forwarded between host endpoints and traffic forwarded between a host endpoint and a workload endpoint on the same host. Refer to <a href="https://docs.projectcalico.org/v3.0/getting-started/bare-metal/bare-metal">Using Calico to secure host interfaces</a> for more details.</p>
+  </li>
+  <li>
+    <p>Calico now works with Kubernetes network services proxy with IPVS/LVS. Calico enforces network policies with kube-proxy running in IPVS mode for Kubernetes clusters. Currently only workload ingress policy is supported.</p>
+  </li>
+  <li>
+    <p>After a period of deprecation, this release removes support for the <code class="highlighter-rouge">ETCD_AUTHORITY</code> and <code class="highlighter-rouge">ETCD_SCHEME</code> environment variables. Calico no longer reads these values. If you have not transitioned to <code class="highlighter-rouge">ETCD_ENDPOINTS</code>, you must do so as of v3.0. Refer to <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/setup/etcdv3">Configuring <code class="highlighter-rouge">calicoctl</code> - etcdv3 datastore</a> for more information.</p>
+  </li>
+  <li>
+    <p>A new node controller for Kubernetes deployments clears data associated with deleted nodes from the Calico datastore, preventing conflicts that can lead to crash loops. Refer to <a href="https://docs.projectcalico.org/v3.0/reference/kube-controllers/configuration">Configuring the Calico Kubernetes controllers</a> for more information.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">calicoctl</code> now allows a <code class="highlighter-rouge">0</code> value for ICMP entries in policy resources, enabling <code class="highlighter-rouge">ping</code> responses. In addition, it now rejects <code class="highlighter-rouge">255</code> values in the <code class="highlighter-rouge">type</code> field due to lack of kernel support. Refer to the reference documentation of the <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/networkpolicy#icmp">network policy</a> and <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/globalnetworkpolicy#icmp">global network policy</a> resources for more information.</p>
+  </li>
+</ul>
+
+<h4 id="limitations-3">Limitations</h4>
+
+<ul>
+  <li>
+    <p><strong>No upgrades</strong>: this version of Calico ends support for etcd version 2. Existing customers must migrate their data to etcd version 3. The alpha and beta releases do not provide migration capabilities, nor do they support upgrades. We plan to add migration and upgrade support in the GA release.</p>
+  </li>
+  <li>
+    <p><strong>Integrates only with Kubernetes, OpenShift, and host endpoints</strong>: the OpenStack, Mesos, DC/OS, rkt, and Docker orchestrators have not been tested and are not supported. (Calico still supports Docker and rkt containers.) We plan to resume support for the OpenStack, Mesos, DC/OS, and Docker orchestrators in a future release.</p>
+  </li>
+  <li>
+    <p><strong>BGP route reflector not supported</strong>: large deployments that require the <a href="https://docs.projectcalico.org/v3.0/usage/routereflector/bird-rr-config">BGP route reflector</a> are not supported. We plan to resume support for the BGP route reflector in a future release.</p>
+  </li>
+  <li>
+    <p><strong>GoBGP not supported</strong>: Setting the <code class="highlighter-rouge">CALICO_NETWORKING_BACKEND</code> environment variable to <code class="highlighter-rouge">gobgp</code> is not supported. See <a href="https://docs.projectcalico.org/v3.0/reference/node/configuration">Configuring calico/node</a> for more information. We plan to resume support for GoBPG in a future release.</p>
+  </li>
+</ul>
+
+<!-- Once migration from etcdv2 to etcdv3 is supported, restore the following warning -->
+<!-- <div class="alert alert-danger" role="alert"><b>Important</b>: If you are using the Kubernetes datastore and upgrading from Calico v2.4.x or earlier to Calico v2.5.x or later, you must <a href="https://github.com/projectcalico/calico/blob/master/upgrade/v2.5/README.md">migrate your Calico configuration data</a> before upgrading. Otherwise, your cluster may lose connectivity after the upgrade.</div> -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>felix</td>
+      <td><a href="https://github.com/projectcalico/felix/releases/tag/3.0.0-beta1">3.0.0-beta1</a></td>
+    </tr>
+    <tr>
+      <td>typha</td>
+      <td><a href="https://github.com/projectcalico/typha/releases/tag/v0.6.0-beta1">v0.6.0-beta1</a></td>
+    </tr>
+    <tr>
+      <td>calicoctl</td>
+      <td><a href="https://github.com/projectcalico/calicoctl/releases/tag/v2.0.0-beta1">v2.0.0-beta1</a></td>
+    </tr>
+    <tr>
+      <td>calico/node</td>
+      <td><a href="https://github.com/projectcalico/calico/releases/tag/v3.0.0-beta1">v3.0.0-beta1</a></td>
+    </tr>
+    <tr>
+      <td>calico/cni</td>
+      <td><a href="https://github.com/projectcalico/cni-plugin/releases/tag/v2.0.0-beta1">v2.0.0-beta1</a></td>
+    </tr>
+    <tr>
+      <td>calico/kube-controllers</td>
+      <td><a href="https://github.com/projectcalico/k8s-policy/releases/tag/v2.0.0-beta1">v2.0.0-beta1</a></td>
+    </tr>
+    <tr>
+      <td>confd</td>
+      <td><a href="https://github.com/projectcalico/confd/releases/tag/v1.0.0-beta1">v1.0.0-beta1</a></td>
+    </tr>
+    <tr>
+      <td>calico-bird</td>
+      <td><a href="https://github.com/projectcalico/calico-bird/releases/tag/v0.3.1">v0.3.1</a></td>
+    </tr>
+    <tr>
+      <td>calico-bgp-daemon</td>
+      <td><a href="https://github.com/projectcalico/calico-bgp-daemon/releases/tag/v0.2.1">v0.2.1</a></td>
+    </tr>
+    <tr>
+      <td>libnetwork-plugin</td>
+      <td><a href="https://github.com/projectcalico/libnetwork-plugin/releases/tag/v1.1.0">v1.1.0</a></td>
+    </tr>
+    <tr>
+      <td>networking-calico</td>
+      <td><a href="http://git.openstack.org/cgit/openstack/networking-calico/commit/?h=1.4.3">1.4.3</a></td>
+    </tr>
+    <tr>
+      <td>calico/routereflector</td>
+      <td><a href="">v0.4.0</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="v300-alpha1">v3.0.0-alpha1</h2>
+
+<p><a href="https://github.com/projectcalico/calico/releases/download/v3.0.0-alpha1/release-v3.0.0-alpha1.tgz">Release archive</a> with Kubernetes manifests, Docker images and binaries.</p>
+
+<p>29 October 2017</p>
+
+<p>This is a pre-release of v3.0.0. This release is intended for testing purposes only and is NOT to be used on production systems.</p>
+
+<h4 id="whats-new-3">What’s new</h4>
+
+<ul>
+  <li>
+    <p>Support for the <a href="https://coreos.com/blog/etcd3-a-new-etcd.html">etcd version 3 datastore</a>.</p>
+  </li>
+  <li>
+    <p>Two new <code class="highlighter-rouge">calicoctl</code> resources: <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/bgpconfig">BGP Configuration</a> and <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/felixconfig">Felix Configuration</a>.</p>
+  </li>
+  <li>
+    <p>Those using the Kubernetes API datastore can now use <code class="highlighter-rouge">calicoctl</code> to create, update, and delete Calico policies.</p>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">calicoctl</code> Policy resource has been split into <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/networkpolicy">Network Policy</a> and <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/globalnetworkpolicy">Global Network Policy</a>.</p>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">get</code>, <code class="highlighter-rouge">apply</code>, <code class="highlighter-rouge">create</code>, <code class="highlighter-rouge">delete</code>, and <code class="highlighter-rouge">replace</code> commands of <code class="highlighter-rouge">calicoctl</code> now include an optional <code class="highlighter-rouge">--namespace=&lt;NS&gt;</code> flag. Refer to the <code class="highlighter-rouge">calicoctl</code> <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/commands/">Command reference</a> section for more details.</p>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">get</code> command of <code class="highlighter-rouge">calicoctl</code> now includes an optional <code class="highlighter-rouge">--all-namespaces</code> flag. Refer to the <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/commands/get">calicoctl get</a> section for more information.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">calicoctl</code> no longer accepts the following flags in <code class="highlighter-rouge">get</code> commands: <code class="highlighter-rouge">--node=&lt;NODE&gt;</code>, <code class="highlighter-rouge">--orchestrator=&lt;ORCH&gt;</code>, <code class="highlighter-rouge">--workload=&lt;WORKLOAD&gt;</code>, and <code class="highlighter-rouge">--scope=&lt;SCOPE&gt;</code>. These options are now a part of the individual resources.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">calicoctl</code> no longer includes a <code class="highlighter-rouge">config</code> command. To achieve the equivalent functionality: refer to <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/commands/#modifying-low-level-component-configurations">Modifying low-level component configurations</a>.</p>
+  </li>
+  <li>
+    <p>You can now name <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/hostendpoint#endpointport">host</a> and <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/workloadendpoint#endpointport">workload</a> endpoint ports and reference them by name in your <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/networkpolicy#ports">policy rules</a>.</p>
+  </li>
+  <li>
+    <p>The new <code class="highlighter-rouge">ApplyOnForward</code> flag allows you to specify if a host endpoint policy should apply to forwarded traffic or not. Forwarded traffic includes traffic forwarded between host endpoints and traffic forwarded between a host endpoint and a workload endpoint on the same host. Refer to <a href="https://docs.projectcalico.org/v3.0/getting-started/bare-metal/bare-metal">Using Calico to secure host interfaces</a> for more details.</p>
+  </li>
+  <li>
+    <p>Calico now works with Kubernetes network services proxy with IPVS/LVS. Calico enforces network policies with kube-proxy running in ipvs mode for Kubernetes clusters. Currently only workload ingress policy is supported.</p>
+  </li>
+  <li>
+    <p>After a period of deprecation, this release removes support for the <code class="highlighter-rouge">ETCD_AUTHORITY</code> and <code class="highlighter-rouge">ETCD_SCHEME</code> environment variables. Calico no longer reads these values. If you have not transitioned to <code class="highlighter-rouge">ETCD_ENDPOINTS</code>, you must do so as of v3.0. Refer to <a href="https://docs.projectcalico.org/v3.0/reference/calicoctl/setup/etcdv3">Configuring <code class="highlighter-rouge">calicoctl</code> - etcdv3 datastore</a> for more information.</p>
+  </li>
+</ul>
+
+<h4 id="limitations-4">Limitations</h4>
+
+<ul>
+  <li>
+    <p><strong>No upgrades</strong>: Calico v3.0.0 ends support for etcd version 2. Existing customers must migrate their data to etcd version 3. The alpha release does not provide migration capabilities, nor does it support upgrades. We plan to add migration and upgrade support in the GA release.</p>
+  </li>
+  <li>
+    <p><strong>Integrates only with Kubernetes and host endpoints</strong>: the OpenStack, OpenShift, Mesos, DC/OS, rkt, and Docker orchestrators have not been tested and are not supported. (Calico v3.0.0 still supports Docker and rkt containers.) We plan to resume support for the OpenStack, OpenShift, Mesos, DC/OS, and Docker orchestrators in a future release.</p>
+  </li>
+  <li>
+    <p><strong>Lack of <code class="highlighter-rouge">calicoctl</code> data validation</strong>: <code class="highlighter-rouge">calicoctl</code> does not perform as much validation on data, increasing the potential for bad data. Use caution when entering data via <code class="highlighter-rouge">calicoctl</code>.</p>
+  </li>
+  <li>
+    <p><strong>BGP route reflector not supported</strong>: large deployments that require the <a href="https://docs.projectcalico.org/v3.0/usage/routereflector/bird-rr-config">BGP route reflector</a> are not supported. We plan to resume support for the BGP route reflector in a future release.</p>
+  </li>
+  <li>
+    <p><strong>GoBGP not supported</strong>: Setting the <code class="highlighter-rouge">CALICO_NETWORKING_BACKEND</code> environment variable to <code class="highlighter-rouge">gobgp</code> is not supported. See <a href="https://docs.projectcalico.org/v3.0/reference/node/configuration">Configuring calico/node</a> for more information. We plan to resume support for GoBPG in a future release.</p>
+  </li>
+</ul>
+
+<!-- Once migration from etcdv2 to etcdv3 is supported, restore the following warning -->
+<!-- <div class="alert alert-danger" role="alert"><b>Important</b>: If you are using the Kubernetes datastore and upgrading from Calico v2.4.x or earlier to Calico v2.5.x or later, you must <a href="https://github.com/projectcalico/calico/blob/master/upgrade/v2.5/README.md">migrate your Calico configuration data</a> before upgrading. Otherwise, your cluster may lose connectivity after the upgrade.</div> -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>felix</td>
+      <td><a href="https://github.com/projectcalico/felix/releases/tag/3.0.0-alpha1">3.0.0-alpha1</a></td>
+    </tr>
+    <tr>
+      <td>typha</td>
+      <td><a href="https://github.com/projectcalico/typha/releases/tag/v0.6.0-alpha1">v0.6.0-alpha1</a></td>
+    </tr>
+    <tr>
+      <td>calicoctl</td>
+      <td><a href="https://github.com/projectcalico/calicoctl/releases/tag/v2.0.0-alpha1">v2.0.0-alpha1</a></td>
+    </tr>
+    <tr>
+      <td>calico/node</td>
+      <td><a href="https://github.com/projectcalico/calico/releases/tag/v3.0.0-alpha1">v3.0.0-alpha1</a></td>
+    </tr>
+    <tr>
+      <td>calico/cni</td>
+      <td><a href="https://github.com/projectcalico/cni-plugin/releases/tag/v2.0.0-alpha1">v2.0.0-alpha1</a></td>
+    </tr>
+    <tr>
+      <td>calico/kube-controllers</td>
+      <td><a href="https://github.com/projectcalico/k8s-policy/releases/tag/v2.0.0-alpha1">v2.0.0-alpha1</a></td>
+    </tr>
+    <tr>
+      <td>confd</td>
+      <td><a href="https://github.com/projectcalico/confd/releases/tag/v1.0.0-alpha1">v1.0.0-alpha1</a></td>
+    </tr>
+    <tr>
+      <td>calico-bird</td>
+      <td><a href="https://github.com/projectcalico/calico-bird/releases/tag/v0.3.1">v0.3.1</a></td>
+    </tr>
+    <tr>
+      <td>calico-bgp-daemon</td>
+      <td><a href="https://github.com/projectcalico/calico-bgp-daemon/releases/tag/v0.2.1">v0.2.1</a></td>
+    </tr>
+    <tr>
+      <td>libnetwork-plugin</td>
+      <td><a href="https://github.com/projectcalico/libnetwork-plugin/releases/tag/v1.1.0">v1.1.0</a></td>
+    </tr>
+    <tr>
+      <td>networking-calico</td>
+      <td><a href="http://git.openstack.org/cgit/openstack/networking-calico/commit/?h=1.4.3">1.4.3</a></td>
+    </tr>
+    <tr>
+      <td>calico/routereflector</td>
+      <td><a href="">v0.4.0</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="v300-alpha1-rc1">v3.0.0-alpha1-rc1</h2>
+
+<p><a href="https://github.com/projectcalico/calico/releases/download/v3.0.0-alpha1-rc1/release-v3.0.0-alpha1-rc1.tgz">Release archive</a> with Kubernetes manifests, Docker images and binaries.</p>
+
+<p>24 October 2017</p>
+
+<p>This is a pre-release of v3.0.0-alpha1. This release is intended for testing purposes only and is NOT to be used on production systems.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>felix</td>
+      <td><a href="https://github.com/projectcalico/felix/releases/tag/3.0.0-alpha1-rc1">3.0.0-alpha1-rc1</a></td>
+    </tr>
+    <tr>
+      <td>typha</td>
+      <td><a href="https://github.com/projectcalico/typha/releases/tag/v0.6.0-alpha1-rc1">v0.6.0-alpha1-rc1</a></td>
+    </tr>
+    <tr>
+      <td>calicoctl</td>
+      <td><a href="https://github.com/projectcalico/calicoctl/releases/tag/v2.0.0-alpha1-rc2">v2.0.0-alpha1-rc2</a></td>
+    </tr>
+    <tr>
+      <td>calico/node</td>
+      <td><a href="https://github.com/projectcalico/calico/releases/tag/v3.0.0-alpha1-rc1">v3.0.0-alpha1-rc1</a></td>
+    </tr>
+    <tr>
+      <td>calico/cni</td>
+      <td><a href="https://github.com/projectcalico/cni-plugin/releases/tag/v2.0.0-alpha1-rc1">v2.0.0-alpha1-rc1</a></td>
+    </tr>
+    <tr>
+      <td>calico/kube-controllers</td>
+      <td><a href="https://github.com/projectcalico/k8s-policy/releases/tag/v2.0.0-alpha1-rc1">v2.0.0-alpha1-rc1</a></td>
+    </tr>
+    <tr>
+      <td>calico-bird</td>
+      <td><a href="https://github.com/projectcalico/calico-bird/releases/tag/v0.3.1">v0.3.1</a></td>
+    </tr>
+    <tr>
+      <td>calico-bgp-daemon</td>
+      <td><a href="https://github.com/projectcalico/calico-bgp-daemon/releases/tag/v0.2.1">v0.2.1</a></td>
+    </tr>
+    <tr>
+      <td>libnetwork-plugin</td>
+      <td><a href="https://github.com/projectcalico/libnetwork-plugin/releases/tag/v1.1.0">v1.1.0</a></td>
+    </tr>
+    <tr>
+      <td>networking-calico</td>
+      <td><a href="http://git.openstack.org/cgit/openstack/networking-calico/commit/?h=1.4.3">1.4.3</a></td>
+    </tr>
+    <tr>
+      <td>calico/routereflector</td>
+      <td><a href="">v0.4.0</a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+              
+              <!-- BOTTOM DOCUMENTATION PAGE NAVBAR -->
+              <div style="margin-top: 60px; margin-bottom: 40px; padding-top: 20px; border-top: 1px solid #999; text-align: left; color: #999;">Rate this Page: <div class="rw-ui-container" style="margin-top: -5px;"></div> <a href="https://www.projectcalico.org/contact?type=docs&file=v3.0/releases/index.md" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> Provide Feedback</a> <a href="https://www.projectcalico.org/community#slack" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-slack" aria-hidden="true"></i> Get Help via Slack</a> <a href="https://www.projectcalico.org/mvp" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-trophy" aria-hidden="true"></i> Ask our MVPs</a> <a href="https:/tigera.io/training" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Training</a></div>
+              <!-- END BOTTOM DOCUMENTATION PAGE NAVBAR -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Start Visual Website Optimizer Asynchronous Code -->
+    <script type='text/javascript'>
+      var _vwo_code=(function(){
+      var account_id=287573,
+      settings_tolerance=2000,
+      library_tolerance=2500,
+      use_existing_jquery=false,
+      /* DO NOT EDIT BELOW THIS LINE */
+      f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+    </script>
+    <!-- End Visual Website Optimizer Asynchronous Code -->
+    <!-- DOCUMENTATION RATING ANALYTICS -->
+   <script type="text/javascript">(function(d, t, e, m){
+    // Async Rating-Widget initialization.
+    window.RW_Async_Init = function(){
+        RW.init({
+            huid: "368439",
+            uid: "33da22c0dff384767b5074aaf10ebc50",
+            source: "website",
+            options: {
+                "advanced": {
+					"font": {
+						"color": "#999999"
+					},
+                    "layout": {
+                        "align": {
+                            "hor": "left"
+                        }
+                    },
+                    "text": {
+                        "rateThis": "Rate this"
+                    }
+                },
+				"label": {
+					"background": "#FFFFFF"
+				},
+				"reVote": true,
+				"showInfo": false,
+				/*"showTooltip": false,*/
+				"hideRecommendations": false,
+				"showReport": false,
+				"showLoader": false,
+                "style": "oxygen",
+                "isDummy": false
+            } 
+        });
+        RW.render();
+    };
+        // Append Rating-Widget JavaScript library.
+    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
+        l = d.location, ck = "Y" + t.getFullYear() + 
+        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
+        f = ((l.search.indexOf("DBG=") > -1) ? "" : ".min"),
+        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
+    if (d.getElementById(id)) return;              
+    rw = d.createElement(e);
+    rw.id = id; rw.async = true; rw.type = "text/javascript";
+    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
+    s.parentNode.insertBefore(rw, s);
+    }(document, new Date(), "script", "rating-widget.com/"));</script>
+    <!-- END DOCUMENTATION RATING ANALYTICS -->
+  </body>
+</html>

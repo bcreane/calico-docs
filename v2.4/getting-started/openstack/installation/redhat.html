@@ -1,0 +1,1814 @@
+<!-- Set this_pages_navbar  -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="http://tigera-docs.appspot.com//images/favicon.png">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto+Mono' type='text/css'>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/style.css"/>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/plugins/offcanvas.css"/>
+    <link href="https://www.projectcalico.org/wp-content/themes/dante/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://tigera-docs.appspot.com//js/jquery-2.2.0.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/bootstrap/bootstrap.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/script.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-52125893-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Red Hat Enterprise Linux 7 Packaged Install Instructions</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="Red Hat Enterprise Linux 7 Packaged Install Instructions" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://docs.projectcalico.org/v2.6/getting-started/openstack/installation/redhat" />
+<meta property="og:url" content="https://docs.projectcalico.org/v2.6/getting-started/openstack/installation/redhat" />
+<script type="application/ld+json">
+{"headline":"Red Hat Enterprise Linux 7 Packaged Install Instructions","@type":"WebPage","url":"https://docs.projectcalico.org/v2.6/getting-started/openstack/installation/redhat","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <section>
+      <nav id="toplevel-nav" class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <!-- Hamburger menu for mobile -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tigera-navbar" aria-expanded="false" aria-controls="tigera-navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Left brand image -->
+            <a class="navbar-brand" href="https://projectcalico.org/">
+              <img alt="Brand" src="http://tigera-docs.appspot.com//images/brand.png">
+            </a>
+          </div>
+          <div id="tigera-navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://projectcalico.org">Home</a></li>
+              <li class="active"><a href="https://projectcalico.org/resources"><span>Resources</span></a>
+                <ul>
+                    <li><a href="http://tigera-docs.appspot.com//latest/getting-started/"><i class="fa fa-tachometer" aria-hidden="true"></i> &nbsp; Getting Started</a></li>
+                    <li><a href="http://tigera-docs.appspot.com/"><i class="fa fa-book" aria-hidden="true"></i> &nbsp; Documentation</a></li>
+                    <!--<li><a href="https://www.projectcalico.org/tutorials"><i class="fa fa-file-code-o" aria-hidden="true"></i> &nbsp; Tutorials &amp; Examples</a></li>
+                    <li><a href=""><i class="fa fa-paper-plane-o" aria-hidden="true"></i> &nbsp; Online Workshops</a></li>-->
+                    <li><a href="https://www.projectcalico.org/videos"><i class="fa fa-video-camera" aria-hidden="true"></i> &nbsp; Videos &amp; Webinars</a></li>
+                    <li><a href="https://www.projectcalico.org/training"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp; Training</a></li>
+                    <li><a href="http://tigera-docs.appspot.com//latest/releases/"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp; Releases</a></li>
+                    <!-- <li><a href="/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li> -->
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/community">Community</a>
+                <ul>
+                    <li><a href="https://slack.projectcalico.org/"><i class="fa fa-slack" aria-hidden="true"></i> &nbsp; Slack</a></li>
+                    <!--<li><a href="https://stackoverflow.com/questions/tagged/project-calico" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i> &nbsp; StackOverflow</a></li>-->
+                    <li><a href="https://www.projectcalico.org/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li>
+                    <li><a href="https://www.projectcalico.org/community#events"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp; Upcoming Events</a></li>
+                    <li><a href="https://www.projectcalico.org/newsletters"><i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp; Newsletter</a></li>
+                    <li><a href="https://github.com/projectcalico" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> &nbsp; GitHub</a></li> 
+                    <li><a href="https://www.projectcalico.org/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i> &nbsp; Jobs</a></li>
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/mvp" style="font-weight: bold;">MVP</a></li>
+              <li><a href="https://www.projectcalico.org/support">Support</a></li>
+              <li class="hidden-xs"><a href="https://www.projectcalico.org/support">
+                <img class="desktopImage" width="30" align="absmiddle" src="https://www.projectcalico.org/images/tigera_trans_sm.png" alt="Tigera"></a>
+              </li>
+            </ul>
+            <form class="navbar-form visible-xs">
+              <ul class="nav navbar-nav navbar-right">
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v2.4/introduction">Introduction</a>
+                  </li>
+                
+                  <li  class="active">
+                    <a href="http://tigera-docs.appspot.com//v2.4/getting-started">Getting Started</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v2.4/usage">Usage</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v2.4/reference">Reference</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v2.4/releases">Releases</a>
+                  </li>
+                
+              </ul>
+            </form>
+            <ul class="visible-xs nav navbar-nav navbar-right">
+             <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (v2.4)<span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                 <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6 (latest)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (beta)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                 <li role="separator" class="divider"></li>
+               </ul>
+             </li>
+           </ul>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-inverse navbar-collapse collapse">
+          <div class="container">
+            <ul class="nav navbar-nav">
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v2.4/introduction"><span>Introduction</span></a>
+                </li>
+              
+                <li class="active">
+                  <a href="http://tigera-docs.appspot.com//v2.4/getting-started"><span>Getting Started</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v2.4/usage"><span>Usage</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v2.4/reference"><span>Reference</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v2.4/releases"><span>Releases</span></a>
+                </li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (v2.4)<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                   <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (latest)</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-sm-0"></div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+          <p class="pull-left visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+            <div class="row">
+              <script>
+                (function() {
+                  var cx = '015028447179048192876:xjzskk7awwe';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+                })();
+              </script>
+              <gcse:search></gcse:search>
+            </div>
+            <div id="sidebar">
+            	
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Getting Started with Calico" href="http://tigera-docs.appspot.com//v2.4/getting-started/">
+        Getting Started with Calico
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-kubernetes" aria-expanded="false" aria-controls="nav-kubernetes">
+          Kubernetes
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-kubernetes">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.4/getting-started/kubernetes/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-kubernetes-installation" aria-expanded="false" aria-controls="nav-kubernetes-installation">
+          Installation
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-kubernetes-installation">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Introduction" href="http://tigera-docs.appspot.com//v2.4/getting-started/kubernetes/installation/">
+        Introduction
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-kubernetes-installation-hosted-viakubectl" aria-expanded="false" aria-controls="nav-kubernetes-installation-hosted-viakubectl">
+          Hosted (via kubectl)
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-kubernetes-installation-hosted-viakubectl">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Introduction" href="http://tigera-docs.appspot.com//v2.4/getting-started/kubernetes/installation/hosted/">
+        Introduction
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Standard Hosted Install" href="http://tigera-docs.appspot.com//v2.4/getting-started/kubernetes/installation/hosted/hosted">
+        Standard Hosted Install
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Kubeadm Hosted Install" href="http://tigera-docs.appspot.com//v2.4/getting-started/kubernetes/installation/hosted/kubeadm/">
+        Kubeadm Hosted Install
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Kubernetes Datastore Hosted Install" href="http://tigera-docs.appspot.com//v2.4/getting-started/kubernetes/installation/hosted/kubernetes-datastore/">
+        Kubernetes Datastore Hosted Install
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Integration Guide" href="http://tigera-docs.appspot.com//v2.4/getting-started/kubernetes/installation/integration">
+        Integration Guide
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="AWS" href="http://tigera-docs.appspot.com//v2.4/getting-started/kubernetes/installation/aws">
+        AWS
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="GCE" href="http://tigera-docs.appspot.com//v2.4/getting-started/kubernetes/installation/gce">
+        GCE
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Azure" href="http://tigera-docs.appspot.com//v2.4/getting-started/kubernetes/installation/azure">
+        Azure
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Vagrant/VirtualBox: CoreOS" href="http://tigera-docs.appspot.com//v2.4/getting-started/kubernetes/installation/vagrant/">
+        Vagrant/VirtualBox: CoreOS
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-kubernetes-tutorials" aria-expanded="false" aria-controls="nav-kubernetes-tutorials">
+          Tutorials
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-kubernetes-tutorials">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Using calicoctl" href="http://tigera-docs.appspot.com//v2.4/getting-started/kubernetes/tutorials/using-calicoctl">
+        Using calicoctl
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Simple Policy Demo" href="http://tigera-docs.appspot.com//v2.4/getting-started/kubernetes/tutorials/simple-policy">
+        Simple Policy Demo
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Stars Policy Demo" href="http://tigera-docs.appspot.com//v2.4/getting-started/kubernetes/tutorials/stars-policy/">
+        Stars Policy Demo
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Advanced network policy" href="http://tigera-docs.appspot.com//v2.4/getting-started/kubernetes/tutorials/advanced-policy">
+        Advanced network policy
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Troubleshooting / FAQ" href="http://tigera-docs.appspot.com//v2.4/getting-started/kubernetes/troubleshooting">
+        Troubleshooting / FAQ
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Upgrade" href="http://tigera-docs.appspot.com//v2.4/getting-started/kubernetes/upgrade">
+        Upgrade
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-openshift" aria-expanded="false" aria-controls="nav-openshift">
+          OpenShift
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-openshift">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Installation" href="http://tigera-docs.appspot.com//v2.4/getting-started/openshift/installation">
+        Installation
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-mesos" aria-expanded="false" aria-controls="nav-mesos">
+          Mesos
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-mesos">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.4/getting-started/mesos/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-mesos-installation" aria-expanded="false" aria-controls="nav-mesos-installation">
+          Installation
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-mesos-installation">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Requirements" href="http://tigera-docs.appspot.com//v2.4/getting-started/mesos/installation/prerequisites">
+        Requirements
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Integration Guide" href="http://tigera-docs.appspot.com//v2.4/getting-started/mesos/installation/integration">
+        Integration Guide
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-mesos-installation-dcos" aria-expanded="false" aria-controls="nav-mesos-installation-dcos">
+          DC/OS
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-mesos-installation-dcos">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.4/getting-started/mesos/installation/dc-os/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Universe Package Install" href="http://tigera-docs.appspot.com//v2.4/getting-started/mesos/installation/dc-os/framework">
+        Universe Package Install
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Customize Universe Package Install" href="http://tigera-docs.appspot.com//v2.4/getting-started/mesos/installation/dc-os/custom">
+        Customize Universe Package Install
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Vagrant/VirtualBox: CentOS" href="http://tigera-docs.appspot.com//v2.4/getting-started/mesos/installation/vagrant-centos/">
+        Vagrant/VirtualBox: CentOS
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-mesos-tutorials" aria-expanded="false" aria-controls="nav-mesos-tutorials">
+          Tutorials
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-mesos-tutorials">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Launching Tasks" href="http://tigera-docs.appspot.com//v2.4/getting-started/mesos/tutorials/launching-tasks">
+        Launching Tasks
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Connecting to Tasks" href="http://tigera-docs.appspot.com//v2.4/getting-started/mesos/tutorials/connecting-tasks">
+        Connecting to Tasks
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-mesos-tutorials-configuringpolicy" aria-expanded="false" aria-controls="nav-mesos-tutorials-configuringpolicy">
+          Configuring Policy
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-mesos-tutorials-configuringpolicy">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Universal Containerizer" href="http://tigera-docs.appspot.com//v2.4/getting-started/mesos/tutorials/policy/universal-containerizer">
+        Universal Containerizer
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Docker Containerizer" href="http://tigera-docs.appspot.com//v2.4/getting-started/mesos/tutorials/policy/docker-containerizer">
+        Docker Containerizer
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-docker" aria-expanded="false" aria-controls="nav-docker">
+          Docker
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-docker">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.4/getting-started/docker/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-docker-installation" aria-expanded="false" aria-controls="nav-docker-installation">
+          Installation
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-docker-installation">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Requirements" href="http://tigera-docs.appspot.com//v2.4/getting-started/docker/installation/requirements">
+        Requirements
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Manual" href="http://tigera-docs.appspot.com//v2.4/getting-started/docker/installation/manual">
+        Manual
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Vagrant/VirtualBox: CoreOS" href="http://tigera-docs.appspot.com//v2.4/getting-started/docker/installation/vagrant-coreos/">
+        Vagrant/VirtualBox: CoreOS
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Vagrant/VirtualBox: Ubuntu" href="http://tigera-docs.appspot.com//v2.4/getting-started/docker/installation/vagrant-ubuntu/">
+        Vagrant/VirtualBox: Ubuntu
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-docker-tutorials" aria-expanded="false" aria-controls="nav-docker-tutorials">
+          Tutorials
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-docker-tutorials">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Security using Calico Profiles" href="http://tigera-docs.appspot.com//v2.4/getting-started/docker/tutorials/security-using-calico-profiles">
+        Security using Calico Profiles
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Security using Calico Profiles and Policy" href="http://tigera-docs.appspot.com//v2.4/getting-started/docker/tutorials/security-using-calico-profiles-and-policy">
+        Security using Calico Profiles and Policy
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Security using Docker Labels and Calico Policy" href="http://tigera-docs.appspot.com//v2.4/getting-started/docker/tutorials/security-using-docker-labels-and-calico-policy">
+        Security using Docker Labels and Calico Policy
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="IPAM" href="http://tigera-docs.appspot.com//v2.4/getting-started/docker/tutorials/ipam">
+        IPAM
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-openstack" aria-expanded="false" aria-controls="nav-openstack">
+          OpenStack
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-openstack">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.4/getting-started/openstack/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-openstack-installation" aria-expanded="false" aria-controls="nav-openstack-installation">
+          Installation
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-openstack-installation">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.4/getting-started/openstack/installation/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Ubuntu" href="http://tigera-docs.appspot.com//v2.4/getting-started/openstack/installation/ubuntu">
+        Ubuntu
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Red Hat Enterprise Linux 7" href="http://tigera-docs.appspot.com//v2.4/getting-started/openstack/installation/redhat">
+        Red Hat Enterprise Linux 7
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Juju Charms" href="http://tigera-docs.appspot.com//v2.4/getting-started/openstack/installation/juju">
+        Juju Charms
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Fuel" href="http://tigera-docs.appspot.com//v2.4/getting-started/openstack/installation/fuel">
+        Fuel
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="DevStack" href="http://tigera-docs.appspot.com//v2.4/getting-started/openstack/installation/devstack">
+        DevStack
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Chef" href="http://tigera-docs.appspot.com//v2.4/getting-started/openstack/installation/chef">
+        Chef
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Upgrade" href="http://tigera-docs.appspot.com//v2.4/getting-started/openstack/upgrade">
+        Upgrade
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Tutorials" href="http://tigera-docs.appspot.com//v2.4/getting-started/openstack/tutorials">
+        Tutorials
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Troubleshooting" href="http://tigera-docs.appspot.com//v2.4/getting-started/openstack/verification">
+        Troubleshooting
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="IP Addressing and Connectivity" href="http://tigera-docs.appspot.com//v2.4/getting-started/openstack/connectivity">
+        IP Addressing and Connectivity
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Use of the Neutron API" href="http://tigera-docs.appspot.com//v2.4/getting-started/openstack/neutron-api">
+        Use of the Neutron API
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-rkt" aria-expanded="false" aria-controls="nav-rkt">
+          rkt
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-rkt">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.4/getting-started/rkt/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-rkt-installation" aria-expanded="false" aria-controls="nav-rkt-installation">
+          Installation
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-rkt-installation">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Manual Installation" href="http://tigera-docs.appspot.com//v2.4/getting-started/rkt/installation/manual">
+        Manual Installation
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Vagrant/VirtualBox: CoreOS" href="http://tigera-docs.appspot.com//v2.4/getting-started/rkt/installation/vagrant-coreos/">
+        Vagrant/VirtualBox: CoreOS
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-rkt-tutorials" aria-expanded="false" aria-controls="nav-rkt-tutorials">
+          Tutorials
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-rkt-tutorials">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Basic Network Isolation" href="http://tigera-docs.appspot.com//v2.4/getting-started/rkt/tutorials/basic">
+        Basic Network Isolation
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Troubleshooting" href="http://tigera-docs.appspot.com//v2.4/getting-started/rkt/troubleshooting">
+        Troubleshooting
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-hostprotection" aria-expanded="false" aria-controls="nav-hostprotection">
+          Host Protection
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-hostprotection">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.4/getting-started/bare-metal/bare-metal">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-hostprotection-installation" aria-expanded="false" aria-controls="nav-hostprotection-installation">
+          Installation
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-hostprotection-installation">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Installing Felix as a static binary" href="http://tigera-docs.appspot.com//v2.4/getting-started/bare-metal/bare-metal-install">
+        Installing Felix as a static binary
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+
+			</div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9">
+            <div id="content-main">
+              <!-- TOP DOCUMENTATION PAGE NAVBAR -->
+              <div style="text-align: left; padding: 18px 0 9px 0; min-width: 500px; overflow-x: hidden;">
+              
+              <a data-proofer-ignore href="https://github.com/projectcalico/calico/tree/master/v2.4/getting-started/openstack/installation/redhat.md" style="color: #999; text-decoration: none; float: right;" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit this page</a></div>
+              <!-- END TOP DOCUMENTATION PAGE NAVBAR -->
+              
+  <div class="alert alert-warning" role="alert">
+    <strong>Warning:</strong> You are viewing the v2.4 docs. <a href="http://tigera-docs.appspot.com//latest">Click here to view the docs for the latest release.</a>
+  </div>
+
+
+              <h1>Red Hat Enterprise Linux 7 Packaged Install Instructions</h1>
+              <p>For this version of Calico, with OpenStack on RHEL 7 or CentOS 7, we recommend
+using OpenStack Liberty or later.</p>
+
+<blockquote>
+  <p><strong>NOTE</strong></p>
+
+  <p>On RHEL/CentOS 7.3, with Mitaka or earlier, there is a Nova
+<a href="https://bugs.launchpad.net/nova/+bug/1649527">bug</a> that breaks Calico
+operation.  You can avoid this bug by:</p>
+
+  <ul>
+    <li>
+      <p>using Newton or later (recommended)</p>
+    </li>
+    <li>
+      <p>or manually <a href="https://review.openstack.org/#/c/425637/">patching</a> your Nova
+install on each compute node.</p>
+    </li>
+  </ul>
+</blockquote>
+
+<p>These instructions will take you through a first-time install of Calico.  If
+you are upgrading an existing system, please see the <a href="http://tigera-docs.appspot.com//v2.4/getting-started/openstack/upgrade">Calico on OpenStack
+upgrade</a>
+document instead for upgrade instructions.</p>
+
+<p>There are three sections to the install: installing etcd, upgrading
+control nodes to use Calico, and upgrading compute nodes to use Calico.
+Follow the <strong>Common Steps</strong> on each node before moving on to the
+specific instructions in the control and compute sections. If you want
+to create a combined control and compute node, work through all three
+sections.</p>
+
+<blockquote>
+  <p><strong>WARNING</strong></p>
+
+  <p>Following the upgrade to use etcd as a data store, Calico
+currently only supports RHEL 7 and above. If support on RHEL 6.x
+or other versions of Linux is important to you, then please <a href="https://www.projectcalico.org/contact/">let
+us know</a>.</p>
+
+</blockquote>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before starting this you will need the following:</p>
+
+<ul>
+  <li>One or more machines running RHEL 7, with OpenStack installed.</li>
+  <li>SSH access to these machines.</li>
+  <li>Working DNS between these machines (use <code class="highlighter-rouge">/etc/hosts</code> if you don’t
+have DNS on your network).</li>
+</ul>
+
+<h2 id="common-steps">Common Steps</h2>
+
+<p>Some steps need to be taken on all machines being installed with Calico.
+These steps are detailed in this section.</p>
+
+<h3 id="install-openstack">Install OpenStack</h3>
+
+<p>If you haven’t already done so, install Openstack with Neutron and ML2
+networking.</p>
+
+<h3 id="configure-yum-repositories">Configure YUM repositories</h3>
+
+<p>Add the EPEL repository – see <a href="https://fedoraproject.org/wiki/EPEL">https://fedoraproject.org/wiki/EPEL</a>.
+You may have already added this to install OpenStack.</p>
+
+<p>Configure the Calico repository:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    cat &gt; /etc/yum.repos.d/calico.repo &lt;&lt;EOF
+    [calico]
+    name=Calico Repository
+    baseurl=http://binaries.projectcalico.org/rpm/calico-2.4/
+    enabled=1
+    skip_if_unavailable=0
+    gpgcheck=1
+    gpgkey=http://binaries.projectcalico.org/rpm/calico-2.4/key
+    priority=97
+    EOF
+</code></pre></div></div>
+
+<h2 id="etcd-install">Etcd Install</h2>
+
+<p>Calico requires an etcd database to operate - this may be installed on a
+single machine or as a cluster.</p>
+
+<p>These instructions cover installing a single node etcd database. You may
+wish to co-locate this with your control node. If you want to install a
+cluster, please get in touch with us and we’ll be happy to help you
+through the process.</p>
+
+<ol>
+  <li>Install and configure etcd.
+    <ul>
+      <li>
+        <p>Download, unpack, and install the binary:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    curl -L  https://github.com/coreos/etcd/releases/download/v2.0.11/etcd-v2.0.11-linux-amd64.tar.gz -o etcd-v2.0.11-linux-amd64.tar.gz
+    tar xvf etcd-v2.0.11-linux-amd64.tar.gz
+    cd etcd-v2.0.11-linux-amd64
+    mv etcd* /usr/local/bin/
+</code></pre></div>        </div>
+
+        <blockquote>
+          <p><strong>WARNING</strong></p>
+
+          <p>We’ve seen certificate errors downloading etcd - you may need
+to add <code class="highlighter-rouge">--insecure</code> to the curl command to ignore this.</p>
+
+        </blockquote>
+      </li>
+      <li>
+        <p>Create an etcd user:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    adduser -s /sbin/nologin -d /var/lib/etcd/ etcd
+    chmod 700 /var/lib/etcd/
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Add the following line to the bottom of <code class="highlighter-rouge">/etc/fstab</code>. This will
+mount a ramdisk for etcd at startup:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    tmpfs /var/lib/etcd tmpfs nodev,nosuid,noexec,nodiratime,size=512M 0 0
+</code></pre></div>        </div>
+      </li>
+      <li>Run <code class="highlighter-rouge">mount -a</code> to mount it now.</li>
+      <li>
+        <p>Get etcd running by providing an init file.</p>
+
+        <p>Place the following in <code class="highlighter-rouge">/etc/sysconfig/etcd</code>, replacing
+<code class="highlighter-rouge">&lt;hostname&gt;</code> and <code class="highlighter-rouge">&lt;public_ip&gt;</code> with their appropriate values for
+the machine.</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ETCD_DATA_DIR=/var/lib/etcd
+    ETCD_NAME=&lt;hostname&gt;
+    ETCD_ADVERTISE_CLIENT_URLS="http://&lt;public_ip&gt;:2379,http://&lt;public_ip&gt;:4001"
+    ETCD_LISTEN_CLIENT_URLS="http://0.0.0.0:2379,http://0.0.0.0:4001"
+    ETCD_LISTEN_PEER_URLS="http://0.0.0.0:2380"
+    ETCD_INITIAL_ADVERTISE_PEER_URLS="http://&lt;public_ip&gt;:2380"
+    ETCD_INITIAL_CLUSTER="&lt;hostname&gt;=http://&lt;public_ip&gt;:2380"
+    ETCD_INITIAL_CLUSTER_STATE=new
+</code></pre></div>        </div>
+
+        <p>Check the <code class="highlighter-rouge">uuidgen</code> tool is installed (the output should change
+each time):</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    # uuidgen
+    11f92f19-cb5a-476f-879f-5efc34033b8b
+</code></pre></div>        </div>
+
+        <p>If it is not installed, run <code class="highlighter-rouge">yum install util-linux</code> to
+install it.</p>
+
+        <p>Place the following in <code class="highlighter-rouge">/usr/local/bin/start-etcd</code>:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c">#!/bin/sh</span>
+    <span class="nb">export </span><span class="nv">ETCD_INITIAL_CLUSTER_TOKEN</span><span class="o">=</span><span class="sb">`</span>uuidgen<span class="sb">`</span>
+    <span class="nb">exec</span> /usr/local/bin/etcd
+</code></pre></div>        </div>
+
+        <p>Then run <code class="highlighter-rouge">chmod +x /usr/local/bin/start-etcd</code> to make that
+file executable.</p>
+
+        <p>You then need to add the following file to
+<code class="highlighter-rouge">/usr/lib/systemd/system/etcd.service</code>:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    [Unit]
+    Description=Etcd
+    After=syslog.target network.target
+
+    [Service]
+    User=root
+    ExecStart=/usr/local/bin/start-etcd
+    EnvironmentFile=-/etc/sysconfig/etcd
+    KillMode=process
+    Restart=always
+
+    [Install]
+    WantedBy=multi-user.target
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Launch etcd and set it to restart after a reboot:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    systemctl start etcd
+    systemctl enable etcd
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="etcd-proxy-install">Etcd Proxy Install</h2>
+
+<p>Install an etcd proxy on every node running OpenStack services that
+isn’t running the etcd database itself (both control and compute nodes).</p>
+
+<ol>
+  <li>
+    <p>Install and configure etcd as an etcd proxy.</p>
+
+    <ul>
+      <li>Download, unpack, and install the binary:</li>
+    </ul>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    curl -L  https://github.com/coreos/etcd/releases/download/v2.0.11/etcd-v2.0.11-linux-amd64.tar.gz -o etcd-v2.0.11-linux-amd64.tar.gz
+    tar xvf etcd-v2.0.11-linux-amd64.tar.gz
+    cd etcd-v2.0.11-linux-amd64
+    mv etcd* /usr/local/bin/
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p><strong>WARNING</strong></p>
+
+      <p>We’ve seen certificate errors downloading etcd - you may need
+to add <code class="highlighter-rouge">--insecure</code> to the curl command to ignore this.</p>
+
+    </blockquote>
+
+    <ul>
+      <li>Create an etcd user:</li>
+    </ul>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       adduser -s /sbin/nologin -d /var/lib/etcd/ etcd
+       chmod 700 /var/lib/etcd/
+</code></pre></div>    </div>
+
+    <ul>
+      <li>
+        <p>Get etcd running by providing an init file.</p>
+
+        <p>Place the following in <code class="highlighter-rouge">/etc/sysconfig/etcd</code>, replacing
+<code class="highlighter-rouge">&lt;etcd_hostname&gt;</code> and <code class="highlighter-rouge">&lt;etcd_ip&gt;</code> with the values you used in
+the <a href="#etcd-install">etcd install</a> section.</p>
+      </li>
+    </ul>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        ETCD_PROXY=on
+        ETCD_DATA_DIR=/var/lib/etcd
+        ETCD_INITIAL_CLUSTER="&lt;etcd_hostname&gt;=http://&lt;etcd_ip&gt;:2380"
+</code></pre></div>    </div>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>You then need to add the following file to `/usr/lib/systemd/system/etcd.service`
+</code></pre></div>    </div>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        [Unit]
+        Description=Etcd
+        After=syslog.target network.target
+
+        [Service]
+        User=root
+        ExecStart=/usr/local/bin/etcd
+        EnvironmentFile=-/etc/sysconfig/etcd
+        KillMode=process
+        Restart=always
+
+        [Install]
+        WantedBy=multi-user.target
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Launch etcd and set it to restart after a reboot:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    systemctl start etcd
+    systemctl enable etcd
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="control-node-install">Control Node Install</h2>
+
+<p>On each control node, perform the following steps:</p>
+
+<ol>
+  <li>
+    <p>Delete all configured OpenStack state, in particular any instances,
+routers, subnets and networks (in that order) created by the install
+process referenced above. You can do this using the web dashboard or
+at the command line.</p>
+
+    <blockquote>
+      <p><strong>HINT</strong></p>
+
+      <p>The Admin and Project sections of the web dashboard both
+have subsections for networks and routers. Some networks may
+need to be deleted from the Admin section.</p>
+
+    </blockquote>
+
+    <blockquote>
+      <p><strong>WARNING</strong></p>
+
+      <p>The Calico install will fail if incompatible state is
+left around.</p>
+
+    </blockquote>
+  </li>
+  <li>Edit the <code class="highlighter-rouge">/etc/neutron/neutron.conf</code> file. In the [DEFAULT]
+section:
+    <ul>
+      <li>Find the line beginning with <code class="highlighter-rouge">core_plugin</code>, and change it to
+read <code class="highlighter-rouge">core_plugin = calico</code>.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Install the <code class="highlighter-rouge">calico-control</code> package:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    yum install calico-control
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Restart the neutron server process:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    service neutron-server restart
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="compute-node-install">Compute Node Install</h2>
+
+<p>On each compute node, perform the following steps:</p>
+
+<ol>
+  <li>
+    <p>Make changes to SELinux and QEMU config to allow VM interfaces with
+<code class="highlighter-rouge">type='ethernet'</code> (<a href="https://web.archive.org/web/20160226213437/http://wiki.libvirt.org/page/Guest_won't_start_-_warning:_could_not_open_/dev/net/tun_('generic_ethernet'_interface)">this libvirt Wiki
+page</a>
+explains why these changes are required):</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    setenforce permissive
+</code></pre></div>    </div>
+
+    <p>Edit <code class="highlighter-rouge">/etc/selinux/config</code> and change the <code class="highlighter-rouge">SELINUX=</code> line to the
+following:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    SELINUX=permissive
+</code></pre></div>    </div>
+
+    <p>In <code class="highlighter-rouge">/etc/libvirt/qemu.conf</code>, add or edit the following four options:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    clear_emulator_capabilities = 0
+    user = "root"
+    group = "root"
+    cgroup_device_acl = [
+         "/dev/null", "/dev/full", "/dev/zero",
+         "/dev/random", "/dev/urandom",
+         "/dev/ptmx", "/dev/kvm", "/dev/kqemu",
+         "/dev/rtc", "/dev/hpet", "/dev/net/tun",
+    ]
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p><strong>NOTE</strong></p>
+
+      <dl>
+        <dt>The <code class="highlighter-rouge">cgroup_device_acl</code> entry is subtly different to the</dt>
+        <dd>
+          <p>default. It now contains <code class="highlighter-rouge">/dev/net/tun</code>.</p>
+        </dd>
+      </dl>
+
+    </blockquote>
+
+    <p>Then restart libvirt to pick up the changes:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    service libvirtd restart
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Open <code class="highlighter-rouge">/etc/nova/nova.conf</code> and remove the line from the [DEFAULT]
+section that reads:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    linuxnet_interface_driver = nova.network.linux_net.LinuxOVSInterfaceDriver
+</code></pre></div>    </div>
+
+    <p>Remove the lines from the [neutron] section setting
+<code class="highlighter-rouge">service_neutron_metadata_proxy</code> or <code class="highlighter-rouge">service_metadata_proxy</code> to
+<code class="highlighter-rouge">True</code>, if there are any. Additionally, if there is a line setting
+<code class="highlighter-rouge">metadata_proxy_shared_secret</code>, comment that line out as well.</p>
+
+    <p>Restart nova compute.</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    service openstack-nova-compute restart
+</code></pre></div>    </div>
+
+    <p>If this node is also a controller, additionally restart nova-api:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    service openstack-nova-api restart
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>If they’re running, stop the Open vSwitch services:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    service neutron-openvswitch-agent stop
+    service openvswitch stop
+</code></pre></div>    </div>
+
+    <p>Then, prevent the services running if you reboot:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    chkconfig openvswitch off
+    chkconfig neutron-openvswitch-agent off
+</code></pre></div>    </div>
+
+    <p>Then, on your control node, run the following command to find the
+agents that you just stopped:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    neutron agent-list
+</code></pre></div>    </div>
+
+    <p>For each agent, delete them with the following command on your
+control node, replacing <code class="highlighter-rouge">&lt;agent-id&gt;</code> with the ID of the agent:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    neutron agent-delete &lt;agent-id&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Install Neutron infrastructure code on the compute host:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    yum install openstack-neutron
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Modify <code class="highlighter-rouge">/etc/neutron/neutron.conf</code>.  In the <code class="highlighter-rouge">[oslo_concurrency]</code> section,
+ensure that the <code class="highlighter-rouge">lock_path</code> variable is uncommented and set as follows:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    # Directory to use for lock files. For security, the specified directory should
+    # only be writable by the user running the processes that need locking.
+    # Defaults to environment variable OSLO_LOCK_PATH. If external locks are used,
+    # a lock path must be set.
+    lock_path = $state_path/lock
+</code></pre></div>    </div>
+
+    <p>Then, stop and disable the Neutron DHCP agent, and install the
+Calico DHCP agent (which uses etcd, allowing it to scale to higher
+numbers of hosts):</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    service neutron-dhcp-agent stop
+    chkconfig neutron-dhcp-agent off
+    yum install calico-dhcp-agent
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Stop and disable any other routing/bridging agents such as the L3
+routing agent or the Linux bridging agent. These conflict
+with Calico.</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    service neutron-l3-agent stop
+    chkconfig neutron-l3-agent off
+    ... repeat for bridging agent and any others ...
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>If this node is not a controller, install and start the Nova
+Metadata API. This step is not required on combined compute and
+controller nodes.</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    yum install openstack-nova-api
+    service openstack-nova-metadata-api restart
+    chkconfig openstack-nova-metadata-api on
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Install the BIRD BGP client from EPEL:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    yum install -y bird bird6
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Install the <code class="highlighter-rouge">calico-compute</code> package:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    yum install calico-compute
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Configure BIRD. By default Calico assumes that you’ll be deploying a
+route reflector to avoid the need for a full BGP mesh. To this end,
+it includes useful configuration scripts that will prepare a BIRD
+config file with a single peering to the route reflector. If that’s
+correct for your network, you can run either or both of the
+following commands.</p>
+
+    <p>For IPv4 connectivity between compute hosts:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    calico-gen-bird-conf.sh &lt;compute_node_ip&gt; &lt;route_reflector_ip&gt; &lt;bgp_as_number&gt;
+</code></pre></div>    </div>
+
+    <p>And/or for IPv6 connectivity between compute hosts:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    calico-gen-bird6-conf.sh &lt;compute_node_ipv4&gt; &lt;compute_node_ipv6&gt; &lt;route_reflector_ipv6&gt; &lt;bgp_as_number&gt;
+</code></pre></div>    </div>
+
+    <p>Note that you’ll also need to configure your route reflector to
+allow connections from the compute node as a route reflector client.
+If you are using BIRD as a route reflector, follow the instructions
+in <a href="http://tigera-docs.appspot.com//v2.4/usage/routereflector/bird-rr-config">this document</a>. If you are using another route reflector, refer
+to the appropriate instructions to configure a client connection.</p>
+
+    <p>If you <em>are</em> configuring a full BGP mesh you’ll need to handle the
+BGP configuration appropriately on each compute host. The scripts
+above can be used to generate a sample configuration for BIRD, by
+replacing the <code class="highlighter-rouge">&lt;route_reflector_ip&gt;</code> with the IP of one other
+compute host – this will generate the configuration for a single
+peer connection, which you can duplicate and update for each compute
+host in your mesh.</p>
+
+    <p>To maintain connectivity between VMs if BIRD crashes or is upgraded,
+configure BIRD graceful restart. Edit the systemd unit file
+/usr/lib/systemd/system/bird.service (and bird6.service for IPv6):</p>
+
+    <ul>
+      <li>Add -R to the end of the ExecStart line.</li>
+      <li>Add KillSignal=SIGKILL as a new line in the [Service] section.</li>
+    </ul>
+
+    <p>Ensure BIRD (and/or BIRD 6 for IPv6) is running and starts on
+reboot:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    service bird restart
+    service bird6 restart
+    chkconfig bird on
+    chkconfig bird6 on
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create the <code class="highlighter-rouge">/etc/calico/felix.cfg</code> file by copying
+<code class="highlighter-rouge">/etc/calico/felix.cfg.example</code>. Ordinarily the default values
+should be used, but see <a href="http://tigera-docs.appspot.com//v2.4/getting-started/openstack/">Configuration</a> for more details.</p>
+  </li>
+  <li>
+    <p>Restart the Felix service:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    systemctl restart calico-felix
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+              
+              <!-- BOTTOM DOCUMENTATION PAGE NAVBAR -->
+              <div style="margin-top: 60px; margin-bottom: 40px; padding-top: 20px; border-top: 1px solid #999; text-align: left; color: #999;">Rate this Page: <div class="rw-ui-container" style="margin-top: -5px;"></div> <a href="https://www.projectcalico.org/contact?type=docs&file=v2.4/getting-started/openstack/installation/redhat.md" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> Provide Feedback</a> <a href="https://www.projectcalico.org/community#slack" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-slack" aria-hidden="true"></i> Get Help via Slack</a> <a href="https://www.projectcalico.org/mvp" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-trophy" aria-hidden="true"></i> Ask our MVPs</a> <a href="https:/tigera.io/training" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Training</a></div>
+              <!-- END BOTTOM DOCUMENTATION PAGE NAVBAR -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Start Visual Website Optimizer Asynchronous Code -->
+    <script type='text/javascript'>
+      var _vwo_code=(function(){
+      var account_id=287573,
+      settings_tolerance=2000,
+      library_tolerance=2500,
+      use_existing_jquery=false,
+      /* DO NOT EDIT BELOW THIS LINE */
+      f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+    </script>
+    <!-- End Visual Website Optimizer Asynchronous Code -->
+    <!-- DOCUMENTATION RATING ANALYTICS -->
+   <script type="text/javascript">(function(d, t, e, m){
+    // Async Rating-Widget initialization.
+    window.RW_Async_Init = function(){
+        RW.init({
+            huid: "368439",
+            uid: "33da22c0dff384767b5074aaf10ebc50",
+            source: "website",
+            options: {
+                "advanced": {
+					"font": {
+						"color": "#999999"
+					},
+                    "layout": {
+                        "align": {
+                            "hor": "left"
+                        }
+                    },
+                    "text": {
+                        "rateThis": "Rate this"
+                    }
+                },
+				"label": {
+					"background": "#FFFFFF"
+				},
+				"reVote": true,
+				"showInfo": false,
+				/*"showTooltip": false,*/
+				"hideRecommendations": false,
+				"showReport": false,
+				"showLoader": false,
+                "style": "oxygen",
+                "isDummy": false
+            } 
+        });
+        RW.render();
+    };
+        // Append Rating-Widget JavaScript library.
+    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
+        l = d.location, ck = "Y" + t.getFullYear() + 
+        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
+        f = ((l.search.indexOf("DBG=") > -1) ? "" : ".min"),
+        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
+    if (d.getElementById(id)) return;              
+    rw = d.createElement(e);
+    rw.id = id; rw.async = true; rw.type = "text/javascript";
+    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
+    s.parentNode.insertBefore(rw, s);
+    }(document, new Date(), "script", "rating-widget.com/"));</script>
+    <!-- END DOCUMENTATION RATING ANALYTICS -->
+  </body>
+</html>

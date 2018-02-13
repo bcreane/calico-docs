@@ -1,0 +1,711 @@
+<!-- Set this_pages_navbar  -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="http://tigera-docs.appspot.com//images/favicon.png">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto+Mono' type='text/css'>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/style.css"/>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/plugins/offcanvas.css"/>
+    <link href="https://www.projectcalico.org/wp-content/themes/dante/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://tigera-docs.appspot.com//js/jquery-2.2.0.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/bootstrap/bootstrap.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/script.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-52125893-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Host routes</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="Host routes" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://docs.projectcalico.org/v2.6/usage/openstack/host-routes" />
+<meta property="og:url" content="https://docs.projectcalico.org/v2.6/usage/openstack/host-routes" />
+<script type="application/ld+json">
+{"headline":"Host routes","@type":"WebPage","url":"https://docs.projectcalico.org/v2.6/usage/openstack/host-routes","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <section>
+      <nav id="toplevel-nav" class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <!-- Hamburger menu for mobile -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tigera-navbar" aria-expanded="false" aria-controls="tigera-navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Left brand image -->
+            <a class="navbar-brand" href="https://projectcalico.org/">
+              <img alt="Brand" src="http://tigera-docs.appspot.com//images/brand.png">
+            </a>
+          </div>
+          <div id="tigera-navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://projectcalico.org">Home</a></li>
+              <li class="active"><a href="https://projectcalico.org/resources"><span>Resources</span></a>
+                <ul>
+                    <li><a href="http://tigera-docs.appspot.com//latest/getting-started/"><i class="fa fa-tachometer" aria-hidden="true"></i> &nbsp; Getting Started</a></li>
+                    <li><a href="http://tigera-docs.appspot.com/"><i class="fa fa-book" aria-hidden="true"></i> &nbsp; Documentation</a></li>
+                    <!--<li><a href="https://www.projectcalico.org/tutorials"><i class="fa fa-file-code-o" aria-hidden="true"></i> &nbsp; Tutorials &amp; Examples</a></li>
+                    <li><a href=""><i class="fa fa-paper-plane-o" aria-hidden="true"></i> &nbsp; Online Workshops</a></li>-->
+                    <li><a href="https://www.projectcalico.org/videos"><i class="fa fa-video-camera" aria-hidden="true"></i> &nbsp; Videos &amp; Webinars</a></li>
+                    <li><a href="https://www.projectcalico.org/training"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp; Training</a></li>
+                    <li><a href="http://tigera-docs.appspot.com//latest/releases/"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp; Releases</a></li>
+                    <!-- <li><a href="/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li> -->
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/community">Community</a>
+                <ul>
+                    <li><a href="https://slack.projectcalico.org/"><i class="fa fa-slack" aria-hidden="true"></i> &nbsp; Slack</a></li>
+                    <!--<li><a href="https://stackoverflow.com/questions/tagged/project-calico" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i> &nbsp; StackOverflow</a></li>-->
+                    <li><a href="https://www.projectcalico.org/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li>
+                    <li><a href="https://www.projectcalico.org/community#events"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp; Upcoming Events</a></li>
+                    <li><a href="https://www.projectcalico.org/newsletters"><i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp; Newsletter</a></li>
+                    <li><a href="https://github.com/projectcalico" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> &nbsp; GitHub</a></li> 
+                    <li><a href="https://www.projectcalico.org/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i> &nbsp; Jobs</a></li>
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/mvp" style="font-weight: bold;">MVP</a></li>
+              <li><a href="https://www.projectcalico.org/support">Support</a></li>
+              <li class="hidden-xs"><a href="https://www.projectcalico.org/support">
+                <img class="desktopImage" width="30" align="absmiddle" src="https://www.projectcalico.org/images/tigera_trans_sm.png" alt="Tigera"></a>
+              </li>
+            </ul>
+            <form class="navbar-form visible-xs">
+              <ul class="nav navbar-nav navbar-right">
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//master/introduction">Introduction</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//master/getting-started">Getting Started</a>
+                  </li>
+                
+                  <li  class="active">
+                    <a href="http://tigera-docs.appspot.com//master/usage">Usage</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//master/reference">Reference</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//master/releases">Releases</a>
+                  </li>
+                
+              </ul>
+            </form>
+            <ul class="visible-xs nav navbar-nav navbar-right">
+             <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (nightly)<span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                 <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6 (latest)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (beta)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                 <li role="separator" class="divider"></li>
+               </ul>
+             </li>
+           </ul>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-inverse navbar-collapse collapse">
+          <div class="container">
+            <ul class="nav navbar-nav">
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//master/introduction"><span>Introduction</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//master/getting-started"><span>Getting Started</span></a>
+                </li>
+              
+                <li class="active">
+                  <a href="http://tigera-docs.appspot.com//master/usage"><span>Usage</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//master/reference"><span>Reference</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//master/releases"><span>Releases</span></a>
+                </li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (nightly)<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                   <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (latest)</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-sm-0"></div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+          <p class="pull-left visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+            <div class="row">
+              <script>
+                (function() {
+                  var cx = '015028447179048192876:xjzskk7awwe';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+                })();
+              </script>
+              <gcse:search></gcse:search>
+            </div>
+            <div id="sidebar">
+            	
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Using Calico" href="http://tigera-docs.appspot.com//master/usage/">
+        Using Calico
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoctl" aria-expanded="false" aria-controls="nav-calicoctl">
+          calicoctl
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoctl">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Installing calicoctl" href="http://tigera-docs.appspot.com//master/usage/calicoctl/install">
+        Installing calicoctl
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoctl-configuringcalicoctl" aria-expanded="false" aria-controls="nav-calicoctl-configuringcalicoctl">
+          Configuring calicoctl
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoctl-configuringcalicoctl">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//master/usage/calicoctl/configure/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="etcd datastore options" href="http://tigera-docs.appspot.com//master/usage/calicoctl/configure/etcd">
+        etcd datastore options
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Kubernetes API datastore options" href="http://tigera-docs.appspot.com//master/usage/calicoctl/configure/kdd">
+        Kubernetes API datastore options
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Running calico/node with an init system" href="http://tigera-docs.appspot.com//master/usage/configuration/as-service">
+        Running calico/node with an init system
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuring BGP Peers" href="http://tigera-docs.appspot.com//master/usage/configuration/bgp">
+        Configuring BGP Peers
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-routereflector" aria-expanded="false" aria-controls="nav-routereflector">
+          Route Reflector
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-routereflector">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuring BIRD" href="http://tigera-docs.appspot.com//master/usage/routereflector/bird-rr-config">
+        Configuring BIRD
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="The calico/routereflector container" href="http://tigera-docs.appspot.com//master/usage/routereflector/calico-routereflector">
+        The calico/routereflector container
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="IPv6" href="http://tigera-docs.appspot.com//master/usage/ipv6">
+        IPv6
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="External Connectivity" href="http://tigera-docs.appspot.com//master/usage/external-connectivity">
+        External Connectivity
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuring IP-in-IP" href="http://tigera-docs.appspot.com//master/usage/configuration/ip-in-ip">
+        Configuring IP-in-IP
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuring a Node IP Address and Subnet" href="http://tigera-docs.appspot.com//master/usage/configuration/node">
+        Configuring a Node IP Address and Subnet
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuring MTU" href="http://tigera-docs.appspot.com//master/usage/configuration/mtu">
+        Configuring MTU
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Decommissioning a Node" href="http://tigera-docs.appspot.com//master/usage/decommissioning-a-node">
+        Decommissioning a Node
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuring Conntrack" href="http://tigera-docs.appspot.com//master/usage/configuration/conntrack">
+        Configuring Conntrack
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoforopenstack" aria-expanded="false" aria-controls="nav-calicoforopenstack">
+          Calico for OpenStack
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoforopenstack">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuration" href="http://tigera-docs.appspot.com//master/usage/openstack/configuration">
+        Configuration
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Detailed Semantics" href="http://tigera-docs.appspot.com//master/usage/openstack/semantics">
+        Detailed Semantics
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Floating IPs" href="http://tigera-docs.appspot.com//master/usage/openstack/floating-ips">
+        Floating IPs
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Service IPs" href="http://tigera-docs.appspot.com//master/usage/openstack/service-ips">
+        Service IPs
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Host routes" href="http://tigera-docs.appspot.com//master/usage/openstack/host-routes">
+        Host routes
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Kuryr" href="http://tigera-docs.appspot.com//master/usage/openstack/kuryr">
+        Kuryr
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Troubleshooting" href="http://tigera-docs.appspot.com//master/usage/troubleshooting/">
+        Troubleshooting
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Logging" href="http://tigera-docs.appspot.com//master/usage/troubleshooting/logging">
+        Logging
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Frequently Asked Questions" href="http://tigera-docs.appspot.com//master/usage/troubleshooting/faq">
+        Frequently Asked Questions
+      </a>
+    </div>
+  
+
+
+			</div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9">
+            <div id="content-main">
+              <!-- TOP DOCUMENTATION PAGE NAVBAR -->
+              <div style="text-align: left; padding: 18px 0 9px 0; min-width: 500px; overflow-x: hidden;">
+              
+              <a data-proofer-ignore href="https://github.com/projectcalico/calico/tree/master/master/usage/openstack/host-routes.md" style="color: #999; text-decoration: none; float: right;" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit this page</a></div>
+              <!-- END TOP DOCUMENTATION PAGE NAVBAR -->
+              
+  <div class="alert alert-warning" role="alert">
+    <strong>Warning:</strong> You are viewing the master docs. <a href="http://tigera-docs.appspot.com//latest">Click here to view the docs for the latest release.</a>
+  </div>
+
+
+              <h1>Host routes</h1>
+              <p>Neutron allows “host routes” to be configured on a subnet, with each host route
+comprising</p>
+
+<ul>
+  <li>an IP destination prefix</li>
+  <li>a next hop IP for routing to that prefix.</li>
+</ul>
+
+<p>When an instance is launched and gets an IP from that subnet, Neutron arranges,
+via DHCP, that the instance’s routing table gets those routes.</p>
+
+<h2 id="with-calico-a-host-routes-next-hop-ip-should-be-the-local-host">With Calico, a host route’s next hop IP should be the local host</h2>
+
+<p>networking-calico supports host routes, but it’s important to note that a host
+route is only consistent with Calico when its next hop IP represents the local
+hypervisor.  This is because the local hypervisor, in a Calico setup, <em>always</em>
+routes all data from an instance and so is always the next hop IP for data to
+any destination.  If the instance’s routing table has a route with some other
+next hop IP, that next hop IP address will effectively be ignored, and the data
+will likely <em>not</em> pass through the implied router; instead the data will go
+first to the hypervisor, and then the hypervisor’s routing table will determine
+its next IP hop from there.</p>
+
+<p>Specifically, each host route’s next hop IP should be the gateway IP of the
+subnet that the desired instance NIC is attached to, and from which it got its
+IP address - where ‘desired instance NIC’ means the one that you want data for
+that host route to go through.  In networking-calico’s usage, subnet gateway
+IPs represent the local hypervisor, because data sent by an instance is always
+routed there.</p>
+
+<blockquote class="alert alert-info">
+  <p><strong>Note</strong>: networking-calico avoids unnecessary IP usage by using the subnet
+gateway IP to represent the local compute host, on every compute host where
+that subnet is being used. Although that might initially sound odd, it works
+because no data is ever sent to or from the gateway IP address; the gateway
+IP is only used as the next hop address for the first IP hop from an instance
+to its compute host, and then the compute host routes the data again,
+according to its routing table, to wherever it needs to go. This also means
+that the gateway IP address really is functioning as each instance’s default
+gateway, in the generally understood sense.</p>
+
+</blockquote>
+
+<h2 id="when-are-host-routes-useful-with-calico">When are host routes useful with Calico?</h2>
+
+<p>Host routes are useful with Calico when an instance has multiple NICs and you
+want to specify which NIC should be used for data to particular prefixes.</p>
+
+<p>When an instance has multiple NICs, it should have a default route through only
+one of those NICs, and use non-default routes to direct appropriate traffic
+through the other NICs.  Neutron host routes can be used to establish those
+non-default routes; alternatively they can also be programmed manually in the
+instance.</p>
+
+<p>For example, suppose an instance has eth0 attached to a subnet with gateway
+10.65.0.1, eth1 attached to a subnet with gateway 11.8.0.1, and a default route
+via eth0.  Then a host route like</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>11.11.0.0/16,11.8.0.1
+</code></pre></div></div>
+
+<p>can be configured for the subnet, to say that data to 11.11.0.0/16 should go
+out through eth1.  The instance’s routing table will then be:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>default via 10.65.0.1 dev eth0
+10.65.0.0/24 dev eth0
+11.8.0.0/24 dev eth1
+11.11.0.0/16 via 11.8.0.1 dev eth1
+</code></pre></div></div>
+
+<p>When an instance only has a single network attachment, and so a single NIC,
+host routes cannot make any difference to how data is routed, so it is
+unhelpful (although also harmless) to configure them.  Regardless of what the
+instance’s routing table says, data must exit over the single NIC, and is
+always layer-2-terminated and rerouted by the host according to the host’s
+routing table.  It’s required for the host’s routing table to cover whatever
+destinations instances may want to send to, and host routes don’t add anything
+to that.</p>
+
+              
+              <!-- BOTTOM DOCUMENTATION PAGE NAVBAR -->
+              <div style="margin-top: 60px; margin-bottom: 40px; padding-top: 20px; border-top: 1px solid #999; text-align: left; color: #999;">Rate this Page: <div class="rw-ui-container" style="margin-top: -5px;"></div> <a href="https://www.projectcalico.org/contact?type=docs&file=master/usage/openstack/host-routes.md" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> Provide Feedback</a> <a href="https://www.projectcalico.org/community#slack" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-slack" aria-hidden="true"></i> Get Help via Slack</a> <a href="https://www.projectcalico.org/mvp" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-trophy" aria-hidden="true"></i> Ask our MVPs</a> <a href="https:/tigera.io/training" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Training</a></div>
+              <!-- END BOTTOM DOCUMENTATION PAGE NAVBAR -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Start Visual Website Optimizer Asynchronous Code -->
+    <script type='text/javascript'>
+      var _vwo_code=(function(){
+      var account_id=287573,
+      settings_tolerance=2000,
+      library_tolerance=2500,
+      use_existing_jquery=false,
+      /* DO NOT EDIT BELOW THIS LINE */
+      f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+    </script>
+    <!-- End Visual Website Optimizer Asynchronous Code -->
+    <!-- DOCUMENTATION RATING ANALYTICS -->
+   <script type="text/javascript">(function(d, t, e, m){
+    // Async Rating-Widget initialization.
+    window.RW_Async_Init = function(){
+        RW.init({
+            huid: "368439",
+            uid: "33da22c0dff384767b5074aaf10ebc50",
+            source: "website",
+            options: {
+                "advanced": {
+					"font": {
+						"color": "#999999"
+					},
+                    "layout": {
+                        "align": {
+                            "hor": "left"
+                        }
+                    },
+                    "text": {
+                        "rateThis": "Rate this"
+                    }
+                },
+				"label": {
+					"background": "#FFFFFF"
+				},
+				"reVote": true,
+				"showInfo": false,
+				/*"showTooltip": false,*/
+				"hideRecommendations": false,
+				"showReport": false,
+				"showLoader": false,
+                "style": "oxygen",
+                "isDummy": false
+            } 
+        });
+        RW.render();
+    };
+        // Append Rating-Widget JavaScript library.
+    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
+        l = d.location, ck = "Y" + t.getFullYear() + 
+        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
+        f = ((l.search.indexOf("DBG=") > -1) ? "" : ".min"),
+        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
+    if (d.getElementById(id)) return;              
+    rw = d.createElement(e);
+    rw.id = id; rw.async = true; rw.type = "text/javascript";
+    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
+    s.parentNode.insertBefore(rw, s);
+    }(document, new Date(), "script", "rating-widget.com/"));</script>
+    <!-- END DOCUMENTATION RATING ANALYTICS -->
+  </body>
+</html>

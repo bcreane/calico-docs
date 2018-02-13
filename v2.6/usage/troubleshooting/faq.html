@@ -1,0 +1,981 @@
+<!-- Set this_pages_navbar  -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="http://tigera-docs.appspot.com//images/favicon.png">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto+Mono' type='text/css'>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/style.css"/>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/plugins/offcanvas.css"/>
+    <link href="https://www.projectcalico.org/wp-content/themes/dante/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://tigera-docs.appspot.com//js/jquery-2.2.0.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/bootstrap/bootstrap.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/script.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-52125893-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Frequently Asked Questions</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="Frequently Asked Questions" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://docs.projectcalico.org/v3.0/usage/troubleshooting/faq" />
+<meta property="og:url" content="https://docs.projectcalico.org/v3.0/usage/troubleshooting/faq" />
+<script type="application/ld+json">
+{"headline":"Frequently Asked Questions","@type":"WebPage","url":"https://docs.projectcalico.org/v3.0/usage/troubleshooting/faq","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <section>
+      <nav id="toplevel-nav" class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <!-- Hamburger menu for mobile -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tigera-navbar" aria-expanded="false" aria-controls="tigera-navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Left brand image -->
+            <a class="navbar-brand" href="https://projectcalico.org/">
+              <img alt="Brand" src="http://tigera-docs.appspot.com//images/brand.png">
+            </a>
+          </div>
+          <div id="tigera-navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://projectcalico.org">Home</a></li>
+              <li class="active"><a href="https://projectcalico.org/resources"><span>Resources</span></a>
+                <ul>
+                    <li><a href="http://tigera-docs.appspot.com//latest/getting-started/"><i class="fa fa-tachometer" aria-hidden="true"></i> &nbsp; Getting Started</a></li>
+                    <li><a href="http://tigera-docs.appspot.com/"><i class="fa fa-book" aria-hidden="true"></i> &nbsp; Documentation</a></li>
+                    <!--<li><a href="https://www.projectcalico.org/tutorials"><i class="fa fa-file-code-o" aria-hidden="true"></i> &nbsp; Tutorials &amp; Examples</a></li>
+                    <li><a href=""><i class="fa fa-paper-plane-o" aria-hidden="true"></i> &nbsp; Online Workshops</a></li>-->
+                    <li><a href="https://www.projectcalico.org/videos"><i class="fa fa-video-camera" aria-hidden="true"></i> &nbsp; Videos &amp; Webinars</a></li>
+                    <li><a href="https://www.projectcalico.org/training"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp; Training</a></li>
+                    <li><a href="http://tigera-docs.appspot.com//latest/releases/"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp; Releases</a></li>
+                    <!-- <li><a href="/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li> -->
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/community">Community</a>
+                <ul>
+                    <li><a href="https://slack.projectcalico.org/"><i class="fa fa-slack" aria-hidden="true"></i> &nbsp; Slack</a></li>
+                    <!--<li><a href="https://stackoverflow.com/questions/tagged/project-calico" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i> &nbsp; StackOverflow</a></li>-->
+                    <li><a href="https://www.projectcalico.org/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li>
+                    <li><a href="https://www.projectcalico.org/community#events"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp; Upcoming Events</a></li>
+                    <li><a href="https://www.projectcalico.org/newsletters"><i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp; Newsletter</a></li>
+                    <li><a href="https://github.com/projectcalico" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> &nbsp; GitHub</a></li> 
+                    <li><a href="https://www.projectcalico.org/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i> &nbsp; Jobs</a></li>
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/mvp" style="font-weight: bold;">MVP</a></li>
+              <li><a href="https://www.projectcalico.org/support">Support</a></li>
+              <li class="hidden-xs"><a href="https://www.projectcalico.org/support">
+                <img class="desktopImage" width="30" align="absmiddle" src="https://www.projectcalico.org/images/tigera_trans_sm.png" alt="Tigera"></a>
+              </li>
+            </ul>
+            <form class="navbar-form visible-xs">
+              <ul class="nav navbar-nav navbar-right">
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v2.6/introduction">Introduction</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v2.6/getting-started">Getting Started</a>
+                  </li>
+                
+                  <li  class="active">
+                    <a href="http://tigera-docs.appspot.com//v2.6/usage">Usage</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v2.6/reference">Reference</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v2.6/releases">Releases</a>
+                  </li>
+                
+              </ul>
+            </form>
+            <ul class="visible-xs nav navbar-nav navbar-right">
+             <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (v2.6)<span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                 <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6 (latest)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (beta)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                 <li role="separator" class="divider"></li>
+               </ul>
+             </li>
+           </ul>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-inverse navbar-collapse collapse">
+          <div class="container">
+            <ul class="nav navbar-nav">
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v2.6/introduction"><span>Introduction</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v2.6/getting-started"><span>Getting Started</span></a>
+                </li>
+              
+                <li class="active">
+                  <a href="http://tigera-docs.appspot.com//v2.6/usage"><span>Usage</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v2.6/reference"><span>Reference</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v2.6/releases"><span>Releases</span></a>
+                </li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (v2.6)<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                   <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (latest)</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-sm-0"></div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+          <p class="pull-left visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+            <div class="row">
+              <script>
+                (function() {
+                  var cx = '015028447179048192876:xjzskk7awwe';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+                })();
+              </script>
+              <gcse:search></gcse:search>
+            </div>
+            <div id="sidebar">
+            	
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Using Calico" href="http://tigera-docs.appspot.com//v2.6/usage/">
+        Using Calico
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoctl" aria-expanded="false" aria-controls="nav-calicoctl">
+          calicoctl
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoctl">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Installing and Configuring calicoctl" href="http://tigera-docs.appspot.com//v2.6/usage/calicoctl/install-and-configuration">
+        Installing and Configuring calicoctl
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="calico/ctl container" href="http://tigera-docs.appspot.com//v2.6/usage/calicoctl/container">
+        calico/ctl container
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Calico and Systemd" href="http://tigera-docs.appspot.com//v2.6/usage/configuration/as-service">
+        Calico and Systemd
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuring BGP Peers" href="http://tigera-docs.appspot.com//v2.6/usage/configuration/bgp">
+        Configuring BGP Peers
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-routereflector" aria-expanded="false" aria-controls="nav-routereflector">
+          Route Reflector
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-routereflector">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuring BIRD" href="http://tigera-docs.appspot.com//v2.6/usage/routereflector/bird-rr-config">
+        Configuring BIRD
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="The calico/routereflector container" href="http://tigera-docs.appspot.com//v2.6/usage/routereflector/calico-routereflector">
+        The calico/routereflector container
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="IPv6" href="http://tigera-docs.appspot.com//v2.6/usage/ipv6">
+        IPv6
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="External Connectivity" href="http://tigera-docs.appspot.com//v2.6/usage/external-connectivity">
+        External Connectivity
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuring IP-in-IP" href="http://tigera-docs.appspot.com//v2.6/usage/configuration/ip-in-ip">
+        Configuring IP-in-IP
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuring a Node IP Address and Subnet" href="http://tigera-docs.appspot.com//v2.6/usage/configuration/node">
+        Configuring a Node IP Address and Subnet
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuring MTU" href="http://tigera-docs.appspot.com//v2.6/usage/configuration/mtu">
+        Configuring MTU
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Decommissioning a Node" href="http://tigera-docs.appspot.com//v2.6/usage/decommissioning-a-node">
+        Decommissioning a Node
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuring Conntrack" href="http://tigera-docs.appspot.com//v2.6/usage/configuration/conntrack">
+        Configuring Conntrack
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoforopenstack" aria-expanded="false" aria-controls="nav-calicoforopenstack">
+          Calico for OpenStack
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoforopenstack">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuration" href="http://tigera-docs.appspot.com//v2.6/usage/openstack/configuration">
+        Configuration
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Detailed Semantics" href="http://tigera-docs.appspot.com//v2.6/usage/openstack/semantics">
+        Detailed Semantics
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Floating IPs" href="http://tigera-docs.appspot.com//v2.6/usage/openstack/floating-ips">
+        Floating IPs
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Service IPs" href="http://tigera-docs.appspot.com//v2.6/usage/openstack/service-ips">
+        Service IPs
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Host routes" href="http://tigera-docs.appspot.com//v2.6/usage/openstack/host-routes">
+        Host routes
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Kuryr" href="http://tigera-docs.appspot.com//v2.6/usage/openstack/kuryr">
+        Kuryr
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Troubleshooting" href="http://tigera-docs.appspot.com//v2.6/usage/troubleshooting/">
+        Troubleshooting
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Logging" href="http://tigera-docs.appspot.com//v2.6/usage/troubleshooting/logging">
+        Logging
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Frequently Asked Questions" href="http://tigera-docs.appspot.com//v2.6/usage/troubleshooting/faq">
+        Frequently Asked Questions
+      </a>
+    </div>
+  
+
+
+			</div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9">
+            <div id="content-main">
+              <!-- TOP DOCUMENTATION PAGE NAVBAR -->
+              <div style="text-align: left; padding: 18px 0 9px 0; min-width: 500px; overflow-x: hidden;">
+              
+              <a data-proofer-ignore href="https://github.com/projectcalico/calico/tree/master/v2.6/usage/troubleshooting/faq.md" style="color: #999; text-decoration: none; float: right;" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit this page</a></div>
+              <!-- END TOP DOCUMENTATION PAGE NAVBAR -->
+              
+  <div class="alert alert-warning" role="alert">
+    <strong>Warning:</strong> You are viewing the v2.6 docs. <a href="http://tigera-docs.appspot.com//latest">Click here to view the docs for the latest release.</a>
+  </div>
+
+
+              <h1>Frequently Asked Questions</h1>
+              <ul id="markdown-toc">
+  <li><a href="#why-use-calico" id="markdown-toc-why-use-calico">“Why use Calico?”</a></li>
+  <li><a href="#does-calico-work-with-ipv6" id="markdown-toc-does-calico-work-with-ipv6">“Does Calico work with IPv6?”</a></li>
+  <li><a href="#why-does-my-container-have-a-route-to-16925411" id="markdown-toc-why-does-my-container-have-a-route-to-16925411">“Why does my container have a route to 169.254.1.1?”</a></li>
+  <li><a href="#why-cant-i-see-the-16925411-address-mentioned-above-on-my-host" id="markdown-toc-why-cant-i-see-the-16925411-address-mentioned-above-on-my-host">Why can’t I see the 169.254.1.1 address mentioned above on my host?</a></li>
+  <li><a href="#why-do-all-cali-interfaces-have-the-mac-address-eeeeeeeeeeee" id="markdown-toc-why-do-all-cali-interfaces-have-the-mac-address-eeeeeeeeeeee">Why do all cali* interfaces have the MAC address ee:ee:ee:ee:ee:ee?</a></li>
+  <li><a href="#can-i-prevent-my-kubernetes-pods-from-initiating-outgoing-connections" id="markdown-toc-can-i-prevent-my-kubernetes-pods-from-initiating-outgoing-connections">Can I prevent my Kubernetes pods from initiating outgoing connections?</a></li>
+  <li><a href="#ive-heard-calico-uses-proxy-arp-doesnt-proxy-arp-cause-a-lot-of-problems" id="markdown-toc-ive-heard-calico-uses-proxy-arp-doesnt-proxy-arp-cause-a-lot-of-problems">I’ve heard Calico uses proxy ARP, doesn’t proxy ARP cause a lot of problems?</a></li>
+  <li><a href="#is-calico-compliant-with-pcidss-requirements" id="markdown-toc-is-calico-compliant-with-pcidss-requirements">“Is Calico compliant with PCI/DSS requirements?”</a></li>
+  <li><a href="#how-do-i-enable-ipip-and-nat-outgoing-on-an-ip-pool" id="markdown-toc-how-do-i-enable-ipip-and-nat-outgoing-on-an-ip-pool">How do I enable IPIP and NAT Outgoing on an IP Pool?</a></li>
+  <li><a href="#how-does-calico-maintain-saved-state" id="markdown-toc-how-does-calico-maintain-saved-state">“How does Calico maintain saved state?”</a></li>
+  <li><a href="#i-heard-calico-is-suggesting-layer-2-i-thought-you-were-layer-3-whats-happening" id="markdown-toc-i-heard-calico-is-suggesting-layer-2-i-thought-you-were-layer-3-whats-happening">“I heard Calico is suggesting layer 2: I thought you were layer 3! What’s happening?”</a></li>
+  <li><a href="#how-do-i-control-policyconnectivity-without-virtualphysical-firewalls" id="markdown-toc-how-do-i-control-policyconnectivity-without-virtualphysical-firewalls">“How do I control policy/connectivity without virtual/physical firewalls?”</a></li>
+  <li><a href="#how-does-calico-interact-with-the-neutron-api" id="markdown-toc-how-does-calico-interact-with-the-neutron-api">“How does Calico interact with the Neutron API?”</a></li>
+  <li><a href="#why-isnt-the--p-flag-on-docker-run-working-as-expected" id="markdown-toc-why-isnt-the--p-flag-on-docker-run-working-as-expected">Why isn’t the <code class="highlighter-rouge">-p</code> flag on <code class="highlighter-rouge">docker run</code> working as expected?</a></li>
+  <li><a href="#can-calico-containers-use-any-ip-address-within-a-pool-even-subnet-networkbroadcast-addresses" id="markdown-toc-can-calico-containers-use-any-ip-address-within-a-pool-even-subnet-networkbroadcast-addresses">Can Calico containers use any IP address within a pool, even subnet network/broadcast addresses?</a></li>
+  <li><a href="#how-do-i-get-network-traffic-into-and-out-of-my-calico-cluster" id="markdown-toc-how-do-i-get-network-traffic-into-and-out-of-my-calico-cluster">How do I get network traffic into and out of my Calico cluster?</a>    <ul>
+      <li><a href="#how-can-i-enable-nat-for-outgoing-traffic-from-containers-with-private-ip-addresses" id="markdown-toc-how-can-i-enable-nat-for-outgoing-traffic-from-containers-with-private-ip-addresses">How can I enable NAT for outgoing traffic from containers with private IP addresses?</a></li>
+      <li><a href="#how-can-i-enable-nat-for-incoming-traffic-to-containers-with-private-ip-addresses" id="markdown-toc-how-can-i-enable-nat-for-incoming-traffic-to-containers-with-private-ip-addresses">How can I enable NAT for incoming traffic to containers with private IP addresses?</a></li>
+      <li><a href="#can-i-run-calico-in-a-public-cloud-environment" id="markdown-toc-can-i-run-calico-in-a-public-cloud-environment">Can I run Calico in a public cloud environment?</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="why-use-calico">“Why use Calico?”</h2>
+
+<p>The problem Calico tries to solve is the networking of workloads (VMs,
+containers, etc) in a high scale environment. Existing L2 based methods
+for solving this problem have problems at high scale. Compared to these,
+we think Calico is more scalable, simpler and more flexible. We think
+you should look into it if you have more than a handful of nodes on a
+single site.</p>
+
+<p>Calico also provides a rich network security model that
+allows operators and developers to declare intent-based network security
+policy that is automatically rendered into distributed firewall rules
+across a cluster of containers, VMs, and/or servers.</p>
+
+<p>For a more detailed discussion of this topic, see our blog post at
+<a href="https://www.projectcalico.org/why-calico/">Why Calico?</a>.</p>
+
+<h2 id="does-calico-work-with-ipv6">“Does Calico work with IPv6?”</h2>
+
+<p>Yes! Calico’s core components support IPv6 out-of-the box. However,
+not all orchestrators that we integrate with support IPv6 yet.</p>
+
+<h2 id="why-does-my-container-have-a-route-to-16925411">“Why does my container have a route to 169.254.1.1?”</h2>
+
+<p>In a Calico network, each host acts as a gateway router for the
+workloads that it hosts.  In container deployments, Calico uses
+169.254.1.1 as the address for the Calico router.  By using a
+link-local address, Calico saves precious IP addresses and avoids
+burdening the user with configuring a suitable address.</p>
+
+<p>While the routing table may look a little odd to someone who is used to
+configuring  LAN networking, using explicit routes rather than
+subnet-local gateways is fairly common in WAN networking.</p>
+
+<h2 id="why-cant-i-see-the-16925411-address-mentioned-above-on-my-host">Why can’t I see the 169.254.1.1 address mentioned above on my host?</h2>
+
+<p>Calico tries hard to avoid interfering with any other configuration
+on the host.  Rather than adding the gateway address to the host side
+of each workload interface, Calico sets the <code class="highlighter-rouge">proxy_arp</code> flag on the
+interface.  This makes the host behave like a gateway, responding to
+ARPs for 169.254.1.1 without having to actually allocate the IP address
+to the interface.</p>
+
+<h2 id="why-do-all-cali-interfaces-have-the-mac-address-eeeeeeeeeeee">Why do all cali* interfaces have the MAC address ee:ee:ee:ee:ee:ee?</h2>
+
+<p>In some setups the kernel is unable to generate a persistent MAC address and so
+Calico assigns a MAC address itself. Since Calico uses
+point-to-point routed interfaces, traffic does not reach the data link layer
+so the MAC Address is never used and can therefore be the same for all the
+cali* interfaces.</p>
+
+<h2 id="can-i-prevent-my-kubernetes-pods-from-initiating-outgoing-connections">Can I prevent my Kubernetes pods from initiating outgoing connections?</h2>
+
+<p>Yes! The Kubernetes <a href="https://kubernetes.io/docs/concepts/services-networking/network-policies/">NetworkPolicy</a>
+API added support for egress policies in v1.8. You can also use <code class="highlighter-rouge">calicoctl</code> to configure egress policy to prevent
+Kubernetes pods from initiating outgoing connections based on the full set of
+supported Calico policy primitives including labels, Kubernetes namespaces,
+CIDRs, and ports.</p>
+
+<h2 id="ive-heard-calico-uses-proxy-arp-doesnt-proxy-arp-cause-a-lot-of-problems">I’ve heard Calico uses proxy ARP, doesn’t proxy ARP cause a lot of problems?</h2>
+
+<p>It can, but not in the way that Calico uses it.</p>
+
+<p>In container deployments, Calico only uses proxy ARP for resolving the
+169.254.1.1 address.  The routing table inside the container ensures
+that all traffic goes via the 169.254.1.1 gateway so that is the only
+IP that will be ARPed by the container.</p>
+
+<h2 id="is-calico-compliant-with-pcidss-requirements">“Is Calico compliant with PCI/DSS requirements?”</h2>
+
+<p>PCI certification applies to the whole end-to-end system, of which
+Calico would be a part. We understand that most current solutions use
+VLANs, but after studying the PCI requirements documents, we believe
+that Calico does meet those requirements and that nothing in the
+documents <em>mandates</em> the use of VLANs.</p>
+
+<h2 id="how-do-i-enable-ipip-and-nat-outgoing-on-an-ip-pool">How do I enable IPIP and NAT Outgoing on an IP Pool?</h2>
+
+<ol>
+  <li>
+    <p>Retrieve current IP Pool config</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>calicoctl get ipPool <span class="nt">-o</span> yaml <span class="o">&gt;</span> pool.yaml
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Modify IP Pool config</p>
+
+    <p>Modify the pool’s spec to enable IP-IP and nat-outgoing. (See 
+<a href="http://tigera-docs.appspot.com//v2.6/reference/calicoctl/resources/ippool">IP Pools</a>
+for other settings that can be edited.)</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- apiVersion: v1
+  kind: ipPool
+  metadata:
+    cidr: 192.168.0.0/16
+  spec:
+    ipip:
+	  enabled: <span class="nb">true
+    </span>nat-outgoing: <span class="nb">true</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Load the modified file.</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>calicoctl replace <span class="nt">-f</span> pool.yaml
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="how-does-calico-maintain-saved-state">“How does Calico maintain saved state?”</h2>
+
+<p>State is saved in a few places in a Calico deployment, depending on
+whether it’s global or local state.</p>
+
+<p>Local state is state that belongs on a single compute host, associated
+with a single running Felix instance (things like kernel routes, tap
+devices etc.). Local state is entirely stored by the Linux kernel on the
+host, with Felix storing it only as a temporary mirror. This makes Felix
+effectively stateless, with the kernel acting as a backing data store on
+one side and etcd as a data source on the other.</p>
+
+<p>If Felix is restarted, it learns current local state by interrogating
+the kernel at start up. It then reads from <code class="highlighter-rouge">etcd</code> all the local state
+which it should have, and updates the kernel to match. This approach has
+strong resiliency benefits, in that if Felix restarts you don’t suddenly
+lose access to your VMs or containers. As long as the Linux kernel is
+running, you’ve still got full functionality.</p>
+
+<p>The bulk of global state is mastered in whatever component hosts the
+plugin.</p>
+
+<ul>
+  <li>In the case of OpenStack, this means a Neutron database. Our
+OpenStack plugin (more strictly a Neutron ML2 driver) queries the
+Neutron database to find out state about the entire deployment. That
+state is then reflected to <code class="highlighter-rouge">etcd</code> and so to Felix.</li>
+  <li>In certain cases, <code class="highlighter-rouge">etcd</code> itself contains the master copy of
+the data. This is because some Docker deployments have an <code class="highlighter-rouge">etcd</code>
+cluster that has the required resiliency characteristics, used to
+store all system configuration -and so <code class="highlighter-rouge">etcd</code> is configured so as to
+be a suitable store for critical data.</li>
+  <li>In other orchestration systems, it may be stored in distributed
+databases, either owned directly by the plugin or by the
+orchestrator itself.</li>
+</ul>
+
+<p>The only other state storage in a Calico network is in the BGP sessions,
+which approximate a distributed database of routes. This BGP state is
+simply a replicated copy of the per-host routes configured by Felix
+based on the global state provided by the orchestrator.</p>
+
+<p>This makes the Calico design very simple, because we store very little
+state. All of our components can be shutdown and restarted without risk,
+because they resynchronize state as necessary. This makes modelling
+their behaviour extremely simple, reducing the complexity of bugs.</p>
+
+<h2 id="i-heard-calico-is-suggesting-layer-2-i-thought-you-were-layer-3-whats-happening">“I heard Calico is suggesting layer 2: I thought you were layer 3! What’s happening?”</h2>
+
+<p>It’s important to distinguish what Calico provides to the workloads
+hosted in a data center (a purely layer 3 network) with what the Calico
+project <em>recommends</em> operators use to build their underlying network
+fabric.</p>
+
+<p>Calico’s core principle is that <em>applications</em> and <em>workloads</em>
+overwhelmingly need only IP connectivity to communicate. For this reason
+we build an IP-forwarded network to connect the tenant applications and
+workloads to each other, and the broader world.</p>
+
+<p>However, the underlying physical fabric obviously needs to be set up
+too. Here, Calico has discussed how both a layer 2 (see
+<a href="http://tigera-docs.appspot.com//v2.6/reference/private-cloud/l2-interconnect-fabric">here</a>)
+or a layer 3 (see
+<a href="http://tigera-docs.appspot.com//v2.6/reference/private-cloud/l3-interconnect-fabric">here</a>)
+fabric
+could be integrated with Calico. This is one of the great strengths of
+the Calico model: it allows the infrastructure to be decoupled from what
+we show to the tenant applications and workloads.</p>
+
+<p>We have some thoughts on different interconnect approaches (as noted
+above), but just because we say that there are layer 2 and layer 3 ways
+of building the fabric, and that those decisions may have an impact on
+route scale, does not mean that Calico is “going back to Ethernet” or
+that we’re recommending layer 2 for tenant applications. In all cases we
+forward on IP packets, no matter what architecture is used to build the
+fabric.</p>
+
+<h2 id="how-do-i-control-policyconnectivity-without-virtualphysical-firewalls">“How do I control policy/connectivity without virtual/physical firewalls?”</h2>
+
+<p>Calico provides an extremely rich security policy model, applying policy at the first and last hop
+of the routed traffic within the Calico network (the source and
+destination compute hosts).</p>
+
+<p>This model is substantially more robust to failure than a centralised
+firewall-based model. In particular, the Calico approach has no
+single-point-of-failure: if the device enforcing the firewall has failed
+then so has one of the workloads involved in the traffic (because the
+firewall is enforced by the compute host).</p>
+
+<p>This model is also extremely amenable to scaling out. Because we have a
+central repository of policy configuration, but apply it at the edges of
+the network (the hosts) where it is needed, we automatically ensure that
+the rules match the topology of the data center. This allows easy
+scaling out, and gives us all the advantages of a single firewall (one
+place to manage the rules), but none of the disadvantages (single points
+of failure, state sharing, hairpinning of traffic, etc.).</p>
+
+<p>Lastly, we decouple the reachability of nodes and the policy applied to
+them. We use BGP to distribute the topology of the network, telling
+every node how to get to every endpoint in case two endpoints need to
+communicate. We use policy to decide <em>if</em> those two nodes should
+communicate, and if so, how. If policy changes and two endpoints should
+now communicate, where before they shouldn’t have, all we have to do is
+update policy: the reachability information does not change. If later
+they should be denied the ability to communicate, the policy is updated
+again, and again the reachability doesn’t have to change.</p>
+
+<h2 id="how-does-calico-interact-with-the-neutron-api">“How does Calico interact with the Neutron API?”</h2>
+
+<p><a href="http://tigera-docs.appspot.com//v2.6/getting-started/openstack/neutron-api">This document</a>
+document goes into extensive detail about how
+various Neutron API calls translate into Calico actions.</p>
+
+<h2 id="why-isnt-the--p-flag-on-docker-run-working-as-expected">Why isn’t the <code class="highlighter-rouge">-p</code> flag on <code class="highlighter-rouge">docker run</code> working as expected?</h2>
+
+<p>The <code class="highlighter-rouge">-p</code> flag tells Docker to set up port mapping to connect a port on the
+Docker host to a port on your container via the <code class="highlighter-rouge">docker0</code> bridge.</p>
+
+<p>If a host’s containers are connected to the <code class="highlighter-rouge">docker0</code> bridge interface, Calico
+would be unable to enforce security rules between workloads on the same host;
+all containers on the bridge would be able to communicate with one other.</p>
+
+<p>You can securely configure port mapping by following our <a href="http://tigera-docs.appspot.com//v2.6/usage/external-connectivity">guide on Exposing
+Container Ports to the Internet</a>.</p>
+
+<h2 id="can-calico-containers-use-any-ip-address-within-a-pool-even-subnet-networkbroadcast-addresses">Can Calico containers use any IP address within a pool, even subnet network/broadcast addresses?</h2>
+
+<p>Yes!  Calico is fully routed, so all IP address within a Calico pool are usable as
+private IP addresses to assign to a workload.  This means addresses commonly
+reserved in a L2 subnet, such as IPv4 addresses ending in .0 or .255, are perfectly
+okay to use.</p>
+
+<h2 id="how-do-i-get-network-traffic-into-and-out-of-my-calico-cluster">How do I get network traffic into and out of my Calico cluster?</h2>
+
+<p>The recommended way to get traffic to/from your Calico network is by peering to
+your existing data center L3 routers using BGP and by assigning globally
+routable IPs (public IPs) to containers that need to be accessed from the internet.
+This allows incoming traffic to be routed directly to your containers without the
+need for NAT.  This flat L3 approach delivers exceptional network scalability
+and performance.</p>
+
+<p>A common scenario is for your container hosts to be on their own
+isolated layer 2 network, like a rack in your server room or an entire data
+center.  Access to that network is via a router, which also is the default
+router for all the container hosts.</p>
+
+<p>If this describes your infrastructure, the
+<a href="http://tigera-docs.appspot.com//v2.6/usage/external-connectivity">External Connectivity tutorial</a> explains in more detail
+what to do. Otherwise, if you have a layer 3 (IP) fabric, then there are
+detailed datacenter networking recommendations given
+in the main <a href="http://tigera-docs.appspot.com//v2.6/reference/private-cloud/l3-interconnect-fabric">this article</a>.
+We’d also encourage you to <a href="https://www.projectcalico.org/contact/">get in touch</a>
+to discuss your environment.</p>
+
+<h3 id="how-can-i-enable-nat-for-outgoing-traffic-from-containers-with-private-ip-addresses">How can I enable NAT for outgoing traffic from containers with private IP addresses?</h3>
+
+<p>If you want to allow containers with private IP addresses to be able to access the
+internet then you can use your data center’s existing outbound NAT capabilities
+(typically provided by the data center’s border routers).</p>
+
+<p>Alternatively you can use Calico’s built in outbound NAT capability by enabling it on any
+Calico IP pool. In this case Calico will perform outbound NAT locally on the compute
+node on which each container is hosted.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat &lt;&lt; EOF | calicoctl apply -f -
+apiVersion: v1
+kind: ipPool
+metadata:
+  cidr: &lt;CIDR&gt;
+spec:
+  nat-outgoing: true
+EOF
+</code></pre></div></div>
+
+<p>Where <code class="highlighter-rouge">&lt;CIDR&gt;</code> is the CIDR of your IP pool, for example <code class="highlighter-rouge">192.168.0.0/16</code>.</p>
+
+<p>Remember: the security profile for the container will need to allow traffic to the
+internet as well.  Refer to the appropriate guide for your orchestration
+system for details on how to configure policy.</p>
+
+<h3 id="how-can-i-enable-nat-for-incoming-traffic-to-containers-with-private-ip-addresses">How can I enable NAT for incoming traffic to containers with private IP addresses?</h3>
+
+<p>As discussed, the recommended way to get traffic to containers that
+need to be accessed from the internet is to give them public IP addresses and
+to configure Calico to peer with the data center’s existing L3 routers.</p>
+
+<p>In cases where this is not possible then you can configure incoming NAT
+(also known as DNAT) on your data centers existing border routers. Alternatively
+you can configure incoming NAT with port mapping on the host on which the container
+is running on.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># First create a new chain called "expose-ports" to hold the NAT rules
+# and jump to that chain from the OUTPUT and PREROUTING chains.
+# The OUTPUT chain is hit by traffic originating on the host itself;
+# The PREROUTING chain is hit by traffic coming from elsewhere.
+iptables -t nat -N expose-ports
+iptables -t nat -A OUTPUT -j expose-ports
+iptables -t nat -A PREROUTING -j expose-ports
+
+# Then, for each port you want to expose, add a rule to the 
+# expose-ports chain, replacing &lt;PUBLIC_IP&gt; with the host IP that you
+# want to use to expose the port and &lt;PUBLIC_PORT&gt; with the host port.
+iptables -t nat -A expose-ports -p tcp --destination &lt;PUBLIC_IP&gt; --dport &lt;PUBLIC_PORT&gt; -j DNAT  --to &lt;CALICO_IP&gt;:&lt;SERVICE_PORT&gt;
+</code></pre></div></div>
+
+<p>For example, you have a container to which you’ve assigned the CALICO_IP 
+of 192.168.7.4, and you have NGINX running on port 8080 inside the container. 
+If you want to expose this service on port 80 and your host has IP 192.0.2.1, 
+then you could run the following commands:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>iptables -t nat -N expose-ports
+iptables -t nat -A OUTPUT -j expose-ports
+iptables -t nat -A PREROUTING -j expose-ports
+
+iptables -t nat -A expose-ports -p tcp --destination 192.0.2.1 --dport 80 -j DNAT --to 192.168.7.4:8080
+</code></pre></div></div>
+
+<p>The commands will need to be run each time the host is restarted.</p>
+
+<p>Remember: the security profile for the container will need to allow traffic to the exposed port as well.
+Refer to the appropriate guide for your orchestration system for details on how to configure policy.</p>
+
+<h3 id="can-i-run-calico-in-a-public-cloud-environment">Can I run Calico in a public cloud environment?</h3>
+
+<p>Yes.  If you are running in a public cloud that doesn’t allow either L3 peering or L2 connectivity between Calico hosts then you can enable <code class="highlighter-rouge">ipip</code> in your Calico IP pool:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> | calicoctl apply -f -
+apiVersion: v1
+kind: ipPool
+metadata:
+  cidr: &lt;CIDR&gt;
+spec:
+  ipip:
+    enabled: true
+  nat-outgoing: true
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<p>Calico will then route traffic between Calico hosts using IP in IP.</p>
+
+<p>In AWS, you disable <code class="highlighter-rouge">Source/Dest. Check</code> instead of using IP in IP as long as all your instances are in the same subnet of your VPC.  This will provide the best performance.  You can disable this with the CLI, or right click the instance in the EC2 console, and <code class="highlighter-rouge">Change Source/Dest. Check</code> from the <code class="highlighter-rouge">Networking</code> submenu.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aws ec2 modify-instance-attribute <span class="nt">--instance-id</span> &lt;INSTANCE_ID&gt; <span class="nt">--source-dest-check</span> <span class="s2">"{</span><span class="se">\"</span><span class="s2">Value</span><span class="se">\"</span><span class="s2">: false}"</span>
+
+<span class="nb">cat</span> <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh"> | calicoctl apply -f -
+apiVersion: v1
+kind: ipPool
+metadata:
+  cidr: &lt;CIDR&gt;
+spec:
+  nat-outgoing: true
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+              
+              <!-- BOTTOM DOCUMENTATION PAGE NAVBAR -->
+              <div style="margin-top: 60px; margin-bottom: 40px; padding-top: 20px; border-top: 1px solid #999; text-align: left; color: #999;">Rate this Page: <div class="rw-ui-container" style="margin-top: -5px;"></div> <a href="https://www.projectcalico.org/contact?type=docs&file=v2.6/usage/troubleshooting/faq.md" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> Provide Feedback</a> <a href="https://www.projectcalico.org/community#slack" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-slack" aria-hidden="true"></i> Get Help via Slack</a> <a href="https://www.projectcalico.org/mvp" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-trophy" aria-hidden="true"></i> Ask our MVPs</a> <a href="https:/tigera.io/training" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Training</a></div>
+              <!-- END BOTTOM DOCUMENTATION PAGE NAVBAR -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Start Visual Website Optimizer Asynchronous Code -->
+    <script type='text/javascript'>
+      var _vwo_code=(function(){
+      var account_id=287573,
+      settings_tolerance=2000,
+      library_tolerance=2500,
+      use_existing_jquery=false,
+      /* DO NOT EDIT BELOW THIS LINE */
+      f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+    </script>
+    <!-- End Visual Website Optimizer Asynchronous Code -->
+    <!-- DOCUMENTATION RATING ANALYTICS -->
+   <script type="text/javascript">(function(d, t, e, m){
+    // Async Rating-Widget initialization.
+    window.RW_Async_Init = function(){
+        RW.init({
+            huid: "368439",
+            uid: "33da22c0dff384767b5074aaf10ebc50",
+            source: "website",
+            options: {
+                "advanced": {
+					"font": {
+						"color": "#999999"
+					},
+                    "layout": {
+                        "align": {
+                            "hor": "left"
+                        }
+                    },
+                    "text": {
+                        "rateThis": "Rate this"
+                    }
+                },
+				"label": {
+					"background": "#FFFFFF"
+				},
+				"reVote": true,
+				"showInfo": false,
+				/*"showTooltip": false,*/
+				"hideRecommendations": false,
+				"showReport": false,
+				"showLoader": false,
+                "style": "oxygen",
+                "isDummy": false
+            } 
+        });
+        RW.render();
+    };
+        // Append Rating-Widget JavaScript library.
+    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
+        l = d.location, ck = "Y" + t.getFullYear() + 
+        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
+        f = ((l.search.indexOf("DBG=") > -1) ? "" : ".min"),
+        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
+    if (d.getElementById(id)) return;              
+    rw = d.createElement(e);
+    rw.id = id; rw.async = true; rw.type = "text/javascript";
+    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
+    s.parentNode.insertBefore(rw, s);
+    }(document, new Date(), "script", "rating-widget.com/"));</script>
+    <!-- END DOCUMENTATION RATING ANALYTICS -->
+  </body>
+</html>

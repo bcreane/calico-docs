@@ -1,0 +1,1377 @@
+<!-- Set this_pages_navbar  -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="http://tigera-docs.appspot.com//images/favicon.png">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto+Mono' type='text/css'>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/style.css"/>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/plugins/offcanvas.css"/>
+    <link href="https://www.projectcalico.org/wp-content/themes/dante/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://tigera-docs.appspot.com//js/jquery-2.2.0.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/bootstrap/bootstrap.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/script.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-52125893-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Configuring the Calico CNI plugins</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="Configuring the Calico CNI plugins" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://docs.projectcalico.org/v3.0/reference/cni-plugin/configuration" />
+<meta property="og:url" content="https://docs.projectcalico.org/v3.0/reference/cni-plugin/configuration" />
+<script type="application/ld+json">
+{"headline":"Configuring the Calico CNI plugins","@type":"WebPage","url":"https://docs.projectcalico.org/v3.0/reference/cni-plugin/configuration","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <section>
+      <nav id="toplevel-nav" class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <!-- Hamburger menu for mobile -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tigera-navbar" aria-expanded="false" aria-controls="tigera-navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Left brand image -->
+            <a class="navbar-brand" href="https://projectcalico.org/">
+              <img alt="Brand" src="http://tigera-docs.appspot.com//images/brand.png">
+            </a>
+          </div>
+          <div id="tigera-navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://projectcalico.org">Home</a></li>
+              <li class="active"><a href="https://projectcalico.org/resources"><span>Resources</span></a>
+                <ul>
+                    <li><a href="http://tigera-docs.appspot.com//latest/getting-started/"><i class="fa fa-tachometer" aria-hidden="true"></i> &nbsp; Getting Started</a></li>
+                    <li><a href="http://tigera-docs.appspot.com/"><i class="fa fa-book" aria-hidden="true"></i> &nbsp; Documentation</a></li>
+                    <!--<li><a href="https://www.projectcalico.org/tutorials"><i class="fa fa-file-code-o" aria-hidden="true"></i> &nbsp; Tutorials &amp; Examples</a></li>
+                    <li><a href=""><i class="fa fa-paper-plane-o" aria-hidden="true"></i> &nbsp; Online Workshops</a></li>-->
+                    <li><a href="https://www.projectcalico.org/videos"><i class="fa fa-video-camera" aria-hidden="true"></i> &nbsp; Videos &amp; Webinars</a></li>
+                    <li><a href="https://www.projectcalico.org/training"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp; Training</a></li>
+                    <li><a href="http://tigera-docs.appspot.com//latest/releases/"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp; Releases</a></li>
+                    <!-- <li><a href="/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li> -->
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/community">Community</a>
+                <ul>
+                    <li><a href="https://slack.projectcalico.org/"><i class="fa fa-slack" aria-hidden="true"></i> &nbsp; Slack</a></li>
+                    <!--<li><a href="https://stackoverflow.com/questions/tagged/project-calico" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i> &nbsp; StackOverflow</a></li>-->
+                    <li><a href="https://www.projectcalico.org/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li>
+                    <li><a href="https://www.projectcalico.org/community#events"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp; Upcoming Events</a></li>
+                    <li><a href="https://www.projectcalico.org/newsletters"><i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp; Newsletter</a></li>
+                    <li><a href="https://github.com/projectcalico" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> &nbsp; GitHub</a></li> 
+                    <li><a href="https://www.projectcalico.org/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i> &nbsp; Jobs</a></li>
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/mvp" style="font-weight: bold;">MVP</a></li>
+              <li><a href="https://www.projectcalico.org/support">Support</a></li>
+              <li class="hidden-xs"><a href="https://www.projectcalico.org/support">
+                <img class="desktopImage" width="30" align="absmiddle" src="https://www.projectcalico.org/images/tigera_trans_sm.png" alt="Tigera"></a>
+              </li>
+            </ul>
+            <form class="navbar-form visible-xs">
+              <ul class="nav navbar-nav navbar-right">
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//master/introduction">Introduction</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//master/getting-started">Getting Started</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//master/usage">Usage</a>
+                  </li>
+                
+                  <li  class="active">
+                    <a href="http://tigera-docs.appspot.com//master/reference">Reference</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//master/releases">Releases</a>
+                  </li>
+                
+              </ul>
+            </form>
+            <ul class="visible-xs nav navbar-nav navbar-right">
+             <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (nightly)<span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                 <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6 (latest)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (beta)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                 <li role="separator" class="divider"></li>
+               </ul>
+             </li>
+           </ul>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-inverse navbar-collapse collapse">
+          <div class="container">
+            <ul class="nav navbar-nav">
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//master/introduction"><span>Introduction</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//master/getting-started"><span>Getting Started</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//master/usage"><span>Usage</span></a>
+                </li>
+              
+                <li class="active">
+                  <a href="http://tigera-docs.appspot.com//master/reference"><span>Reference</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//master/releases"><span>Releases</span></a>
+                </li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (nightly)<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                   <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (latest)</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-sm-0"></div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+          <p class="pull-left visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+            <div class="row">
+              <script>
+                (function() {
+                  var cx = '015028447179048192876:xjzskk7awwe';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+                })();
+              </script>
+              <gcse:search></gcse:search>
+            </div>
+            <div id="sidebar">
+            	
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Reference" href="http://tigera-docs.appspot.com//master/reference/">
+        Reference
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoctl" aria-expanded="false" aria-controls="nav-calicoctl">
+          calicoctl
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoctl">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//master/reference/calicoctl/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoctl-commandreference" aria-expanded="false" aria-controls="nav-calicoctl-commandreference">
+          Command Reference
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoctl-commandreference">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//master/reference/calicoctl/commands/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="get" href="http://tigera-docs.appspot.com//master/reference/calicoctl/commands/get">
+        get
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="create" href="http://tigera-docs.appspot.com//master/reference/calicoctl/commands/create">
+        create
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="replace" href="http://tigera-docs.appspot.com//master/reference/calicoctl/commands/replace">
+        replace
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="apply" href="http://tigera-docs.appspot.com//master/reference/calicoctl/commands/apply">
+        apply
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="delete" href="http://tigera-docs.appspot.com//master/reference/calicoctl/commands/delete">
+        delete
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="convert" href="http://tigera-docs.appspot.com//master/reference/calicoctl/commands/convert">
+        convert
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoctl-commandreference-ipam" aria-expanded="false" aria-controls="nav-calicoctl-commandreference-ipam">
+          ipam
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoctl-commandreference-ipam">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//master/reference/calicoctl/commands/ipam/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="release" href="http://tigera-docs.appspot.com//master/reference/calicoctl/commands/ipam/release">
+        release
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="show" href="http://tigera-docs.appspot.com//master/reference/calicoctl/commands/ipam/show">
+        show
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoctl-commandreference-node" aria-expanded="false" aria-controls="nav-calicoctl-commandreference-node">
+          node
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoctl-commandreference-node">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//master/reference/calicoctl/commands/node/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="run" href="http://tigera-docs.appspot.com//master/reference/calicoctl/commands/node/run">
+        run
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="status" href="http://tigera-docs.appspot.com//master/reference/calicoctl/commands/node/status">
+        status
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="diags" href="http://tigera-docs.appspot.com//master/reference/calicoctl/commands/node/diags">
+        diags
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="checksystem" href="http://tigera-docs.appspot.com//master/reference/calicoctl/commands/node/checksystem">
+        checksystem
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="version" href="http://tigera-docs.appspot.com//master/reference/calicoctl/commands/version">
+        version
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoctl-resourcedefinitions" aria-expanded="false" aria-controls="nav-calicoctl-resourcedefinitions">
+          Resource Definitions
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoctl-resourcedefinitions">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//master/reference/calicoctl/resources/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="BGP Peer" href="http://tigera-docs.appspot.com//master/reference/calicoctl/resources/bgppeer">
+        BGP Peer
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="BGP Configuration" href="http://tigera-docs.appspot.com//master/reference/calicoctl/resources/bgpconfig">
+        BGP Configuration
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Felix Configuration" href="http://tigera-docs.appspot.com//master/reference/calicoctl/resources/felixconfig">
+        Felix Configuration
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Global Network Set" href="http://tigera-docs.appspot.com//master/reference/calicoctl/resources/globalnetworkset">
+        Global Network Set
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Host Endpoint" href="http://tigera-docs.appspot.com//master/reference/calicoctl/resources/hostendpoint">
+        Host Endpoint
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="IP Pool" href="http://tigera-docs.appspot.com//master/reference/calicoctl/resources/ippool">
+        IP Pool
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Node" href="http://tigera-docs.appspot.com//master/reference/calicoctl/resources/node">
+        Node
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Network Policy" href="http://tigera-docs.appspot.com//master/reference/calicoctl/resources/networkpolicy">
+        Network Policy
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Global Network Policy" href="http://tigera-docs.appspot.com//master/reference/calicoctl/resources/globalnetworkpolicy">
+        Global Network Policy
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Profile" href="http://tigera-docs.appspot.com//master/reference/calicoctl/resources/profile">
+        Profile
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Workload Endpoint" href="http://tigera-docs.appspot.com//master/reference/calicoctl/resources/workloadendpoint">
+        Workload Endpoint
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-caliconode" aria-expanded="false" aria-controls="nav-caliconode">
+          calico/node
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-caliconode">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuration" href="http://tigera-docs.appspot.com//master/reference/node/configuration">
+        Configuration
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-felix" aria-expanded="false" aria-controls="nav-felix">
+          felix
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-felix">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuration" href="http://tigera-docs.appspot.com//master/reference/felix/configuration">
+        Configuration
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Prometheus Statistics" href="http://tigera-docs.appspot.com//master/reference/felix/prometheus">
+        Prometheus Statistics
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Calico CNI Plugins" href="http://tigera-docs.appspot.com//master/reference/cni-plugin/configuration">
+        Calico CNI Plugins
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Calico Kubernetes Controllers" href="http://tigera-docs.appspot.com//master/reference/kube-controllers/configuration">
+        Calico Kubernetes Controllers
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-deployingonpubliccloud" aria-expanded="false" aria-controls="nav-deployingonpubliccloud">
+          Deploying on Public Cloud
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-deployingonpubliccloud">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="AWS" href="http://tigera-docs.appspot.com//master/reference/public-cloud/aws">
+        AWS
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Azure" href="http://tigera-docs.appspot.com//master/reference/public-cloud/azure">
+        Azure
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="GCE" href="http://tigera-docs.appspot.com//master/reference/public-cloud/gce">
+        GCE
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-deployingonprivatecloud" aria-expanded="false" aria-controls="nav-deployingonprivatecloud">
+          Deploying on Private Cloud
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-deployingonprivatecloud">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Calico Over Ethernet Fabrics" href="http://tigera-docs.appspot.com//master/reference/private-cloud/l2-interconnect-fabric">
+        Calico Over Ethernet Fabrics
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Calico Over IP Fabrics" href="http://tigera-docs.appspot.com//master/reference/private-cloud/l3-interconnect-fabric">
+        Calico Over IP Fabrics
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-architecture" aria-expanded="false" aria-controls="nav-architecture">
+          Architecture
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-architecture">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Introduction" href="http://tigera-docs.appspot.com//master/reference/architecture/">
+        Introduction
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="calico/node" href="http://tigera-docs.appspot.com//master/reference/architecture/components">
+        calico/node
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Data Path" href="http://tigera-docs.appspot.com//master/reference/architecture/data-path">
+        Data Path
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-advanced" aria-expanded="false" aria-controls="nav-advanced">
+          Advanced
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-advanced">
+          
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-advanced-configuringetcdrbac" aria-expanded="false" aria-controls="nav-advanced-configuringetcdrbac">
+          Configuring etcd RBAC
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-advanced-configuringetcdrbac">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//master/reference/advanced/etcd-rbac/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Certificate Generation" href="http://tigera-docs.appspot.com//master/reference/advanced/etcd-rbac/certificate-generation">
+        Certificate Generation
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="User and Role Creations" href="http://tigera-docs.appspot.com//master/reference/advanced/etcd-rbac/users-and-roles">
+        User and Role Creations
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Kubernetes" href="http://tigera-docs.appspot.com//master/reference/advanced/etcd-rbac/kubernetes">
+        Kubernetes
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Advanced Kubernetes" href="http://tigera-docs.appspot.com//master/reference/advanced/etcd-rbac/kubernetes-advanced">
+        Advanced Kubernetes
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Etcd paths for Calico components" href="http://tigera-docs.appspot.com//master/reference/advanced/etcd-rbac/calico-etcdv3-paths">
+        Etcd paths for Calico components
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="System Requirements" href="http://tigera-docs.appspot.com//master/reference/requirements">
+        System Requirements
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Repo Structure" href="http://tigera-docs.appspot.com//master/reference/repo-structure">
+        Repo Structure
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Get Involved" href="http://tigera-docs.appspot.com//master/reference/involved">
+        Get Involved
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="License" href="http://tigera-docs.appspot.com//master/reference/license">
+        License
+      </a>
+    </div>
+  
+
+
+			</div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9">
+            <div id="content-main">
+              <!-- TOP DOCUMENTATION PAGE NAVBAR -->
+              <div style="text-align: left; padding: 18px 0 9px 0; min-width: 500px; overflow-x: hidden;">
+              
+              <a data-proofer-ignore href="https://github.com/projectcalico/calico/tree/master/master/reference/cni-plugin/configuration.md" style="color: #999; text-decoration: none; float: right;" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit this page</a></div>
+              <!-- END TOP DOCUMENTATION PAGE NAVBAR -->
+              
+  <div class="alert alert-warning" role="alert">
+    <strong>Warning:</strong> You are viewing the master docs. <a href="http://tigera-docs.appspot.com//latest">Click here to view the docs for the latest release.</a>
+  </div>
+
+
+              <h1>Configuring the Calico CNI plugins</h1>
+              <p>The Calico CNI plugin is configured through the standard CNI 
+<a href="https://github.com/containernetworking/cni/blob/master/SPEC.md#network-configuration">configuration mechanism</a></p>
+
+<p>A minimal configuration file that uses Calico for networking 
+and IPAM looks like this</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any_name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cniVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ipam"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico-ipam"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>If the <code class="highlighter-rouge">calico/node</code> container on a node registered with a <code class="highlighter-rouge">NODENAME</code> other than the node hostname, the CNI plugin on this node must be configured with the same <code class="highlighter-rouge">nodename</code>:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any_name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nodename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;NODENAME&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ipam"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico-ipam"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Additional configuration can be added as detailed below.</p>
+
+<h2 id="generic">Generic</h2>
+
+<h3 id="datastore-type">Datastore type</h3>
+
+<p>The following option allows configuration of the Calico datastore type.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">datastore_type</code> (default: etcdv3)</li>
+</ul>
+
+<p>The Calico CNI plugin supports the following datastore types:</p>
+
+<ul>
+  <li>etcdv3 (default)</li>
+  <li>kubernetes</li>
+</ul>
+
+<h3 id="etcd-location">Etcd location</h3>
+
+<p>The following options are valid when <code class="highlighter-rouge">datastore_type</code> is <code class="highlighter-rouge">etcdv3</code>.</p>
+
+<p>Configure access to your etcd cluster using the following options</p>
+
+<ul>
+  <li><code class="highlighter-rouge">etcd_endpoints</code> (no default. Format is comma separated list of etcd servers e.g. <code class="highlighter-rouge">http://1.2.3.4:2379,http://5.6.7.8:2379</code>)</li>
+  <li><code class="highlighter-rouge">etcd_key_file</code> (no default. Format is an absolute path to a file)</li>
+  <li><code class="highlighter-rouge">etcd_cert_file</code> (no default. Format is an absolute path to a file)</li>
+  <li><code class="highlighter-rouge">etcd_ca_cert_file</code> (no default. Format is an absolute path to a file)</li>
+</ul>
+
+<p>The following deprecated options are also supported</p>
+
+<ul>
+  <li><code class="highlighter-rouge">etcd_authority</code> (default is <code class="highlighter-rouge">127.0.0.1:2379</code>)
+    <ul>
+      <li>If <code class="highlighter-rouge">etcd_authority</code> is set at the same time as <code class="highlighter-rouge">etcd_endpoints</code> then <code class="highlighter-rouge">etcd_endpoints</code> is used.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">etcd_scheme</code> (default is <code class="highlighter-rouge">http</code>)</li>
+</ul>
+
+<h3 id="logging">Logging</h3>
+
+<ul>
+  <li>Logging is always to <code class="highlighter-rouge">stderr</code></li>
+  <li>Logging level can be controlled by setting <code class="highlighter-rouge">"log_level"</code> in the netconf. Allowed levels are
+    <ul>
+      <li><code class="highlighter-rouge">WARNING</code> - the default.</li>
+      <li><code class="highlighter-rouge">INFO</code> - Enables some additional logging from the CNI plugin.</li>
+      <li><code class="highlighter-rouge">DEBUG</code> - Enables lots of debug logging from both the CNI plugin and the underlying libcalico library.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any_name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cniVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"log_level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBUG"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ipam"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico-ipam"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="ipam">IPAM</h3>
+
+<p>When using Calico IPAM, the following flags determine what IP addresses should be assigned. NOTE: These flags are strings and not boolean values.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">assign_ipv4</code> (default: <code class="highlighter-rouge">"true"</code>)</li>
+  <li><code class="highlighter-rouge">assign_ipv6</code> (default: <code class="highlighter-rouge">"false"</code>)</li>
+</ul>
+
+<p>A specific IP address can be chosen by using <a href="https://github.com/appc/cni/blob/master/SPEC.md#parameters"><code class="highlighter-rouge">CNI_ARGS</code></a> and setting <code class="highlighter-rouge">IP</code> to the desired value.</p>
+
+<p>By default, Calico IPAM will assign IP addresses from all the available IP pools.</p>
+
+<p>Optionally, the list of possible IPv4 and IPv6 pools can also be specified via the following properties:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">ipv4_pools</code>: An array of CIDR strings (e.g. <code class="highlighter-rouge">"ipv4_pools": ["10.0.0.0/24", "20.0.0.0/16"]</code>)</li>
+  <li><code class="highlighter-rouge">ipv6_pools</code>: An array of CIDR strings (e.g. <code class="highlighter-rouge">"ipv6_pools": ["2001:db8::1/120"]</code>)</li>
+</ul>
+
+<p>Example CNI config:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any_name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cniVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ipam"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico-ipam"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"assign_ipv4"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"assign_ipv6"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ipv4_pools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"10.0.0.0/24"</span><span class="p">,</span><span class="w"> </span><span class="s2">"20.0.0.0/16"</span><span class="p">],</span><span class="w">
+        </span><span class="s2">"ipv6_pools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"2001:db8::1/120"</span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<blockquote class="alert alert-info">
+  <p><strong>Note</strong>: <code class="highlighter-rouge">ipv6_pools</code> will be respected only when <code class="highlighter-rouge">assign_ipv6</code> is set to <code class="highlighter-rouge">"true"</code>.</p>
+</blockquote>
+
+<p>Any IP pools specified in the CNI config must have already been created. It is an error to specify IP pools in the config that do not exist.</p>
+
+<h2 id="kubernetes-specific">Kubernetes specific</h2>
+
+<p>When using the Calico CNI plugin with Kubernetes, the plugin must be able to access the Kubernetes API server in order to find the labels assigned to the Kubernetes pods. The recommended way to configure access is through a <code class="highlighter-rouge">kubeconfig</code> file specified in the <code class="highlighter-rouge">kubernetes</code> section of the network config. e.g.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any_name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cniVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"kubernetes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"kubeconfig"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/path/to/kubeconfig"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"ipam"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico-ipam"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>As a convenience, the API location location can also be configured directly, e.g.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any_name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cniVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"kubernetes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"k8s_api_root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://127.0.0.1:8080"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"ipam"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico-ipam"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="enabling-kubernetes-policy">Enabling Kubernetes Policy</h3>
+
+<p>If you wish to use the Kubernetes <code class="highlighter-rouge">NetworkPolicy</code> resource then you must set a policy type in the network config.
+There is a single supported policy type, <code class="highlighter-rouge">k8s</code>. When set,
+you must also run calico/kube-controllers with the policy, profile, and workloadendpoint controllers enabled.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any_name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cniVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"k8s"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"kubernetes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"kubeconfig"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/path/to/kubeconfig"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"ipam"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico-ipam"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>When using <code class="highlighter-rouge">type: k8s</code>, the Calico CNI plugin requires read-only Kubernetes API access to the <code class="highlighter-rouge">Pods</code> resource in all namespaces.</p>
+
+<p>Previous versions of the plugin (<code class="highlighter-rouge">v1.3.1</code> and earlier) supported an alternative type called <a href="https://github.com/projectcalico/calicoctl/blob/v0.20.0/docs/cni/kubernetes/AnnotationPolicy.md"><code class="highlighter-rouge">k8s-annotations</code></a> This uses annotations on pods to specify network policy but is no longer supported.</p>
+
+<h3 id="deprecated-ways-of-specifying-kubernetes-api-access-details">Deprecated ways of specifying Kubernetes API access details</h3>
+
+<p>From the examples above, you can see that the <code class="highlighter-rouge">k8s_api_root</code> can appear in either the <code class="highlighter-rouge">kubernetes</code> or <code class="highlighter-rouge">policy</code> configuration blocks.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">k8s_api_root</code> (default <code class="highlighter-rouge">http://127.0.0.1:8080</code>)</li>
+</ul>
+
+<p>In addition, the following methods are supported in the <code class="highlighter-rouge">policy</code> section of the CNI network config only. None of them have default values.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">k8s_auth_token</code></li>
+  <li><code class="highlighter-rouge">k8s_client_certificate</code></li>
+  <li><code class="highlighter-rouge">k8s_client_key</code></li>
+  <li><code class="highlighter-rouge">k8s_certificate_authority</code></li>
+</ul>
+
+<h2 id="ipam-1">IPAM</h2>
+
+<p>When using the CNI <code class="highlighter-rouge">host-local</code> IPAM plugin, a special value <code class="highlighter-rouge">usePodCidr</code> is allowed for the subnet field.  This tells the plugin to determine the subnet to use from the Kubernetes API based on the Node.podCIDR field.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">node_name</code>
+    <ul>
+      <li>The node name to use when looking up the <code class="highlighter-rouge">usePodCidr</code> value (defaults to current hostname)</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any_name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cniVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"kubernetes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"kubeconfig"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/path/to/kubeconfig"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"node_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node-name-in-k8s"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"ipam"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"host-local"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subnet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usePodCidr"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>When making use of the <code class="highlighter-rouge">usePodCidr</code> option, the Calico CNI plugin requires read-only Kubernetes API access to the <code class="highlighter-rouge">Nodes</code> resource.</p>
+
+<h3 id="ipam-manipulation-with-kubernetes-annotations">IPAM Manipulation with Kubernetes Annotations</h3>
+
+<h4 id="specifying-ip-pools-on-a-per-pod-basis">Specifying IP pools on a per-Pod basis</h4>
+
+<p>In addition to specifying IP pools in the CNI config as discussed above, Calico IPAM supports specifying IP pools per-Pod using the following <a href="https://kubernetes.io/docs/user-guide/annotations/">Kubernetes annotations</a>.</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">cni.projectcalico.org/ipv4pools</code>: A list of configured IPv4 Pools from which to choose an address for the Pod.</p>
+
+    <p>Example:</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">annotations</span><span class="pi">:</span>
+    <span class="s2">"</span><span class="s">cni.projectcalico.org/ipv4pools"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">[</span><span class="se">\"</span><span class="s">192.168.0.0/16</span><span class="se">\"</span><span class="s">]"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">cni.projectcalico.org/ipv6pools</code>: A list of configured IPv6 Pools from which to choose an address for the Pod.</p>
+
+    <p>Example:</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">annotations</span><span class="pi">:</span>
+    <span class="s2">"</span><span class="s">cni.projectcalico.org/ipv6pools"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">[</span><span class="se">\"</span><span class="s">2001:db8::1/120</span><span class="se">\"</span><span class="s">]"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>If provided, these IP pools will override any IP pools specified in the CNI config.</p>
+
+<blockquote class="alert alert-info">
+  <p><strong>Note</strong>: This requires the IP pools to exist before <code class="highlighter-rouge">ipv4pools</code> or
+<code class="highlighter-rouge">ipv6pools</code> annotations are used. Requesting a subset of an IP pool
+is not supported. IP pools requested in the annotations must exactly
+match a configured <a href="http://tigera-docs.appspot.com//master/reference/calicoctl/resources/ippool">IPPool</a> resource.</p>
+</blockquote>
+
+<h4 id="requesting-a-specific-ip-address">Requesting a Specific IP address</h4>
+
+<p>You can also request a specific IP address through <a href="https://kubernetes.io/docs/user-guide/annotations/">Kubernetes annotations</a> with Calico IPAM.
+There are two annotations to request a specific IP address:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">cni.projectcalico.org/ipAddrs</code>: A list of IPv4 and/or IPv6 addresses to assign to the Pod. The requested IP addresses will be assigned from Calico IPAM and must exist within a configured IP pool.</p>
+
+    <p>Example:</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">annotations</span><span class="pi">:</span>
+      <span class="s2">"</span><span class="s">cni.projectcalico.org/ipAddrs"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">[</span><span class="se">\"</span><span class="s">192.168.0.1</span><span class="se">\"</span><span class="s">]"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">cni.projectcalico.org/ipAddrsNoIpam</code>: A list of IPv4 and/or IPv6 addresses to assign to the Pod, bypassing IPAM. Any IP conflicts and routing have to be taken care of manually or by some other system.
+Calico will only distribute routes to a Pod if its IP address falls within a Calico IP pool. If you assign an IP address that is not in a Calico IP pool, you must ensure that routing to that IP address is taken care of through another mechanism.</p>
+
+    <p>Example:</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">annotations</span><span class="pi">:</span>
+      <span class="s2">"</span><span class="s">cni.projectcalico.org/ipAddrsNoIpam"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">[</span><span class="se">\"</span><span class="s">10.0.0.1</span><span class="se">\"</span><span class="s">]"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote class="alert alert-info">
+  <p><strong>Note</strong>:</p>
+  <ul>
+    <li>The <code class="highlighter-rouge">ipAddrs</code> and <code class="highlighter-rouge">ipAddrsNoIpam</code> annotations can’t be used together.</li>
+    <li>You can only specify one IPv4/IPv6 or one IPv4 and one IPv6 address with these annotations.</li>
+    <li>When <code class="highlighter-rouge">ipAddrs</code> or <code class="highlighter-rouge">ipAddrsNoIpam</code> is used with <code class="highlighter-rouge">ipv4pools</code> or <code class="highlighter-rouge">ipv6pools</code>, <code class="highlighter-rouge">ipAddrs</code> / <code class="highlighter-rouge">ipAddrsNoIpam</code> take priority.</li>
+  </ul>
+</blockquote>
+
+              
+              <!-- BOTTOM DOCUMENTATION PAGE NAVBAR -->
+              <div style="margin-top: 60px; margin-bottom: 40px; padding-top: 20px; border-top: 1px solid #999; text-align: left; color: #999;">Rate this Page: <div class="rw-ui-container" style="margin-top: -5px;"></div> <a href="https://www.projectcalico.org/contact?type=docs&file=master/reference/cni-plugin/configuration.md" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> Provide Feedback</a> <a href="https://www.projectcalico.org/community#slack" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-slack" aria-hidden="true"></i> Get Help via Slack</a> <a href="https://www.projectcalico.org/mvp" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-trophy" aria-hidden="true"></i> Ask our MVPs</a> <a href="https:/tigera.io/training" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Training</a></div>
+              <!-- END BOTTOM DOCUMENTATION PAGE NAVBAR -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Start Visual Website Optimizer Asynchronous Code -->
+    <script type='text/javascript'>
+      var _vwo_code=(function(){
+      var account_id=287573,
+      settings_tolerance=2000,
+      library_tolerance=2500,
+      use_existing_jquery=false,
+      /* DO NOT EDIT BELOW THIS LINE */
+      f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+    </script>
+    <!-- End Visual Website Optimizer Asynchronous Code -->
+    <!-- DOCUMENTATION RATING ANALYTICS -->
+   <script type="text/javascript">(function(d, t, e, m){
+    // Async Rating-Widget initialization.
+    window.RW_Async_Init = function(){
+        RW.init({
+            huid: "368439",
+            uid: "33da22c0dff384767b5074aaf10ebc50",
+            source: "website",
+            options: {
+                "advanced": {
+					"font": {
+						"color": "#999999"
+					},
+                    "layout": {
+                        "align": {
+                            "hor": "left"
+                        }
+                    },
+                    "text": {
+                        "rateThis": "Rate this"
+                    }
+                },
+				"label": {
+					"background": "#FFFFFF"
+				},
+				"reVote": true,
+				"showInfo": false,
+				/*"showTooltip": false,*/
+				"hideRecommendations": false,
+				"showReport": false,
+				"showLoader": false,
+                "style": "oxygen",
+                "isDummy": false
+            } 
+        });
+        RW.render();
+    };
+        // Append Rating-Widget JavaScript library.
+    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
+        l = d.location, ck = "Y" + t.getFullYear() + 
+        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
+        f = ((l.search.indexOf("DBG=") > -1) ? "" : ".min"),
+        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
+    if (d.getElementById(id)) return;              
+    rw = d.createElement(e);
+    rw.id = id; rw.async = true; rw.type = "text/javascript";
+    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
+    s.parentNode.insertBefore(rw, s);
+    }(document, new Date(), "script", "rating-widget.com/"));</script>
+    <!-- END DOCUMENTATION RATING ANALYTICS -->
+  </body>
+</html>

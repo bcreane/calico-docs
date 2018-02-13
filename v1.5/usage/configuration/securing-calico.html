@@ -1,0 +1,709 @@
+<!-- Set this_pages_navbar  -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="http://tigera-docs.appspot.com//images/favicon.png">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto+Mono' type='text/css'>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/style.css"/>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/plugins/offcanvas.css"/>
+    <link href="https://www.projectcalico.org/wp-content/themes/dante/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://tigera-docs.appspot.com//js/jquery-2.2.0.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/bootstrap/bootstrap.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/script.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-52125893-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Securing Calico</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="Securing Calico" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://docs.projectcalico.org/http://tigera-docs.appspot.com/v1.5/usage/configuration/securing-calico" />
+<meta property="og:url" content="https://docs.projectcalico.org/http://tigera-docs.appspot.com/v1.5/usage/configuration/securing-calico" />
+<script type="application/ld+json">
+{"headline":"Securing Calico","@type":"WebPage","url":"https://docs.projectcalico.org/http://tigera-docs.appspot.com/v1.5/usage/configuration/securing-calico","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <section>
+      <nav id="toplevel-nav" class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <!-- Hamburger menu for mobile -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tigera-navbar" aria-expanded="false" aria-controls="tigera-navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Left brand image -->
+            <a class="navbar-brand" href="https://projectcalico.org/">
+              <img alt="Brand" src="http://tigera-docs.appspot.com//images/brand.png">
+            </a>
+          </div>
+          <div id="tigera-navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://projectcalico.org">Home</a></li>
+              <li class="active"><a href="https://projectcalico.org/resources"><span>Resources</span></a>
+                <ul>
+                    <li><a href="http://tigera-docs.appspot.com//latest/getting-started/"><i class="fa fa-tachometer" aria-hidden="true"></i> &nbsp; Getting Started</a></li>
+                    <li><a href="http://tigera-docs.appspot.com/"><i class="fa fa-book" aria-hidden="true"></i> &nbsp; Documentation</a></li>
+                    <!--<li><a href="https://www.projectcalico.org/tutorials"><i class="fa fa-file-code-o" aria-hidden="true"></i> &nbsp; Tutorials &amp; Examples</a></li>
+                    <li><a href=""><i class="fa fa-paper-plane-o" aria-hidden="true"></i> &nbsp; Online Workshops</a></li>-->
+                    <li><a href="https://www.projectcalico.org/videos"><i class="fa fa-video-camera" aria-hidden="true"></i> &nbsp; Videos &amp; Webinars</a></li>
+                    <li><a href="https://www.projectcalico.org/training"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp; Training</a></li>
+                    <li><a href="http://tigera-docs.appspot.com//latest/releases/"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp; Releases</a></li>
+                    <!-- <li><a href="/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li> -->
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/community">Community</a>
+                <ul>
+                    <li><a href="https://slack.projectcalico.org/"><i class="fa fa-slack" aria-hidden="true"></i> &nbsp; Slack</a></li>
+                    <!--<li><a href="https://stackoverflow.com/questions/tagged/project-calico" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i> &nbsp; StackOverflow</a></li>-->
+                    <li><a href="https://www.projectcalico.org/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li>
+                    <li><a href="https://www.projectcalico.org/community#events"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp; Upcoming Events</a></li>
+                    <li><a href="https://www.projectcalico.org/newsletters"><i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp; Newsletter</a></li>
+                    <li><a href="https://github.com/projectcalico" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> &nbsp; GitHub</a></li> 
+                    <li><a href="https://www.projectcalico.org/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i> &nbsp; Jobs</a></li>
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/mvp" style="font-weight: bold;">MVP</a></li>
+              <li><a href="https://www.projectcalico.org/support">Support</a></li>
+              <li class="hidden-xs"><a href="https://www.projectcalico.org/support">
+                <img class="desktopImage" width="30" align="absmiddle" src="https://www.projectcalico.org/images/tigera_trans_sm.png" alt="Tigera"></a>
+              </li>
+            </ul>
+            <form class="navbar-form visible-xs">
+              <ul class="nav navbar-nav navbar-right">
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v1.5/introduction">Introduction</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v1.5/getting-started">Getting Started</a>
+                  </li>
+                
+                  <li  class="active">
+                    <a href="http://tigera-docs.appspot.com//v1.5/usage">Usage</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v1.5/reference">Reference</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v1.5/releases">Releases</a>
+                  </li>
+                
+              </ul>
+            </form>
+            <ul class="visible-xs nav navbar-nav navbar-right">
+             <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (v1.5)<span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                 <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6 (latest)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (beta)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                 <li role="separator" class="divider"></li>
+               </ul>
+             </li>
+           </ul>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-inverse navbar-collapse collapse">
+          <div class="container">
+            <ul class="nav navbar-nav">
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v1.5/introduction"><span>Introduction</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v1.5/getting-started"><span>Getting Started</span></a>
+                </li>
+              
+                <li class="active">
+                  <a href="http://tigera-docs.appspot.com//v1.5/usage"><span>Usage</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v1.5/reference"><span>Reference</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v1.5/releases"><span>Releases</span></a>
+                </li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (v1.5)<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                   <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (latest)</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-sm-0"></div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+          <p class="pull-left visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+            <div class="row">
+              <script>
+                (function() {
+                  var cx = '015028447179048192876:xjzskk7awwe';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+                })();
+              </script>
+              <gcse:search></gcse:search>
+            </div>
+            <div id="sidebar">
+            	
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Using Calico" href="http://tigera-docs.appspot.com//v1.5/usage/">
+        Using Calico
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Configuration" href="http://tigera-docs.appspot.com//v1.5/usage/configuration/">
+        Configuration
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Advanced Network Policy" href="http://tigera-docs.appspot.com//v1.5/usage/configuration/advanced-network-policy">
+        Advanced Network Policy
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Calico and Systemd" href="http://tigera-docs.appspot.com//v1.5/usage/configuration/as-service">
+        Calico and Systemd
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="BGP Peering" href="http://tigera-docs.appspot.com//v1.5/usage/configuration/bgp">
+        BGP Peering
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Route Reflector" href="http://tigera-docs.appspot.com//v1.5/usage/bird-rr-config">
+        Route Reflector
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Securing Calico" href="http://tigera-docs.appspot.com//v1.5/usage/configuration/securing-calico">
+        Securing Calico
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="IPv6" href="http://tigera-docs.appspot.com//v1.5/usage/ipv6">
+        IPv6
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Dockerless Calico" href="http://tigera-docs.appspot.com//v1.5/usage/dockerless-calico">
+        Dockerless Calico
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="External Connectivity" href="http://tigera-docs.appspot.com//v1.5/usage/external-connectivity">
+        External Connectivity
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Exposing Ports" href="http://tigera-docs.appspot.com//v1.5/usage/exposing-ports">
+        Exposing Ports
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Troubleshooting" href="http://tigera-docs.appspot.com//v1.5/usage/troubleshooting/">
+        Troubleshooting
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Logging" href="http://tigera-docs.appspot.com//v1.5/usage/troubleshooting/logging">
+        Logging
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="FAQ for Calico on Openstack" href="http://tigera-docs.appspot.com//v1.5/usage/troubleshooting/faq">
+        FAQ for Calico on Openstack
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="FAQ for Calico in Containers" href="http://tigera-docs.appspot.com//v1.5/usage/troubleshooting/faq-2">
+        FAQ for Calico in Containers
+      </a>
+    </div>
+  
+
+
+			</div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9">
+            <div id="content-main">
+              <!-- TOP DOCUMENTATION PAGE NAVBAR -->
+              <div style="text-align: left; padding: 18px 0 9px 0; min-width: 500px; overflow-x: hidden;">
+              
+              <a data-proofer-ignore href="https://github.com/projectcalico/calico/tree/master/v1.5/usage/configuration/securing-calico.md" style="color: #999; text-decoration: none; float: right;" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit this page</a></div>
+              <!-- END TOP DOCUMENTATION PAGE NAVBAR -->
+              
+  <div class="alert alert-warning" role="alert">
+    <strong>Warning:</strong> You are viewing the v1.5 docs. <a href="http://tigera-docs.appspot.com//latest">Click here to view the docs for the latest release.</a>
+  </div>
+
+
+              <h1>Securing Calico</h1>
+              <h1 id="what-calico-does-and-does-not-provide">What Calico does and does not provide</h1>
+
+<p>Currently, Calico implements security policy that ensures that:</p>
+
+<ul>
+  <li>a workload endpoint cannot spoof its source address</li>
+  <li>all traffic going to an endpoint must be accepted by the inbound
+policy attached to that endpoint</li>
+  <li>all traffic leaving an endpoint must be accepted by the outbound
+policy attached to that endpoint.</li>
+</ul>
+
+<p>However, there are several areas that Calico does not currently cover
+(we’re working on these and we’d love to hear from you if you’re
+interested!). Calico does not:</p>
+
+<ul>
+  <li>prevent an endpoint from probing the network (if its outbound policy
+allows it); in particular, it doesn’t prevent an endpoint from
+contacting compute hosts or etcd</li>
+  <li>prevent an endpoint from flooding its host with DNS/DHCP/ICMP
+traffic</li>
+  <li>prevent a compromised host from spoofing packets.</li>
+</ul>
+
+<p>Since the outbound policy is typically controlled by the application
+developer who owns the endpoint (at least when Calico is used with
+OpenStack), it’s a management challenge to use that to enforce <em>network</em>
+policy.</p>
+
+<h1 id="how-calico-uses-iptables">How Calico uses iptables</h1>
+
+<p>Calico needs to add its security policy rules to the “INPUT”, “OUTPUT”
+and “FORWARD” chains of the iptables “filter” table. To minimise the
+impact on the top-level chains, Calico inserts a single rule at the
+start of each of the kernel chains, which jumps to Calico’s own chain.</p>
+
+<p>The INPUT chain is traversed by packets which are destined for the host
+itself. Calico applies workloads’ outbound policy in the input chain as
+well as the policy for host endpoints.</p>
+
+<p>For workload traffic hitting the INPUT chain, Calico whitelists some
+essential bootstrapping traffic, such as DHCP, DNS and the OpenStack
+metadata traffic. Other traffic from local workload endpoints passes
+through the outbound rules for the endpoint. Then, it hits a
+configurable rule that either drops the traffic or allows it to continue
+to the remainder of the INPUT chain.</p>
+
+<p>Presently, the Calico FORWARD chain is not similarly configurable. All
+traffic that is heading to or from a local endpoint is processed through
+the relevant security policy. Then, if the policy accepts the traffic,
+it is accepted. If the policy rejects the traffic it is immediately
+dropped.</p>
+
+<p>Calico installs host endpoint outbound rules in the OUTPUT chain.</p>
+
+<p>To prevent IPv6-enabled endpoints from spoofing their IP addresses,
+Felix inserts a reverse path filtering rule in the iptables “raw”
+PREROUTING chain. (For IPv4, it enables the rp_filter sysctl on each
+interface that it controls.)</p>
+
+<h1 id="securing-iptables">Securing iptables</h1>
+
+<p>In a production environment, we recommend setting the default policy for
+the INPUT and FORWARD chains to be DROP and then explicitly whitelisting
+the traffic that should be allowed.</p>
+
+<h1 id="securing-etcd">Securing etcd</h1>
+
+<h2 id="limiting-network-access-to-etcd">Limiting network access to etcd</h2>
+
+<p>Calico uses etcd to store and forward the configuration of the network
+from plugin to the Felix agent. By default, etcd is writable by anyone
+with access to its REST interface. We plan to use the RBAC feature of an
+upcoming etcd release to improve this dramatically. However, until that
+work is done, we recommend blocking access to etcd from all but the IP
+range(s) used by the compute nodes and plugin.</p>
+
+<p>Calico’s host endpoint support (see <a href="http://tigera-docs.appspot.com//v1.5/getting-started/bare-metal/bare-metal">this document</a>) can be used to
+enforce such policy.</p>
+
+<h2 id="using-tls-to-encrypt-and-authenticate-communication-with-etcd">Using TLS to encrypt and authenticate communication with etcd</h2>
+
+<p>Calico supports etcd’s TLS-based security model, which supports the
+encryption (and authentication) of traffic between Calico components and
+the etcd cluster.</p>
+
+<blockquote>
+  <p><strong>WARNING</strong></p>
+
+  <p>Calico’s TLS support uses the Python urllib3 library.
+Unfortunately, we’ve seen issues with TLS in some of the common
+versions of urllib3 including the version that ships with Ubuntu
+14.04 (1.7.1) and versions 1.11-1.12. Version 1.13 appears to
+work well.</p>
+
+  <p>In addition, no versions of urllib3 support using IP addresses in the
+<code class="highlighter-rouge">subjectAltName</code> field of a TLS certificate. An IP address can still
+be used in the common name (CN) field but this restriction prevents
+the creation of a certificate that contains multiple IP addresses.
+urllib3 does support domain name-based <code class="highlighter-rouge">subjectAltNames</code>, allowing for
+multiple domain names to be embedded in the certificate.</p>
+
+  <p>For more details of the restrictions, see <a href="https://github.com/projectcalico/felix/issues/933">this GitHub &gt; issue</a>.</p>
+</blockquote>
+
+<p>To enable TLS support:</p>
+
+<ul>
+  <li>
+    <p>Follow the instructions in the <a href="https://coreos.com/etcd/docs/latest/security.html">etcd security
+guide</a> to create
+a certificate authority and enable TLS in etcd. We recommend
+enabling both client and peer authentication. This will enable
+security between Calico and etcd as well as between different nodes
+in the etcd cluster.</p>
+
+    <blockquote>
+      <p><strong>NOTE</strong></p>
+
+      <p>etcd proxies communicate with the cluster as peers so they need to
+have peer certificates.</p>
+
+    </blockquote>
+  </li>
+  <li>
+    <p>Issue a private key and client certificate for each
+Calico component. In OpenStack, you’ll need one certificate for each
+control node and one for each compute node.</p>
+  </li>
+  <li>If using OpenStack, configure each Neutron control node to use TLS:
+    <ul>
+      <li>
+        <p>Put the PEM-encoded private key and certificates in a secure
+place that is only accessible by the user that Neutron will
+run as.</p>
+
+        <blockquote>
+          <p><strong>NOTE</strong></p>
+
+          <p>Each control node should have its own private key and
+certificate. The certificate encodes the IP address or
+hostname of the owner.</p>
+
+        </blockquote>
+      </li>
+      <li>
+        <p>Modify <code class="highlighter-rouge">/etc/neutron/plugins/ml2_conf.ini</code> to include a
+<code class="highlighter-rouge">[calico]</code> section that tells it where to find the key and
+certificates:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[calico]
+etcd_key_file=&lt;location of PEM-encoded private key&gt;
+etcd_cert_file=&lt;location of PEM-encoded client certificate&gt;
+etcd_ca_cert_file=&lt;location of PEM-encoded CA certificate&gt;
+</code></pre></div>        </div>
+
+        <blockquote>
+          <p><strong>NOTE</strong></p>
+
+          <p>Calico will validate the etcd server’s certificate against the
+<code class="highlighter-rouge">etcd_host</code> configuration parameter. <code class="highlighter-rouge">etcd_host</code> defaults
+ to “localhost”. Issuing a certificate for “localhost”
+ doesn’t tie the certificate to any particular server.
+ Therefore, even if you’re connecting to the local server,
+ you may wish to issue the certificate for the server’s
+ domain name and configure <code class="highlighter-rouge">etcd_host</code> to match.</p>
+
+        </blockquote>
+      </li>
+      <li>
+        <p>Restart neutron-server.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Unless your Calico system uses <code class="highlighter-rouge">calicoctl node</code> to install and
+configure Felix, configure each Felix with its own key and
+certificate:</p>
+
+    <blockquote>
+      <p><strong>NOTE</strong></p>
+
+      <p>In systems that use <code class="highlighter-rouge">calicoctl node</code> (such as Docker, Kubernetes
+and other container orchestrators), you should use the
+<code class="highlighter-rouge">calicoctl</code> tool to configure TLS. See the <a href="http://tigera-docs.appspot.com//v1.5/reference/advanced/etcd-secure">Etcd Secure
+ Cluster</a>
+ document for details.</p>
+
+    </blockquote>
+
+    <ul>
+      <li>Generate a certificate and key pair for each Felix.</li>
+      <li>
+        <p>Put the PEM-encoded private key and certificates in a secure
+place that is only accessible by the root user. For example,
+create a directory <code class="highlighter-rouge">/etc/calico/secure</code>:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir -p /etc/calico/secure
+$ chown -R root:root /etc/calico/secure
+$ chmod 0700 /etc/calico/secure
+</code></pre></div>        </div>
+
+        <blockquote>
+          <p><strong>NOTE</strong></p>
+
+          <p>Each Felix-controlled node should have its own private key and
+certificate. The certificate encodes the IP address or
+hostname of the owner.</p>
+
+        </blockquote>
+      </li>
+      <li>
+        <p>Modify Felix’s configuration file <code class="highlighter-rouge">/etc/calico/felix.cfg</code> to
+tell it where to find the key and certificates:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[global]
+EtcdScheme = https
+EtcdKeyFile = &lt;location of PEM-encoded private key&gt;
+EtcdCertFile = &lt;location of PEM-encoded client certificate&gt;
+EtcdCaFile = &lt;location of PEM-encoded CA certificate&gt;
+...
+</code></pre></div>        </div>
+
+        <blockquote>
+          <p><strong>NOTE</strong></p>
+
+          <p>Calico will validate the etcd server’s certificate against the
+host part of the <code class="highlighter-rouge">EtcdAddr</code> configuration parameter.
+<code class="highlighter-rouge">EtcdAddr</code> defaults to “localhost:4001”. Issuing a
+certificate for “localhost” doesn’t tie the certificate to
+any particular server. Therefore, even if you’re
+connecting to the local server, you may wish to issue the
+certificate for the server’s domain name and configure
+<code class="highlighter-rouge">EtcdAddr</code> to match.</p>
+
+        </blockquote>
+      </li>
+      <li>Restart Felix.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="host-endpoint-failsafe-rules">Host endpoint failsafe rules</h1>
+
+<p>By default for host endpoints (in order to avoid breaking all
+connectivity to a host) Calico whitelists ssh to and etcd traffic from
+the host running Felix. The filter rules are based entirely on ports so
+they are fairly broad.</p>
+
+<p>This behaviour can be configured or disabled via configuration
+parameters; see <a href="http://tigera-docs.appspot.com//v1.5/usage/configuration">here</a>.</p>
+
+              
+              <!-- BOTTOM DOCUMENTATION PAGE NAVBAR -->
+              <div style="margin-top: 60px; margin-bottom: 40px; padding-top: 20px; border-top: 1px solid #999; text-align: left; color: #999;">Rate this Page: <div class="rw-ui-container" style="margin-top: -5px;"></div> <a href="https://www.projectcalico.org/contact?type=docs&file=v1.5/usage/configuration/securing-calico.md" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> Provide Feedback</a> <a href="https://www.projectcalico.org/community#slack" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-slack" aria-hidden="true"></i> Get Help via Slack</a> <a href="https://www.projectcalico.org/mvp" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-trophy" aria-hidden="true"></i> Ask our MVPs</a> <a href="https:/tigera.io/training" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Training</a></div>
+              <!-- END BOTTOM DOCUMENTATION PAGE NAVBAR -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Start Visual Website Optimizer Asynchronous Code -->
+    <script type='text/javascript'>
+      var _vwo_code=(function(){
+      var account_id=287573,
+      settings_tolerance=2000,
+      library_tolerance=2500,
+      use_existing_jquery=false,
+      /* DO NOT EDIT BELOW THIS LINE */
+      f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+    </script>
+    <!-- End Visual Website Optimizer Asynchronous Code -->
+    <!-- DOCUMENTATION RATING ANALYTICS -->
+   <script type="text/javascript">(function(d, t, e, m){
+    // Async Rating-Widget initialization.
+    window.RW_Async_Init = function(){
+        RW.init({
+            huid: "368439",
+            uid: "33da22c0dff384767b5074aaf10ebc50",
+            source: "website",
+            options: {
+                "advanced": {
+					"font": {
+						"color": "#999999"
+					},
+                    "layout": {
+                        "align": {
+                            "hor": "left"
+                        }
+                    },
+                    "text": {
+                        "rateThis": "Rate this"
+                    }
+                },
+				"label": {
+					"background": "#FFFFFF"
+				},
+				"reVote": true,
+				"showInfo": false,
+				/*"showTooltip": false,*/
+				"hideRecommendations": false,
+				"showReport": false,
+				"showLoader": false,
+                "style": "oxygen",
+                "isDummy": false
+            } 
+        });
+        RW.render();
+    };
+        // Append Rating-Widget JavaScript library.
+    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
+        l = d.location, ck = "Y" + t.getFullYear() + 
+        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
+        f = ((l.search.indexOf("DBG=") > -1) ? "" : ".min"),
+        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
+    if (d.getElementById(id)) return;              
+    rw = d.createElement(e);
+    rw.id = id; rw.async = true; rw.type = "text/javascript";
+    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
+    s.parentNode.insertBefore(rw, s);
+    }(document, new Date(), "script", "rating-widget.com/"));</script>
+    <!-- END DOCUMENTATION RATING ANALYTICS -->
+  </body>
+</html>

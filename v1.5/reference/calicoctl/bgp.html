@@ -1,0 +1,1068 @@
+<!-- Set this_pages_navbar  -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="http://tigera-docs.appspot.com//images/favicon.png">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto+Mono' type='text/css'>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/style.css"/>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/plugins/offcanvas.css"/>
+    <link href="https://www.projectcalico.org/wp-content/themes/dante/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://tigera-docs.appspot.com//js/jquery-2.2.0.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/bootstrap/bootstrap.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/script.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-52125893-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>calicoctl bgp</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="calicoctl bgp" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/bgppeer" />
+<meta property="og:url" content="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/bgppeer" />
+<script type="application/ld+json">
+{"headline":"calicoctl bgp","@type":"WebPage","url":"https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/bgppeer","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <section>
+      <nav id="toplevel-nav" class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <!-- Hamburger menu for mobile -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tigera-navbar" aria-expanded="false" aria-controls="tigera-navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Left brand image -->
+            <a class="navbar-brand" href="https://projectcalico.org/">
+              <img alt="Brand" src="http://tigera-docs.appspot.com//images/brand.png">
+            </a>
+          </div>
+          <div id="tigera-navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://projectcalico.org">Home</a></li>
+              <li class="active"><a href="https://projectcalico.org/resources"><span>Resources</span></a>
+                <ul>
+                    <li><a href="http://tigera-docs.appspot.com//latest/getting-started/"><i class="fa fa-tachometer" aria-hidden="true"></i> &nbsp; Getting Started</a></li>
+                    <li><a href="http://tigera-docs.appspot.com/"><i class="fa fa-book" aria-hidden="true"></i> &nbsp; Documentation</a></li>
+                    <!--<li><a href="https://www.projectcalico.org/tutorials"><i class="fa fa-file-code-o" aria-hidden="true"></i> &nbsp; Tutorials &amp; Examples</a></li>
+                    <li><a href=""><i class="fa fa-paper-plane-o" aria-hidden="true"></i> &nbsp; Online Workshops</a></li>-->
+                    <li><a href="https://www.projectcalico.org/videos"><i class="fa fa-video-camera" aria-hidden="true"></i> &nbsp; Videos &amp; Webinars</a></li>
+                    <li><a href="https://www.projectcalico.org/training"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp; Training</a></li>
+                    <li><a href="http://tigera-docs.appspot.com//latest/releases/"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp; Releases</a></li>
+                    <!-- <li><a href="/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li> -->
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/community">Community</a>
+                <ul>
+                    <li><a href="https://slack.projectcalico.org/"><i class="fa fa-slack" aria-hidden="true"></i> &nbsp; Slack</a></li>
+                    <!--<li><a href="https://stackoverflow.com/questions/tagged/project-calico" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i> &nbsp; StackOverflow</a></li>-->
+                    <li><a href="https://www.projectcalico.org/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li>
+                    <li><a href="https://www.projectcalico.org/community#events"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp; Upcoming Events</a></li>
+                    <li><a href="https://www.projectcalico.org/newsletters"><i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp; Newsletter</a></li>
+                    <li><a href="https://github.com/projectcalico" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> &nbsp; GitHub</a></li> 
+                    <li><a href="https://www.projectcalico.org/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i> &nbsp; Jobs</a></li>
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/mvp" style="font-weight: bold;">MVP</a></li>
+              <li><a href="https://www.projectcalico.org/support">Support</a></li>
+              <li class="hidden-xs"><a href="https://www.projectcalico.org/support">
+                <img class="desktopImage" width="30" align="absmiddle" src="https://www.projectcalico.org/images/tigera_trans_sm.png" alt="Tigera"></a>
+              </li>
+            </ul>
+            <form class="navbar-form visible-xs">
+              <ul class="nav navbar-nav navbar-right">
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v1.5/introduction">Introduction</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v1.5/getting-started">Getting Started</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v1.5/usage">Usage</a>
+                  </li>
+                
+                  <li  class="active">
+                    <a href="http://tigera-docs.appspot.com//v1.5/reference">Reference</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v1.5/releases">Releases</a>
+                  </li>
+                
+              </ul>
+            </form>
+            <ul class="visible-xs nav navbar-nav navbar-right">
+             <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (v1.5)<span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                 <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6 (latest)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (beta)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                 <li role="separator" class="divider"></li>
+               </ul>
+             </li>
+           </ul>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-inverse navbar-collapse collapse">
+          <div class="container">
+            <ul class="nav navbar-nav">
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v1.5/introduction"><span>Introduction</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v1.5/getting-started"><span>Getting Started</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v1.5/usage"><span>Usage</span></a>
+                </li>
+              
+                <li class="active">
+                  <a href="http://tigera-docs.appspot.com//v1.5/reference"><span>Reference</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v1.5/releases"><span>Releases</span></a>
+                </li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (v1.5)<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                   <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (latest)</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-sm-0"></div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+          <p class="pull-left visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+            <div class="row">
+              <script>
+                (function() {
+                  var cx = '015028447179048192876:xjzskk7awwe';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+                })();
+              </script>
+              <gcse:search></gcse:search>
+            </div>
+            <div id="sidebar">
+            	
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Reference" href="http://tigera-docs.appspot.com//v1.5/reference/">
+        Reference
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Supported Platforms" href="http://tigera-docs.appspot.com//v1.5/reference/supported-platforms">
+        Supported Platforms
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoctl" aria-expanded="false" aria-controls="nav-calicoctl">
+          calicoctl
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoctl">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="status" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/status">
+        status
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="node" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/node">
+        node
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="container" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/container">
+        container
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="endpoint" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/endpoint">
+        endpoint
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="profile" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/profile">
+        profile
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="pool" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/pool">
+        pool
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="bgp" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/bgp">
+        bgp
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="ipam" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/ipam">
+        ipam
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="checksystem" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/checksystem">
+        checksystem
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="diags" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/diags">
+        diags
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="version" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/version">
+        version
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="config" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/config">
+        config
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-deployingonpubliccloud" aria-expanded="false" aria-controls="nav-deployingonpubliccloud">
+          Deploying on Public Cloud
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-deployingonpubliccloud">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v1.5/reference/public-cloud/overview">
+        Overview
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-deployingonprivatecloud" aria-expanded="false" aria-controls="nav-deployingonprivatecloud">
+          Deploying on Private Cloud
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-deployingonprivatecloud">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v1.5/reference/private-cloud/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Calico Over Ethernet Fabrics" href="http://tigera-docs.appspot.com//v1.5/reference/private-cloud/l2-interconnect-fabric">
+        Calico Over Ethernet Fabrics
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="IP Interconnect Fabrics in Calico" href="http://tigera-docs.appspot.com//v1.5/reference/private-cloud/l3-interconnect-fabric">
+        IP Interconnect Fabrics in Calico
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Troubleshooting" href="http://tigera-docs.appspot.com//v1.5/reference/private-cloud/troubleshooting">
+        Troubleshooting
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-architecture" aria-expanded="false" aria-controls="nav-architecture">
+          Architecture
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-architecture">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Introduction" href="http://tigera-docs.appspot.com//v1.5/reference/architecture/">
+        Introduction
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="calico/node" href="http://tigera-docs.appspot.com//v1.5/reference/architecture/components">
+        calico/node
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Data Path" href="http://tigera-docs.appspot.com//v1.5/reference/architecture/data-path">
+        Data Path
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Calico Security Model" href="http://tigera-docs.appspot.com//v1.5/reference/security-model">
+        Calico Security Model
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Addressing and Connectivity Overview" href="http://tigera-docs.appspot.com//v1.5/reference/addressing">
+        Addressing and Connectivity Overview
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-advanced" aria-expanded="false" aria-controls="nav-advanced">
+          Advanced
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-advanced">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Calico for CNI" href="http://tigera-docs.appspot.com//v1.5/reference/advanced/calico-cni">
+        Calico for CNI
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-advanced-calicowithoutdockernetworking---net=none" aria-expanded="false" aria-controls="nav-advanced-calicowithoutdockernetworking---net=none">
+          Calico without Docker networking (--net=none)
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-advanced-calicowithoutdockernetworking---net=none">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Prerequisites" href="http://tigera-docs.appspot.com//v1.5/reference/without-docker-networking/prerequisites">
+        Prerequisites
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Installation" href="http://tigera-docs.appspot.com//v1.5/reference/without-docker-networking/installation">
+        Installation
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-advanced-calicowithoutdockernetworking---net=none-environmentsetup" aria-expanded="false" aria-controls="nav-advanced-calicowithoutdockernetworking---net=none-environmentsetup">
+          Environment Setup
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-advanced-calicowithoutdockernetworking---net=none-environmentsetup">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Vagrant CoreOS" href="http://tigera-docs.appspot.com//v1.5/reference/without-docker-networking/environment-setup/vagrant-coreos/">
+        Vagrant CoreOS
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Vagrant Ubuntu" href="http://tigera-docs.appspot.com//v1.5/reference/without-docker-networking/environment-setup/vagrant-ubuntu/">
+        Vagrant Ubuntu
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="AWS" href="http://tigera-docs.appspot.com//v1.5/reference/without-docker-networking/environment-setup/aws">
+        AWS
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="GCE" href="http://tigera-docs.appspot.com//v1.5/reference/without-docker-networking/environment-setup/gce">
+        GCE
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Digital Ocean" href="http://tigera-docs.appspot.com//v1.5/reference/without-docker-networking/environment-setup/digital-ocean">
+        Digital Ocean
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="IPv6" href="http://tigera-docs.appspot.com//v1.5/reference/without-docker-networking/ipv6">
+        IPv6
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Lifecycle of a container (Calico without Docker networking)" href="http://tigera-docs.appspot.com//v1.5/reference/without-docker-networking/docker-container-lifecycle">
+        Lifecycle of a container (Calico without Docker networking)
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Calico's use of the Neutron API" href="http://tigera-docs.appspot.com//v1.5/reference/advanced/calico-neutron-api">
+        Calico's use of the Neutron API
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Secure etcd" href="http://tigera-docs.appspot.com//v1.5/reference/advanced/etcd-secure">
+        Secure etcd
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overlap IPs" href="http://tigera-docs.appspot.com//v1.5/reference/advanced/overlap-ips">
+        Overlap IPs
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Repo Structure" href="http://tigera-docs.appspot.com//v1.5/reference/repo-structure">
+        Repo Structure
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Contribute" href="http://tigera-docs.appspot.com//v1.5/reference/contribute">
+        Contribute
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Involved" href="http://tigera-docs.appspot.com//v1.5/reference/involved">
+        Involved
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="License" href="http://tigera-docs.appspot.com//v1.5/reference/license">
+        License
+      </a>
+    </div>
+  
+
+
+			</div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9">
+            <div id="content-main">
+              <!-- TOP DOCUMENTATION PAGE NAVBAR -->
+              <div style="text-align: left; padding: 18px 0 9px 0; min-width: 500px; overflow-x: hidden;">
+              
+              <a data-proofer-ignore href="https://github.com/projectcalico/calico/tree/master/v1.5/reference/calicoctl/bgp.md" style="color: #999; text-decoration: none; float: right;" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit this page</a></div>
+              <!-- END TOP DOCUMENTATION PAGE NAVBAR -->
+              
+  <div class="alert alert-warning" role="alert">
+    <strong>Warning:</strong> You are viewing the v1.5 docs. <a href="http://tigera-docs.appspot.com//latest">Click here to view the docs for the latest release.</a>
+  </div>
+
+
+              <h1>calicoctl bgp</h1>
+              <p>This sections describes the <code class="highlighter-rouge">calicoctl bgp</code> commands.</p>
+
+<p>These commands can be used to manage the global BGP configuration, including:</p>
+<ul>
+  <li>global BGP peers (the BGP speakers that peer with every Calico node in the
+network)</li>
+  <li>default values to use for the AS number</li>
+  <li>whether a full BGP mesh is required between all of the Calico nodes</li>
+</ul>
+
+<p>Calico node-specific BGP configuration, such as having BGP peers specific to a
+particular Calico node, is configured using the <code class="highlighter-rouge">calicoctl node</code> commands. You
+can read about these commands in the <a href="node"><code class="highlighter-rouge">calicoctl node</code> guide</a>.</p>
+
+<p>For an overview of BGP configuration, read the <a href="http://tigera-docs.appspot.com//v1.5/usage/configuration/bgp">BGP tutorial</a>, which
+covers in more detail all available BGP related commands, including use cases.</p>
+
+<p>Read the <a href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl">calicoctl Overview</a>
+for a full list of calicoctl commands.</p>
+
+<h2 id="displaying-the-help-text-for-calicoctl-bgp-commands">Displaying the help text for ‘calicoctl bgp’ commands</h2>
+
+<p>Run <code class="highlighter-rouge">calicoctl bgp --help</code> to display the following help menu for the
+calicoctl bgp commands.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+Usage:
+  calicoctl bgp peer add &lt;PEER_IP&gt; as &lt;AS_NUM&gt;
+  calicoctl bgp peer remove &lt;PEER_IP&gt;
+  calicoctl bgp peer show [--ipv4 | --ipv6]
+  calicoctl bgp node-mesh [on|off]
+  calicoctl bgp default-node-as [&lt;AS_NUM&gt;]
+
+
+Description:
+  Configure default global BGP settings for all nodes. Note: per-node settings
+  will override these globals for that node.
+
+Options:
+ --ipv4    Show IPv4 information only.
+ --ipv6    Show IPv6 information only.
+
+</code></pre></div></div>
+
+<h2 id="calicoctl-bgp-commands">calicoctl bgp commands</h2>
+
+<h3 id="calicoctl-bgp-peer-add-peer_ip-as-as_num">calicoctl bgp peer add &lt;PEER_IP&gt; as &lt;AS_NUM&gt;</h3>
+<p>This command is used to add a global BGP peer.</p>
+
+<p>The command can be run on any machine that can access the etcd datastore, such
+as a Calico node host.</p>
+
+<p>Command syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calicoctl bgp peer add &lt;PEER_IP&gt; as &lt;AS_NUM&gt;
+
+    &lt;PEER_IP&gt;:  The IP address (IPv4 or IPv6) of the BGP peer
+    &lt;AS_NUM&gt;:  The AS number of the BGP peer.
+</code></pre></div></div>
+
+<p>The peer is uniquely identified by the IP address, so if you add another peer
+with the same IP address and different AS number, it will replace the previous
+peer configuration.</p>
+
+<p>Configuring a global peer instructs all Calico nodes in the deployment to
+establish a peering using the specified peer IP address and AS number.  If the
+AS number is the same as the AS number configured on the node, this will be an
+iBGP connection, otherwise it will be an eBGP connection.</p>
+
+<p>Examples:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ calicoctl bgp peer add 192.0.2.10 as 64555
+
+$ calicoctl bgp peer add 2001:0db8::1 as 64590
+</code></pre></div></div>
+
+<h3 id="calicoctl-bgp-peer-remove-peer_ip">calicoctl bgp peer remove &lt;PEER_IP&gt;</h3>
+<p>This command removes a global BGP peer that was previously added using
+<code class="highlighter-rouge">bgp peer add &lt;PEER IP&gt; as &lt;AS_NUM&gt;</code>.</p>
+
+<p>The peer is uniquely identified by the IP address it was added with.</p>
+
+<p>Removing a global peer instructs all Calico nodes in the deployment to delete
+the peering associated with the specified peer IP address.</p>
+
+<p>The command can be run on any machine that can access the etcd datastore, such
+as a Calico node host.</p>
+
+<p>Command syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calicoctl bgp peer remove \&lt;PEER_IP\&gt;
+
+    &lt;PEER_IP&gt;:  The IP address (IPv4 or IPv6) of the BGP peer
+</code></pre></div></div>
+
+<p>Examples:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ calicoctl bgp peer remove 192.0.2.10
+BGP peer removed from global configuration
+
+$ calicoctl bgp peer remove 2001:0db8::1
+BGP peer removed from global configuration
+</code></pre></div></div>
+
+<h3 id="calicoctl-bgp-peer-show">calicoctl bgp peer show</h3>
+<p>This command displays the current list of configured global BGP peers.</p>
+
+<p>This command does not display the connection or protocol status of the peers.
+If you want to view that information, use the <a href="status"><code class="highlighter-rouge">calicoctl status</code></a>
+command.</p>
+
+<p>The command can be run on any Calico node.</p>
+
+<p>Command syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calicoctl bgp peer show [--ipv4 | --ipv6]
+
+    --ipv4:  Optional flag to show IPv4 peers only
+    --ipv6:  Optional flag to show IPv6 peers only
+
+    If neither --ipv4 nor --ipv6 are specified, all peers are displayed.    
+</code></pre></div></div>
+
+<p>Examples:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ calicoctl bgp peer show
++----------------------+--------+
+| Global IPv4 BGP Peer | AS Num |
++----------------------+--------+
+| 192.0.2.10           | 64555  |
++----------------------+--------+
++----------------------+--------+
+| Global IPv6 BGP Peer | AS Num |
++----------------------+--------+
+| 2001:db8::1          | 64590  |
++----------------------+--------+
+
+$ calicoctl bgp peer show --ipv4
++----------------------+--------+
+| Global IPv4 BGP Peer | AS Num |
++----------------------+--------+
+| 192.0.2.10           | 64555  |
++----------------------+--------+
+</code></pre></div></div>
+
+<h3 id="calicoctl-bgp-node-mesh">calicoctl bgp node-mesh</h3>
+<p>This command is used to view the status of, or enable and disable, the full
+node-to-node BGP mesh.</p>
+
+<p>When set to <code class="highlighter-rouge">on</code>, the Calico nodes automatically create a peering with all
+other Calico nodes in the deployment.</p>
+
+<p>In large deployments, you may want to set this value to <code class="highlighter-rouge">off</code> in order to
+manage BGP peerings explicitly.</p>
+
+<p>The command can be run on any Calico node.</p>
+
+<p>Command syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calicoctl bgp node-mesh [on|off]
+
+    off:  Disable the node-to-node BGP mesh between all of the Calico nodes.
+    on:  Enable the node-to-node BGP mesh between all of the Calico nodes.
+
+    If no parameter is specified, this command displays the current status.
+</code></pre></div></div>
+
+<p>Examples:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ calicoctl bgp node-mesh on
+
+$ calicoctl bgp node-mesh off
+
+$ calicoctl bgp node-mesh
+off
+</code></pre></div></div>
+
+<h3 id="calicoctl-bgp-default">calicoctl bgp default</h3>
+<p>This command is used to view and set the default AS number used by Calico
+nodes.</p>
+
+<p>When a Calico node is started (see <a href="node"><code class="highlighter-rouge">calicoctl node</code></a> commands),
+the default AS number is used to configure the BGP peerings if one has not
+been explicitly specified in the <code class="highlighter-rouge">calicoctl node</code> command.</p>
+
+<p>If any nodes are using the default AS number (i.e. an AS number was not
+explicitly specified on the node), then changing the default value with the
+following command will automatically trigger the nodes to peer using the
+updated AS number.</p>
+
+<p>The command can be run on any Calico node.</p>
+
+<p>Command syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calicoctl bgp default-node-as [&lt;AS_NUM&gt;]
+
+    &lt;AS_NUM&gt;: AS number to set as the default for all Calico nodes.
+
+    If no parameter is specified, this command displays the current value.
+</code></pre></div></div>
+
+<p>Examples:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ calicoctl bgp default-node-as 64512
+
+$ calicoctl bgp default-node-as
+64512
+</code></pre></div></div>
+
+              
+              <!-- BOTTOM DOCUMENTATION PAGE NAVBAR -->
+              <div style="margin-top: 60px; margin-bottom: 40px; padding-top: 20px; border-top: 1px solid #999; text-align: left; color: #999;">Rate this Page: <div class="rw-ui-container" style="margin-top: -5px;"></div> <a href="https://www.projectcalico.org/contact?type=docs&file=v1.5/reference/calicoctl/bgp.md" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> Provide Feedback</a> <a href="https://www.projectcalico.org/community#slack" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-slack" aria-hidden="true"></i> Get Help via Slack</a> <a href="https://www.projectcalico.org/mvp" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-trophy" aria-hidden="true"></i> Ask our MVPs</a> <a href="https:/tigera.io/training" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Training</a></div>
+              <!-- END BOTTOM DOCUMENTATION PAGE NAVBAR -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Start Visual Website Optimizer Asynchronous Code -->
+    <script type='text/javascript'>
+      var _vwo_code=(function(){
+      var account_id=287573,
+      settings_tolerance=2000,
+      library_tolerance=2500,
+      use_existing_jquery=false,
+      /* DO NOT EDIT BELOW THIS LINE */
+      f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+    </script>
+    <!-- End Visual Website Optimizer Asynchronous Code -->
+    <!-- DOCUMENTATION RATING ANALYTICS -->
+   <script type="text/javascript">(function(d, t, e, m){
+    // Async Rating-Widget initialization.
+    window.RW_Async_Init = function(){
+        RW.init({
+            huid: "368439",
+            uid: "33da22c0dff384767b5074aaf10ebc50",
+            source: "website",
+            options: {
+                "advanced": {
+					"font": {
+						"color": "#999999"
+					},
+                    "layout": {
+                        "align": {
+                            "hor": "left"
+                        }
+                    },
+                    "text": {
+                        "rateThis": "Rate this"
+                    }
+                },
+				"label": {
+					"background": "#FFFFFF"
+				},
+				"reVote": true,
+				"showInfo": false,
+				/*"showTooltip": false,*/
+				"hideRecommendations": false,
+				"showReport": false,
+				"showLoader": false,
+                "style": "oxygen",
+                "isDummy": false
+            } 
+        });
+        RW.render();
+    };
+        // Append Rating-Widget JavaScript library.
+    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
+        l = d.location, ck = "Y" + t.getFullYear() + 
+        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
+        f = ((l.search.indexOf("DBG=") > -1) ? "" : ".min"),
+        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
+    if (d.getElementById(id)) return;              
+    rw = d.createElement(e);
+    rw.id = id; rw.async = true; rw.type = "text/javascript";
+    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
+    s.parentNode.insertBefore(rw, s);
+    }(document, new Date(), "script", "rating-widget.com/"));</script>
+    <!-- END DOCUMENTATION RATING ANALYTICS -->
+  </body>
+</html>

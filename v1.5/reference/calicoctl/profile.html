@@ -1,0 +1,1377 @@
+<!-- Set this_pages_navbar  -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="http://tigera-docs.appspot.com//images/favicon.png">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto+Mono' type='text/css'>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/style.css"/>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/plugins/offcanvas.css"/>
+    <link href="https://www.projectcalico.org/wp-content/themes/dante/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://tigera-docs.appspot.com//js/jquery-2.2.0.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/bootstrap/bootstrap.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/script.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-52125893-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>calicoctl profile</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="calicoctl profile" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/profile" />
+<meta property="og:url" content="https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/profile" />
+<script type="application/ld+json">
+{"headline":"calicoctl profile","@type":"WebPage","url":"https://docs.projectcalico.org/v3.0/reference/calicoctl/resources/profile","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <section>
+      <nav id="toplevel-nav" class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <!-- Hamburger menu for mobile -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tigera-navbar" aria-expanded="false" aria-controls="tigera-navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Left brand image -->
+            <a class="navbar-brand" href="https://projectcalico.org/">
+              <img alt="Brand" src="http://tigera-docs.appspot.com//images/brand.png">
+            </a>
+          </div>
+          <div id="tigera-navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://projectcalico.org">Home</a></li>
+              <li class="active"><a href="https://projectcalico.org/resources"><span>Resources</span></a>
+                <ul>
+                    <li><a href="http://tigera-docs.appspot.com//latest/getting-started/"><i class="fa fa-tachometer" aria-hidden="true"></i> &nbsp; Getting Started</a></li>
+                    <li><a href="http://tigera-docs.appspot.com/"><i class="fa fa-book" aria-hidden="true"></i> &nbsp; Documentation</a></li>
+                    <!--<li><a href="https://www.projectcalico.org/tutorials"><i class="fa fa-file-code-o" aria-hidden="true"></i> &nbsp; Tutorials &amp; Examples</a></li>
+                    <li><a href=""><i class="fa fa-paper-plane-o" aria-hidden="true"></i> &nbsp; Online Workshops</a></li>-->
+                    <li><a href="https://www.projectcalico.org/videos"><i class="fa fa-video-camera" aria-hidden="true"></i> &nbsp; Videos &amp; Webinars</a></li>
+                    <li><a href="https://www.projectcalico.org/training"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp; Training</a></li>
+                    <li><a href="http://tigera-docs.appspot.com//latest/releases/"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp; Releases</a></li>
+                    <!-- <li><a href="/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li> -->
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/community">Community</a>
+                <ul>
+                    <li><a href="https://slack.projectcalico.org/"><i class="fa fa-slack" aria-hidden="true"></i> &nbsp; Slack</a></li>
+                    <!--<li><a href="https://stackoverflow.com/questions/tagged/project-calico" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i> &nbsp; StackOverflow</a></li>-->
+                    <li><a href="https://www.projectcalico.org/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li>
+                    <li><a href="https://www.projectcalico.org/community#events"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp; Upcoming Events</a></li>
+                    <li><a href="https://www.projectcalico.org/newsletters"><i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp; Newsletter</a></li>
+                    <li><a href="https://github.com/projectcalico" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> &nbsp; GitHub</a></li> 
+                    <li><a href="https://www.projectcalico.org/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i> &nbsp; Jobs</a></li>
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/mvp" style="font-weight: bold;">MVP</a></li>
+              <li><a href="https://www.projectcalico.org/support">Support</a></li>
+              <li class="hidden-xs"><a href="https://www.projectcalico.org/support">
+                <img class="desktopImage" width="30" align="absmiddle" src="https://www.projectcalico.org/images/tigera_trans_sm.png" alt="Tigera"></a>
+              </li>
+            </ul>
+            <form class="navbar-form visible-xs">
+              <ul class="nav navbar-nav navbar-right">
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v1.5/introduction">Introduction</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v1.5/getting-started">Getting Started</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v1.5/usage">Usage</a>
+                  </li>
+                
+                  <li  class="active">
+                    <a href="http://tigera-docs.appspot.com//v1.5/reference">Reference</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v1.5/releases">Releases</a>
+                  </li>
+                
+              </ul>
+            </form>
+            <ul class="visible-xs nav navbar-nav navbar-right">
+             <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (v1.5)<span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                 <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6 (latest)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (beta)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                 <li role="separator" class="divider"></li>
+               </ul>
+             </li>
+           </ul>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-inverse navbar-collapse collapse">
+          <div class="container">
+            <ul class="nav navbar-nav">
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v1.5/introduction"><span>Introduction</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v1.5/getting-started"><span>Getting Started</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v1.5/usage"><span>Usage</span></a>
+                </li>
+              
+                <li class="active">
+                  <a href="http://tigera-docs.appspot.com//v1.5/reference"><span>Reference</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v1.5/releases"><span>Releases</span></a>
+                </li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (v1.5)<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                   <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (latest)</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-sm-0"></div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+          <p class="pull-left visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+            <div class="row">
+              <script>
+                (function() {
+                  var cx = '015028447179048192876:xjzskk7awwe';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+                })();
+              </script>
+              <gcse:search></gcse:search>
+            </div>
+            <div id="sidebar">
+            	
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Reference" href="http://tigera-docs.appspot.com//v1.5/reference/">
+        Reference
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Supported Platforms" href="http://tigera-docs.appspot.com//v1.5/reference/supported-platforms">
+        Supported Platforms
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-calicoctl" aria-expanded="false" aria-controls="nav-calicoctl">
+          calicoctl
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-calicoctl">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="status" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/status">
+        status
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="node" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/node">
+        node
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="container" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/container">
+        container
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="endpoint" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/endpoint">
+        endpoint
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="profile" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/profile">
+        profile
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="pool" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/pool">
+        pool
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="bgp" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/bgp">
+        bgp
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="ipam" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/ipam">
+        ipam
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="checksystem" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/checksystem">
+        checksystem
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="diags" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/diags">
+        diags
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="version" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/version">
+        version
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="config" href="http://tigera-docs.appspot.com//v1.5/reference/calicoctl/config">
+        config
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-deployingonpubliccloud" aria-expanded="false" aria-controls="nav-deployingonpubliccloud">
+          Deploying on Public Cloud
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-deployingonpubliccloud">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v1.5/reference/public-cloud/overview">
+        Overview
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-deployingonprivatecloud" aria-expanded="false" aria-controls="nav-deployingonprivatecloud">
+          Deploying on Private Cloud
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-deployingonprivatecloud">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v1.5/reference/private-cloud/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Calico Over Ethernet Fabrics" href="http://tigera-docs.appspot.com//v1.5/reference/private-cloud/l2-interconnect-fabric">
+        Calico Over Ethernet Fabrics
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="IP Interconnect Fabrics in Calico" href="http://tigera-docs.appspot.com//v1.5/reference/private-cloud/l3-interconnect-fabric">
+        IP Interconnect Fabrics in Calico
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Troubleshooting" href="http://tigera-docs.appspot.com//v1.5/reference/private-cloud/troubleshooting">
+        Troubleshooting
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-architecture" aria-expanded="false" aria-controls="nav-architecture">
+          Architecture
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-architecture">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Introduction" href="http://tigera-docs.appspot.com//v1.5/reference/architecture/">
+        Introduction
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="calico/node" href="http://tigera-docs.appspot.com//v1.5/reference/architecture/components">
+        calico/node
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Data Path" href="http://tigera-docs.appspot.com//v1.5/reference/architecture/data-path">
+        Data Path
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Calico Security Model" href="http://tigera-docs.appspot.com//v1.5/reference/security-model">
+        Calico Security Model
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Addressing and Connectivity Overview" href="http://tigera-docs.appspot.com//v1.5/reference/addressing">
+        Addressing and Connectivity Overview
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-advanced" aria-expanded="false" aria-controls="nav-advanced">
+          Advanced
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-advanced">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Calico for CNI" href="http://tigera-docs.appspot.com//v1.5/reference/advanced/calico-cni">
+        Calico for CNI
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-advanced-calicowithoutdockernetworking---net=none" aria-expanded="false" aria-controls="nav-advanced-calicowithoutdockernetworking---net=none">
+          Calico without Docker networking (--net=none)
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-advanced-calicowithoutdockernetworking---net=none">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Prerequisites" href="http://tigera-docs.appspot.com//v1.5/reference/without-docker-networking/prerequisites">
+        Prerequisites
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Installation" href="http://tigera-docs.appspot.com//v1.5/reference/without-docker-networking/installation">
+        Installation
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-advanced-calicowithoutdockernetworking---net=none-environmentsetup" aria-expanded="false" aria-controls="nav-advanced-calicowithoutdockernetworking---net=none-environmentsetup">
+          Environment Setup
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-advanced-calicowithoutdockernetworking---net=none-environmentsetup">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Vagrant CoreOS" href="http://tigera-docs.appspot.com//v1.5/reference/without-docker-networking/environment-setup/vagrant-coreos/">
+        Vagrant CoreOS
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Vagrant Ubuntu" href="http://tigera-docs.appspot.com//v1.5/reference/without-docker-networking/environment-setup/vagrant-ubuntu/">
+        Vagrant Ubuntu
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="AWS" href="http://tigera-docs.appspot.com//v1.5/reference/without-docker-networking/environment-setup/aws">
+        AWS
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="GCE" href="http://tigera-docs.appspot.com//v1.5/reference/without-docker-networking/environment-setup/gce">
+        GCE
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Digital Ocean" href="http://tigera-docs.appspot.com//v1.5/reference/without-docker-networking/environment-setup/digital-ocean">
+        Digital Ocean
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="IPv6" href="http://tigera-docs.appspot.com//v1.5/reference/without-docker-networking/ipv6">
+        IPv6
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Lifecycle of a container (Calico without Docker networking)" href="http://tigera-docs.appspot.com//v1.5/reference/without-docker-networking/docker-container-lifecycle">
+        Lifecycle of a container (Calico without Docker networking)
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Calico's use of the Neutron API" href="http://tigera-docs.appspot.com//v1.5/reference/advanced/calico-neutron-api">
+        Calico's use of the Neutron API
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Secure etcd" href="http://tigera-docs.appspot.com//v1.5/reference/advanced/etcd-secure">
+        Secure etcd
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overlap IPs" href="http://tigera-docs.appspot.com//v1.5/reference/advanced/overlap-ips">
+        Overlap IPs
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Repo Structure" href="http://tigera-docs.appspot.com//v1.5/reference/repo-structure">
+        Repo Structure
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Contribute" href="http://tigera-docs.appspot.com//v1.5/reference/contribute">
+        Contribute
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Involved" href="http://tigera-docs.appspot.com//v1.5/reference/involved">
+        Involved
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="License" href="http://tigera-docs.appspot.com//v1.5/reference/license">
+        License
+      </a>
+    </div>
+  
+
+
+			</div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9">
+            <div id="content-main">
+              <!-- TOP DOCUMENTATION PAGE NAVBAR -->
+              <div style="text-align: left; padding: 18px 0 9px 0; min-width: 500px; overflow-x: hidden;">
+              
+              <a data-proofer-ignore href="https://github.com/projectcalico/calico/tree/master/v1.5/reference/calicoctl/profile.md" style="color: #999; text-decoration: none; float: right;" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit this page</a></div>
+              <!-- END TOP DOCUMENTATION PAGE NAVBAR -->
+              
+  <div class="alert alert-warning" role="alert">
+    <strong>Warning:</strong> You are viewing the v1.5 docs. <a href="http://tigera-docs.appspot.com//latest">Click here to view the docs for the latest release.</a>
+  </div>
+
+
+              <h1>calicoctl profile</h1>
+              <blockquote>
+  <p>NOTE: The <code class="highlighter-rouge">calicoctl profile</code> commands should NOT be used when running
+Calico with the Docker libnetwork driver.  The libnetwork driver manages
+the security policy for containers.</p>
+</blockquote>
+
+<p>This sections describes the <code class="highlighter-rouge">calicoctl profile</code> commands.</p>
+
+<p>Read the <a href="../calicoctl">calicoctl Overview</a> for a
+full list of calicoctl commands.</p>
+
+<h2 id="displaying-the-help-text-for-calicoctl-profile-commands">Displaying the help text for ‘calicoctl profile’ commands</h2>
+
+<p>Run <code class="highlighter-rouge">calicoctl profile --help</code> to display the following help menu for the
+calicoctl profile commands.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+Usage:
+  calicoctl profile show [--detailed]
+  calicoctl profile add &lt;PROFILE&gt;
+  calicoctl profile remove &lt;PROFILE&gt; [--no-check]
+  calicoctl profile &lt;PROFILE&gt; tag show
+  calicoctl profile &lt;PROFILE&gt; tag (add|remove) &lt;TAG&gt;
+  calicoctl profile &lt;PROFILE&gt; rule add (inbound|outbound) [--at=&lt;POSITION&gt;]
+    (allow|deny) [(
+      (tcp|udp) [(from [(ports &lt;SRCPORTS&gt;)] [(tag &lt;SRCTAG&gt;)] [(cidr &lt;SRCCIDR&gt;)])]
+                [(to   [(ports &lt;DSTPORTS&gt;)] [(tag &lt;DSTTAG&gt;)] [(cidr &lt;DSTCIDR&gt;)])] |
+      icmp [(type &lt;ICMPTYPE&gt; [(code &lt;ICMPCODE&gt;)])]
+           [(from [(tag &lt;SRCTAG&gt;)] [(cidr &lt;SRCCIDR&gt;)])]
+           [(to   [(tag &lt;DSTTAG&gt;)] [(cidr &lt;DSTCIDR&gt;)])] |
+      [(from [(tag &lt;SRCTAG&gt;)] [(cidr &lt;SRCCIDR&gt;)])]  
+      [(to   [(tag &lt;DSTTAG&gt;)] [(cidr &lt;DSTCIDR&gt;)])]
+    )]
+  calicoctl profile &lt;PROFILE&gt; rule remove (inbound|outbound) (--at=&lt;POSITION&gt;|
+    (allow|deny) [(
+      (tcp|udp) [(from [(ports &lt;SRCPORTS&gt;)] [(tag &lt;SRCTAG&gt;)] [(cidr &lt;SRCCIDR&gt;)])]
+                [(to   [(ports &lt;DSTPORTS&gt;)] [(tag &lt;DSTTAG&gt;)] [(cidr &lt;DSTCIDR&gt;)])] |
+      icmp [(type &lt;ICMPTYPE&gt; [(code &lt;ICMPCODE&gt;)])]
+           [(from [(tag &lt;SRCTAG&gt;)] [(cidr &lt;SRCCIDR&gt;)])]
+           [(to   [(tag &lt;DSTTAG&gt;)] [(cidr &lt;DSTCIDR&gt;)])] |
+      icmpv6 [(type &lt;ICMPTYPE&gt; [(code &lt;ICMPCODE&gt;)])]
+             [(from [(tag &lt;SRCTAG&gt;)] [(cidr &lt;SRCCIDR&gt;)])]
+             [(to   [(tag &lt;DSTTAG&gt;)] [(cidr &lt;DSTCIDR&gt;)])] |
+      [(from [(tag &lt;SRCTAG&gt;)] [(cidr &lt;SRCCIDR&gt;)])]
+      [(to   [(tag &lt;DSTTAG&gt;)] [(cidr &lt;DSTCIDR&gt;)])]
+    )])
+  calicoctl profile &lt;PROFILE&gt; rule show
+  calicoctl profile &lt;PROFILE&gt; rule json
+  calicoctl profile &lt;PROFILE&gt; rule update
+
+Description:
+  Modify available profiles and configure rules or tags.
+
+Options:
+  --detailed        Show additional information.
+  --no-check        Remove a profile without checking if there are endpoints
+                    associated with the profile.
+  --at=&lt;POSITION&gt;   Specify the position in the chain where the rule should
+                    be placed. Default: append at end.
+
+Examples:
+  Add and set up a rule to prevent all inbound traffic except pings from the 192.168/16 subnet
+  $ calicoctl profile add only-local-pings
+  $ calicoctl profile only-local-pings rule add inbound deny icmp
+  $ calicoctl profile only-local-pings rule add inbound --at=0 allow from 192.168.0.0/16
+
+</code></pre></div></div>
+
+<h2 id="calicoctl-profile-commands">calicoctl profile commands</h2>
+
+<h3 id="calicoctl-profile-show">calicoctl profile show</h3>
+<p>This command prints a list of the policy profiles known to Calico.</p>
+
+<p>If the <code class="highlighter-rouge">--detailed</code> flag is passed into the command,
+the command will print information about the endpoints
+associated with each profile, including:</p>
+<ul>
+  <li>Profile name</li>
+  <li>Workload ID associated with profile</li>
+  <li>Endpoint ID associated with profile</li>
+  <li>Host owner of workload</li>
+  <li>Orchestrator running the workload</li>
+  <li>State of the workload</li>
+</ul>
+
+<p>This command can be run on any Calico node.</p>
+
+<p>Command syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calicoctl profile show [--detailed]
+
+    --detailed: Show information about workloads associated with profiles
+</code></pre></div></div>
+
+<p>Examples:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ calicoctl profile show
++------------+
+|    Name    |
++------------+
+| PROF_A_C_E |
+|   PROF_B   |
+|   PROF_D   |
++------------+
+
+$ calicoctl profile show --detailed
++------------+----------------+-----------------+------------------------------------------------------------------+----------------------------------+--------+
+|    Name    |      Host      | Orchestrator ID |                           Workload ID                            |           Endpoint ID            | State  |
++------------+----------------+-----------------+------------------------------------------------------------------+----------------------------------+--------+
+| PROF_A_C_E | calico-host-01 |      docker     | 15a483ab65cc60e2831859dd0eb3b3acde86cc464aea8f6bbbd35cb5395ed007 | ee033eba777f11e5abe9080027b2d0eb | active |
+| PROF_A_C_E | calico-host-01 |      docker     | a549f09ed2c9ae2a840edc834dea0d14e686a4bf6195c791db283aed7f8b5e48 | 011af79a778011e5abe9080027b2d0eb | active |
+| PROF_A_C_E | calico-host-02 |      docker     | ecbb19f9913236da5e03187fbfadf65a5761c49051adf54758d7f447852336fa | f6e1dd20777f11e5abe9080027b2d0eb | active |
+|   PROF_B   | calico-host-01 |      docker     | fb028123092ed9a91f279f1aa11517cbd5b023ec4daf382cce8471b3fe41e9af | f2497552777f11e5abe9080027b2d0eb | active |
+|   PROF_D   | calico-host-02 |      docker     | 6f103f1439c3d69ed014d4aa7f5b92dac7b892cbec627ac3b181ae4263e307de | faecf8be777f11e5abe9080027b2d0eb | active |
++------------+----------------+-----------------+------------------------------------------------------------------+----------------------------------+--------+
+
+</code></pre></div></div>
+
+<h3 id="calicoctl-profile-add-profile">calicoctl profile add &lt;PROFILE&gt;</h3>
+<p>This command allows you to create policy profiles to configure
+networking policy for Calico endpoints.</p>
+
+<p>When you create a new profile with this command, it includes default rules and
+tags that make it act like a traditional security group: endpoints in the group
+can communicate freely. However, you may modify the rules and tags to suit your
+needs. See [AdvancedNetworkPolicy] for more discussion of profiles, rules
+and tags.</p>
+
+<p>This command can be run on any Calico node.</p>
+
+<p>Command syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calicoctl profile add &lt;PROFILE&gt;
+
+    &lt;PROFILE&gt;: Name of policy profile to add.
+</code></pre></div></div>
+
+<p>Examples:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ calicoctl profile add PROF_TEST
+Created profile PROF_TEST
+</code></pre></div></div>
+
+<h3 id="calicoctl-profile-remove-profile">calicoctl profile remove &lt;PROFILE&gt;</h3>
+<p>This command allows you to remove policy profiles from Calico.</p>
+
+<p>If you try to remove a profile that is still associated with endpoints, the
+command will fail and a warning message will be printed.  To remove the profile
+anyway, you can run the command with the <code class="highlighter-rouge">--no-check</code> flag to remove the profile
+without checking dependencies, or you can run the
+<a href="./container"><code class="highlighter-rouge">calicoctl container</code></a> command that removes the profile
+association from a container for each container associated with the profile.
+Note that Felix remove the iptables security rules for a profile when a profile
+is removed. All traffic to endpoints still associated with a deleted profile
+will be dropped.</p>
+
+<p>This command can be run on any Calico node.</p>
+
+<p>Command syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calicoctl profile remove &lt;PROFILE&gt; [--no-check]
+
+    &lt;PROFILE&gt;: Name of profile to remove.
+
+    --no-check: Remove a profile without checking if there are endpoints
+                associated with the profile.
+</code></pre></div></div>
+
+<p>Examples:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ calicoctl profile remove PROF_TEST
+Deleted profile PROF_TEST
+</code></pre></div></div>
+
+<h3 id="calicoctl-profile-profile-tag-show">calicoctl profile &lt;PROFILE&gt; tag show</h3>
+<p>This command shows the tags related to a given profile.</p>
+
+<p>All endpoints with this policy profile have the tags applied. Tags are used in
+rules to select which endpoints to allow or deny traffic to and from. See the
+<code class="highlighter-rouge">calicoctl profile &lt;PROFILE&gt; rule add</code> command below for additional information.</p>
+
+<p>This command can be run on any Calico node.</p>
+
+<p>Command syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calicoctl profile &lt;PROFILE&gt; tag show
+
+    &lt;PROFILE&gt;: Name of profile whose tags will be printed.
+</code></pre></div></div>
+
+<p>Examples:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ calicoctl profile PROF_TEST tag show
+PROF_TEST
+</code></pre></div></div>
+
+<h3 id="calicoctl-profile-profile-tag-addremove-tag">calicoctl profile &lt;PROFILE&gt; tag (add|remove) &lt;TAG&gt;</h3>
+<p>This command allows you to add or remove a profile tag from the given profile.</p>
+
+<p>An example use case for adding tags would be if you have multiple profiles
+that serve a similar purpose, such as a group of web applications. You may have
+backend service that talks to all of these web applications. This backend
+service is using a profile called BACKEND.  It would be tedious to create
+multiple rules on the BACKEND profile for each web application that the backend
+service interacts with.  Instead, you can set a tag on the web application
+profiles called WEB_APP, then create a rule on the BACKEND profile that allows
+interaction from the WEB_APP tag.</p>
+
+<p>This command can be run on any Calico node.</p>
+
+<p>Command syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calicoctl profile &lt;PROFILE&gt; tag (add|remove) &lt;TAG&gt;
+
+    &lt;PROFILE&gt;: Name of profile to add or remove a tag from.
+    &lt;TAG&gt;: Tag name to add or remove from profile.
+</code></pre></div></div>
+
+<p>Examples:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Add the WEB_APP tag to the WEB_SERVER_A profile
+$ calicoctl profile WEB_SERVER_A tag add WEB_APP
+Tag WEB_APP added to profile WEB_SERVER_A
+
+# View the tags of the WEB_SERVER_A profile
+$ calicoctl profile PROF tag show
+WEB_SERVER_A
+WEB_APP
+
+# Remove the WEB_APP tag from the WEB_SERVER_A profile
+$ calicoctl profile WEB_SERVER_A tag remove WEB_APP
+Tag WEB_APP removed from profile WEB_SERVER_A
+</code></pre></div></div>
+
+<h3 id="calicoctl-profile-profile-rule-add-inboundoutbound-allowdeny">calicoctl profile &lt;PROFILE&gt; rule add (inbound|outbound) (allow|deny)</h3>
+<p>This command allows you to configure policy rules on your policy profiles.</p>
+
+<p>You can configure rules to allow and/or deny specific traffic
+to and from your containers, based on a variety of criteria.</p>
+
+<p>You can filter traffic based on any combination of the following:</p>
+<ul>
+  <li><em>Type</em> - udp, tcp, icmp/icmpv6 (including type and code)</li>
+  <li><em>Source tag</em> - Profile tag, such as WEB_SERVER</li>
+  <li><em>Source cidr</em> - such as 172.25.1.0/24</li>
+  <li><em>Source port</em> - TCP/UDP only</li>
+  <li><em>Destination tag</em> - Profile tag, such as DATA_SERVER</li>
+  <li><em>Destination cidr</em> - such as 172.25.2.0/24</li>
+  <li><em>Destination port</em> - TCP/UDP only</li>
+</ul>
+
+<p>Rules are executed in order. If a packet matches the rule criteria, rule
+evaluation stops and the allow/deny action is taken. If an endpoint is part of
+multiple profiles, the packet is matched against the profiles in order. If it
+does not match any rules, matching proceeds to the next profile. If the last
+profile is evaluated without a match, the packet is denied.</p>
+
+<h4 id="docker-default-networking">Docker default networking</h4>
+<p>When a profile is created with <code class="highlighter-rouge">calicoctl profile add</code>, the base rules for the
+profile are as follows:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Inbound rules:
+   1 allow from tag &lt;PROFILE&gt;
+Outbound rules:
+   1 allow
+</code></pre></div></div>
+
+<p>The default inbound rules allow traffic from workloads associated
+with the   <PROFILE> and implicitly deny all other traffic to the workloads.</PROFILE>
+</p>
+
+<p>The default outbound rules allow all traffic leaving the workloads.</p>
+
+<p>This command allows you to add additional rules to your profiles
+to filter traffic based on desired policy criteria.</p>
+
+<p>This command can be run on any Calico node.</p>
+
+<p>Command syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calicoctl profile &lt;PROFILE&gt; rule add (inbound|outbound) [--at=&lt;POSITION&gt;]
+  (allow|deny) [(
+    (tcp|udp) [(from [(ports &lt;SRCPORTS&gt;)] [(tag &lt;SRCTAG&gt;)] [(cidr &lt;SRCCIDR&gt;)])]
+              [(to   [(ports &lt;DSTPORTS&gt;)] [(tag &lt;DSTTAG&gt;)] [(cidr &lt;DSTCIDR&gt;)])] |
+    icmp [(type &lt;ICMPTYPE&gt; [(code &lt;ICMPCODE&gt;)])]
+         [(from [(tag &lt;SRCTAG&gt;)] [(cidr &lt;SRCCIDR&gt;)])]
+         [(to   [(tag &lt;DSTTAG&gt;)] [(cidr &lt;DSTCIDR&gt;)])] |
+    icmpv6 [(type &lt;ICMPTYPE&gt; [(code &lt;ICMPCODE&gt;)])]
+           [(from [(tag &lt;SRCTAG&gt;)] [(cidr &lt;SRCCIDR&gt;)])]
+           [(to   [(tag &lt;DSTTAG&gt;)] [(cidr &lt;DSTCIDR&gt;)])] |
+    [(from [(tag &lt;SRCTAG&gt;)] [(cidr &lt;SRCCIDR&gt;)])]
+    [(to   [(tag &lt;DSTTAG&gt;)] [(cidr &lt;DSTCIDR&gt;)])]
+  )]
+
+    &lt;POSITION&gt;: Integer position in profile's rule list to insert this new rule.
+    &lt;PROFILE&gt;: Name of profile to add rule to.
+    &lt;SRCPORTS&gt;: Source port numbers to use in new rule (TCP/UDP only).
+    &lt;SRCTAG&gt;: Source profile tag name to use in new rule.
+    &lt;SRCCIDR&gt;: Source IP cidr to use in new rule.
+    &lt;DSTPORTS&gt;: Destination port numbers to use in new rule (TCP/UDP only).
+    &lt;DSTTAG&gt;: Destination profile tag name to use in new rule.
+    &lt;DSTCIDR&gt;: Destination IP cidr to use in new rule.
+    &lt;ICMPTYPE&gt;: ICMP type number .
+    &lt;ICMPCODE&gt;: Specific code number related to ICMP type.
+</code></pre></div></div>
+
+<p>Note: Each IP address specified should match the IP version of each other IP
+address and protocol in the rule.</p>
+
+<p>Examples:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Configure a WEB profile to allow ICMP pings, SSH, and HTTP traffic.
+# WEB profile currently has default rules:
+# Inbound rules:
+#    1 allow from tag WEB
+# Outbound rules:
+#    1 allow
+
+# Configure rule to allow inbound HTTP and SSH packets
+$ calicoctl profile WEB rule add inbound allow tcp to ports 80,443
+
+# Configure rule to allow inbound ICMP ping packets
+$ calicoctl profile WEB rule add inbound allow icmp type 8
+
+# Show the rules on the profile
+$ calicoctl profile WEB rule show
+Inbound rules:
+   1 allow from tag WEB
+   2 allow tcp to ports 80,443
+   3 allow icmp type 8
+Outbound rules:
+   1 allow
+</code></pre></div></div>
+
+<h3 id="calicoctl-profile-profile-rule-remove-inboundoutbound-allowdeny">calicoctl profile &lt;PROFILE&gt; rule remove (inbound|outbound) (allow|deny)</h3>
+
+<p>This command allows you to remove existing policy rules from a
+Calico policy profile. This command follows the same format as
+the <code class="highlighter-rouge">calicoctl profile &lt;PROFILE&gt; rule add</code> command above.</p>
+
+<p>Removing rules from a profile may be necessary to provide the
+desired policy on your Calico nodes.  For example, you may have
+multiple web applications using profile WEB where each web app
+serves a different purpose.  You may want these web apps to
+interact with each other, so you would want to remove the default
+profile rule that allows traffic from workloads on same profile.
+See the example code below to understand how to do this.</p>
+
+<p>This command can be run on any Calico node.</p>
+
+<p>Command syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calicoctl profile &lt;PROFILE&gt; rule remove (inbound|outbound) (--at=&lt;POSITION&gt;|
+  (allow|deny) [(
+    (tcp|udp) [(from [(ports &lt;SRCPORTS&gt;)] [(tag &lt;SRCTAG&gt;)] [(cidr &lt;SRCCIDR&gt;)])]
+              [(to   [(ports &lt;DSTPORTS&gt;)] [(tag &lt;DSTTAG&gt;)] [(cidr &lt;DSTCIDR&gt;)])] |
+    icmp [(type &lt;ICMPTYPE&gt; [(code &lt;ICMPCODE&gt;)])]
+         [(from [(tag &lt;SRCTAG&gt;)] [(cidr &lt;SRCCIDR&gt;)])]
+         [(to   [(tag &lt;DSTTAG&gt;)] [(cidr &lt;DSTCIDR&gt;)])] |
+    [(from [(tag &lt;SRCTAG&gt;)] [(cidr &lt;SRCCIDR&gt;)])]
+    [(to   [(tag &lt;DSTTAG&gt;)] [(cidr &lt;DSTCIDR&gt;)])]
+  )])
+
+    &lt;POSITION&gt;: Integer position in profile's rule list to insert this new rule.
+    &lt;PROFILE&gt;: Name of profile to add rule to.
+    &lt;SRCPORTS&gt;: Source port numbers to use in new rule (TCP/UDP only).
+    &lt;SRCTAG&gt;: Source profile tag name to use in new rule.
+    &lt;SRCCIDR&gt;: Source IP cidr to use in new rule.
+    &lt;DSTPORTS&gt;: Destination port numbers to use in new rule (TCP/UDP only).
+    &lt;DSTTAG&gt;: Destination profile tag name to use in new rule.
+    &lt;DSTCIDR&gt;: Destination IP cidr to use in new rule.
+    &lt;ICMPTYPE&gt;: ICMP type number .
+    &lt;ICMPCODE&gt;: Specific code number related to ICMP type.
+</code></pre></div></div>
+
+<p>Examples:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Consider profile WEB which has been configured to allow inbound
+# ICMP pings, HTTP, and SSH traffic in addition to the default
+# traffic rules:
+# Inbound rules:
+#    1 allow from tag WEB
+#    2 allow tcp to ports 80,443
+#    3 allow icmp type 8
+# Outbound rules:
+#    1 allow
+
+# Remove the 1st rule that allows traffic from other workloads with
+# the WEB tag.
+$ calicoctl profile WEB rule remove inbound --at=1
+
+# Show the rules on the profile
+$ calicoctl profile WEB rule show
+Inbound rules:
+   1 allow tcp to ports 80,443
+   2 allow icmp type 8
+Outbound rules:
+   1 allow
+
+</code></pre></div></div>
+
+<h3 id="calicoctl-profile-profile-rule-show">calicoctl profile &lt;PROFILE&gt; rule show</h3>
+<p>This command prints the inbound and outbound rules that are configured on a
+profile.</p>
+
+<p>This command can be run on any Calico node.</p>
+
+<p>Command syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calicoctl profile &lt;PROFILE&gt; rule show
+
+    &lt;PROFILE&gt;: Name of profile whose rules will be printed.
+</code></pre></div></div>
+
+<p>Examples:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Default rules for newly created profile named PROF
+$ calicoctl profile PROF rule show
+Inbound rules:
+   1 allow from tag PROF
+Outbound rules:
+   1 allow
+
+</code></pre></div></div>
+
+<h3 id="calicoctl-profile-profile-rule-json">calicoctl profile &lt;PROFILE&gt; rule json</h3>
+<p>This command prints the inbound and outbound rules that are configured on a
+profile in JSON format.</p>
+
+<p>The output of this command can be saved to a file and used in the future to
+quickly configure a profile (see the <code class="highlighter-rouge">calicoctl profile &lt;PROFILE&gt; rule update</code>
+command below).</p>
+
+<p>This command can be run on any Calico node.</p>
+
+<p>Command syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calicoctl profile &lt;PROFILE&gt; rule json
+
+    &lt;PROFILE&gt;: Name of profile whose rules will be printed.
+</code></pre></div></div>
+
+<p>Examples:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Default rules for newly created profile named PROF
+$ calicoctl profile PROF rule json
+{
+  "inbound_rules": [
+    {
+      "action": "allow",
+      "src_tag": "PROF"
+    }
+  ],
+  "outbound_rules": [
+    {
+      "action": "allow"
+    }
+  ]
+}
+</code></pre></div></div>
+
+<h3 id="calicoctl-profile-profile-rule-update">calicoctl profile &lt;PROFILE&gt; rule update</h3>
+<p>This command allows you to import JSON data to quickly configure rules on a
+profile.</p>
+
+<p>The JSON data for this command must be passed into the command as stdin.</p>
+
+<p>This command can be run on any Calico node.</p>
+
+<p>Command syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calicoctl profile &lt;PROFILE&gt; rule update
+
+    &lt;PROFILE&gt;: Name of profile whose rules will be updated.
+</code></pre></div></div>
+
+<p>Examples:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Configure a profile using JSON file web_rules.json with the following contents:
+# {
+#   "inbound_rules": [
+#     {
+#       "action": "allow",
+#       "protocol": "tcp",
+#       "dst_ports": [
+#         80,
+#         443
+#       ]
+#     },
+#     {
+#       "action": "allow",
+#       "icmp_type": 8,
+#       "protocol": "icmp"
+#     }
+#   ],
+#   "outbound_rules": [
+#     {
+#       "action": "allow"
+#     }
+#   ]
+# }
+
+# Create profile
+$ calicoctl profile add WEB
+Created profile WEB
+
+# Update profile rules using json file
+$ calicoctl profile WEB rule update &lt; web_rules.json
+Successfully updated rules on profile WEB
+
+# Show the rules on the profile
+$ calicoctl profile WEB rule show
+Inbound rules:
+   1 allow tcp to ports 80,443
+   2 allow icmp type 8
+Outbound rules:
+   1 allow
+</code></pre></div></div>
+
+              
+              <!-- BOTTOM DOCUMENTATION PAGE NAVBAR -->
+              <div style="margin-top: 60px; margin-bottom: 40px; padding-top: 20px; border-top: 1px solid #999; text-align: left; color: #999;">Rate this Page: <div class="rw-ui-container" style="margin-top: -5px;"></div> <a href="https://www.projectcalico.org/contact?type=docs&file=v1.5/reference/calicoctl/profile.md" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> Provide Feedback</a> <a href="https://www.projectcalico.org/community#slack" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-slack" aria-hidden="true"></i> Get Help via Slack</a> <a href="https://www.projectcalico.org/mvp" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-trophy" aria-hidden="true"></i> Ask our MVPs</a> <a href="https:/tigera.io/training" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Training</a></div>
+              <!-- END BOTTOM DOCUMENTATION PAGE NAVBAR -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Start Visual Website Optimizer Asynchronous Code -->
+    <script type='text/javascript'>
+      var _vwo_code=(function(){
+      var account_id=287573,
+      settings_tolerance=2000,
+      library_tolerance=2500,
+      use_existing_jquery=false,
+      /* DO NOT EDIT BELOW THIS LINE */
+      f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+    </script>
+    <!-- End Visual Website Optimizer Asynchronous Code -->
+    <!-- DOCUMENTATION RATING ANALYTICS -->
+   <script type="text/javascript">(function(d, t, e, m){
+    // Async Rating-Widget initialization.
+    window.RW_Async_Init = function(){
+        RW.init({
+            huid: "368439",
+            uid: "33da22c0dff384767b5074aaf10ebc50",
+            source: "website",
+            options: {
+                "advanced": {
+					"font": {
+						"color": "#999999"
+					},
+                    "layout": {
+                        "align": {
+                            "hor": "left"
+                        }
+                    },
+                    "text": {
+                        "rateThis": "Rate this"
+                    }
+                },
+				"label": {
+					"background": "#FFFFFF"
+				},
+				"reVote": true,
+				"showInfo": false,
+				/*"showTooltip": false,*/
+				"hideRecommendations": false,
+				"showReport": false,
+				"showLoader": false,
+                "style": "oxygen",
+                "isDummy": false
+            } 
+        });
+        RW.render();
+    };
+        // Append Rating-Widget JavaScript library.
+    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
+        l = d.location, ck = "Y" + t.getFullYear() + 
+        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
+        f = ((l.search.indexOf("DBG=") > -1) ? "" : ".min"),
+        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
+    if (d.getElementById(id)) return;              
+    rw = d.createElement(e);
+    rw.id = id; rw.async = true; rw.type = "text/javascript";
+    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
+    s.parentNode.insertBefore(rw, s);
+    }(document, new Date(), "script", "rating-widget.com/"));</script>
+    <!-- END DOCUMENTATION RATING ANALYTICS -->
+  </body>
+</html>

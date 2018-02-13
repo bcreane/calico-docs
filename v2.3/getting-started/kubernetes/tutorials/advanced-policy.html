@@ -1,0 +1,1514 @@
+<!-- Set this_pages_navbar  -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="http://tigera-docs.appspot.com//images/favicon.png">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto+Mono' type='text/css'>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/style.css"/>
+    <link rel="stylesheet" href="http://tigera-docs.appspot.com//css/plugins/offcanvas.css"/>
+    <link href="https://www.projectcalico.org/wp-content/themes/dante/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://tigera-docs.appspot.com//js/jquery-2.2.0.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/bootstrap/bootstrap.min.js"></script>
+    <script src="http://tigera-docs.appspot.com//js/script.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-52125893-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Going Beyond NetworkPolicy with Calico</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="Going Beyond NetworkPolicy with Calico" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://docs.projectcalico.org/v3.0/getting-started/kubernetes/tutorials/advanced-policy" />
+<meta property="og:url" content="https://docs.projectcalico.org/v3.0/getting-started/kubernetes/tutorials/advanced-policy" />
+<script type="application/ld+json">
+{"headline":"Going Beyond NetworkPolicy with Calico","@type":"WebPage","url":"https://docs.projectcalico.org/v3.0/getting-started/kubernetes/tutorials/advanced-policy","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <section>
+      <nav id="toplevel-nav" class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <!-- Hamburger menu for mobile -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tigera-navbar" aria-expanded="false" aria-controls="tigera-navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Left brand image -->
+            <a class="navbar-brand" href="https://projectcalico.org/">
+              <img alt="Brand" src="http://tigera-docs.appspot.com//images/brand.png">
+            </a>
+          </div>
+          <div id="tigera-navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://projectcalico.org">Home</a></li>
+              <li class="active"><a href="https://projectcalico.org/resources"><span>Resources</span></a>
+                <ul>
+                    <li><a href="http://tigera-docs.appspot.com//latest/getting-started/"><i class="fa fa-tachometer" aria-hidden="true"></i> &nbsp; Getting Started</a></li>
+                    <li><a href="http://tigera-docs.appspot.com/"><i class="fa fa-book" aria-hidden="true"></i> &nbsp; Documentation</a></li>
+                    <!--<li><a href="https://www.projectcalico.org/tutorials"><i class="fa fa-file-code-o" aria-hidden="true"></i> &nbsp; Tutorials &amp; Examples</a></li>
+                    <li><a href=""><i class="fa fa-paper-plane-o" aria-hidden="true"></i> &nbsp; Online Workshops</a></li>-->
+                    <li><a href="https://www.projectcalico.org/videos"><i class="fa fa-video-camera" aria-hidden="true"></i> &nbsp; Videos &amp; Webinars</a></li>
+                    <li><a href="https://www.projectcalico.org/training"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp; Training</a></li>
+                    <li><a href="http://tigera-docs.appspot.com//latest/releases/"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp; Releases</a></li>
+                    <!-- <li><a href="/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li> -->
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/community">Community</a>
+                <ul>
+                    <li><a href="https://slack.projectcalico.org/"><i class="fa fa-slack" aria-hidden="true"></i> &nbsp; Slack</a></li>
+                    <!--<li><a href="https://stackoverflow.com/questions/tagged/project-calico" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i> &nbsp; StackOverflow</a></li>-->
+                    <li><a href="https://www.projectcalico.org/mvp"><i class="fa fa-star" aria-hidden="true"></i> &nbsp; MVP Program</a></li>
+                    <li><a href="https://www.projectcalico.org/community#events"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp; Upcoming Events</a></li>
+                    <li><a href="https://www.projectcalico.org/newsletters"><i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp; Newsletter</a></li>
+                    <li><a href="https://github.com/projectcalico" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> &nbsp; GitHub</a></li> 
+                    <li><a href="https://www.projectcalico.org/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i> &nbsp; Jobs</a></li>
+                    <li><a href="https://www.projectcalico.org/blog"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="https://www.projectcalico.org/mvp" style="font-weight: bold;">MVP</a></li>
+              <li><a href="https://www.projectcalico.org/support">Support</a></li>
+              <li class="hidden-xs"><a href="https://www.projectcalico.org/support">
+                <img class="desktopImage" width="30" align="absmiddle" src="https://www.projectcalico.org/images/tigera_trans_sm.png" alt="Tigera"></a>
+              </li>
+            </ul>
+            <form class="navbar-form visible-xs">
+              <ul class="nav navbar-nav navbar-right">
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v2.3/introduction">Introduction</a>
+                  </li>
+                
+                  <li  class="active">
+                    <a href="http://tigera-docs.appspot.com//v2.3/getting-started">Getting Started</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v2.3/usage">Usage</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v2.3/reference">Reference</a>
+                  </li>
+                
+                  <li >
+                    <a href="http://tigera-docs.appspot.com//v2.3/releases">Releases</a>
+                  </li>
+                
+              </ul>
+            </form>
+            <ul class="visible-xs nav navbar-nav navbar-right">
+             <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (v2.3)<span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                 <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6 (latest)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (beta)</a></li>
+                 <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                 <li role="separator" class="divider"></li>
+               </ul>
+             </li>
+           </ul>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-inverse navbar-collapse collapse">
+          <div class="container">
+            <ul class="nav navbar-nav">
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v2.3/introduction"><span>Introduction</span></a>
+                </li>
+              
+                <li class="active">
+                  <a href="http://tigera-docs.appspot.com//v2.3/getting-started"><span>Getting Started</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v2.3/usage"><span>Usage</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v2.3/reference"><span>Reference</span></a>
+                </li>
+              
+                <li>
+                  <a href="http://tigera-docs.appspot.com//v2.3/releases"><span>Releases</span></a>
+                </li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version (v2.3)<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                   <li><a href="http://tigera-docs.appspot.com//v3.0/introduction">v3.0 (latest)</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.6/introduction">v2.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.5/introduction">v2.5</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.4/introduction">v2.4</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.3/introduction">v2.3</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.2/introduction">v2.2</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.1/introduction">v2.1</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v2.0/introduction">v2.0</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.6/introduction">v1.6</a></li>
+                   <li><a href="http://tigera-docs.appspot.com//v1.5/introduction">v1.5</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="http://tigera-docs.appspot.com//master/introduction">nightly</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-sm-0"></div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+          <p class="pull-left visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+            <div class="row">
+              <script>
+                (function() {
+                  var cx = '015028447179048192876:xjzskk7awwe';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+                })();
+              </script>
+              <gcse:search></gcse:search>
+            </div>
+            <div id="sidebar">
+            	
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Getting Started with Calico" href="http://tigera-docs.appspot.com//v2.3/getting-started/">
+        Getting Started with Calico
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-kubernetes" aria-expanded="false" aria-controls="nav-kubernetes">
+          Kubernetes
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-kubernetes">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.3/getting-started/kubernetes/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-kubernetes-installation" aria-expanded="false" aria-controls="nav-kubernetes-installation">
+          Installation
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-kubernetes-installation">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Introduction" href="http://tigera-docs.appspot.com//v2.3/getting-started/kubernetes/installation/">
+        Introduction
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-kubernetes-installation-hosted-viakubectl" aria-expanded="false" aria-controls="nav-kubernetes-installation-hosted-viakubectl">
+          Hosted (via kubectl)
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-kubernetes-installation-hosted-viakubectl">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Introduction" href="http://tigera-docs.appspot.com//v2.3/getting-started/kubernetes/installation/hosted/">
+        Introduction
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Standard Hosted Install" href="http://tigera-docs.appspot.com//v2.3/getting-started/kubernetes/installation/hosted/hosted">
+        Standard Hosted Install
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Kubeadm Hosted Install" href="http://tigera-docs.appspot.com//v2.3/getting-started/kubernetes/installation/hosted/kubeadm/">
+        Kubeadm Hosted Install
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Kubernetes Datastore Hosted Install" href="http://tigera-docs.appspot.com//v2.3/getting-started/kubernetes/installation/hosted/kubernetes-datastore/">
+        Kubernetes Datastore Hosted Install
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Integration Guide" href="http://tigera-docs.appspot.com//v2.3/getting-started/kubernetes/installation/integration">
+        Integration Guide
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="AWS" href="http://tigera-docs.appspot.com//v2.3/getting-started/kubernetes/installation/aws">
+        AWS
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="GCE" href="http://tigera-docs.appspot.com//v2.3/getting-started/kubernetes/installation/gce">
+        GCE
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Vagrant/VirtualBox: CoreOS" href="http://tigera-docs.appspot.com//v2.3/getting-started/kubernetes/installation/vagrant/">
+        Vagrant/VirtualBox: CoreOS
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-kubernetes-tutorials" aria-expanded="false" aria-controls="nav-kubernetes-tutorials">
+          Tutorials
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-kubernetes-tutorials">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Using calicoctl" href="http://tigera-docs.appspot.com//v2.3/getting-started/kubernetes/tutorials/using-calicoctl">
+        Using calicoctl
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Simple Policy Demo" href="http://tigera-docs.appspot.com//v2.3/getting-started/kubernetes/tutorials/simple-policy">
+        Simple Policy Demo
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Stars Policy Demo" href="http://tigera-docs.appspot.com//v2.3/getting-started/kubernetes/tutorials/stars-policy/">
+        Stars Policy Demo
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Advanced network policy" href="http://tigera-docs.appspot.com//v2.3/getting-started/kubernetes/tutorials/advanced-policy">
+        Advanced network policy
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Troubleshooting / FAQ" href="http://tigera-docs.appspot.com//v2.3/getting-started/kubernetes/troubleshooting">
+        Troubleshooting / FAQ
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Upgrade" href="http://tigera-docs.appspot.com//v2.3/getting-started/kubernetes/upgrade">
+        Upgrade
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-mesos" aria-expanded="false" aria-controls="nav-mesos">
+          Mesos
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-mesos">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.3/getting-started/mesos/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-mesos-installation" aria-expanded="false" aria-controls="nav-mesos-installation">
+          Installation
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-mesos-installation">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Requirements" href="http://tigera-docs.appspot.com//v2.3/getting-started/mesos/installation/prerequisites">
+        Requirements
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Integration Guide" href="http://tigera-docs.appspot.com//v2.3/getting-started/mesos/installation/integration">
+        Integration Guide
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-mesos-installation-dcos" aria-expanded="false" aria-controls="nav-mesos-installation-dcos">
+          DC/OS
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-mesos-installation-dcos">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.3/getting-started/mesos/installation/dc-os/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Universe Package Install" href="http://tigera-docs.appspot.com//v2.3/getting-started/mesos/installation/dc-os/framework">
+        Universe Package Install
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Customize Universe Package Install" href="http://tigera-docs.appspot.com//v2.3/getting-started/mesos/installation/dc-os/custom">
+        Customize Universe Package Install
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-mesos-tutorials" aria-expanded="false" aria-controls="nav-mesos-tutorials">
+          Tutorials
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-mesos-tutorials">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Launching Tasks" href="http://tigera-docs.appspot.com//v2.3/getting-started/mesos/tutorials/launching-tasks">
+        Launching Tasks
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Connecting to Tasks" href="http://tigera-docs.appspot.com//v2.3/getting-started/mesos/tutorials/connecting-tasks">
+        Connecting to Tasks
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-mesos-tutorials-configuringpolicy" aria-expanded="false" aria-controls="nav-mesos-tutorials-configuringpolicy">
+          Configuring Policy
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-mesos-tutorials-configuringpolicy">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Universal Containerizer" href="http://tigera-docs.appspot.com//v2.3/getting-started/mesos/tutorials/policy/universal-containerizer">
+        Universal Containerizer
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Docker Containerizer" href="http://tigera-docs.appspot.com//v2.3/getting-started/mesos/tutorials/policy/docker-containerizer">
+        Docker Containerizer
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-mesos-demos" aria-expanded="false" aria-controls="nav-mesos-demos">
+          Demos
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-mesos-demos">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Vagrant Quickstart - Docker Containerizer" href="http://tigera-docs.appspot.com//v2.3/getting-started/mesos/vagrant/">
+        Vagrant Quickstart - Docker Containerizer
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-docker" aria-expanded="false" aria-controls="nav-docker">
+          Docker
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-docker">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.3/getting-started/docker/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-docker-installation" aria-expanded="false" aria-controls="nav-docker-installation">
+          Installation
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-docker-installation">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Requirements" href="http://tigera-docs.appspot.com//v2.3/getting-started/docker/installation/requirements">
+        Requirements
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Manual" href="http://tigera-docs.appspot.com//v2.3/getting-started/docker/installation/manual">
+        Manual
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Vagrant/VirtualBox: CoreOS" href="http://tigera-docs.appspot.com//v2.3/getting-started/docker/installation/vagrant-coreos/">
+        Vagrant/VirtualBox: CoreOS
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Vagrant/VirtualBox: Ubuntu" href="http://tigera-docs.appspot.com//v2.3/getting-started/docker/installation/vagrant-ubuntu/">
+        Vagrant/VirtualBox: Ubuntu
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-docker-tutorials" aria-expanded="false" aria-controls="nav-docker-tutorials">
+          Tutorials
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-docker-tutorials">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Security using Calico Profiles" href="http://tigera-docs.appspot.com//v2.3/getting-started/docker/tutorials/security-using-calico-profiles">
+        Security using Calico Profiles
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Security using Calico Profiles and Policy" href="http://tigera-docs.appspot.com//v2.3/getting-started/docker/tutorials/security-using-calico-profiles-and-policy">
+        Security using Calico Profiles and Policy
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Security using Docker Labels and Calico Policy" href="http://tigera-docs.appspot.com//v2.3/getting-started/docker/tutorials/security-using-docker-labels-and-calico-policy">
+        Security using Docker Labels and Calico Policy
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="IPAM" href="http://tigera-docs.appspot.com//v2.3/getting-started/docker/tutorials/ipam">
+        IPAM
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-openstack" aria-expanded="false" aria-controls="nav-openstack">
+          OpenStack
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-openstack">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.3/getting-started/openstack/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-openstack-installation" aria-expanded="false" aria-controls="nav-openstack-installation">
+          Installation
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-openstack-installation">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.3/getting-started/openstack/installation/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Ubuntu" href="http://tigera-docs.appspot.com//v2.3/getting-started/openstack/installation/ubuntu">
+        Ubuntu
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Red Hat Enterprise Linux 7" href="http://tigera-docs.appspot.com//v2.3/getting-started/openstack/installation/redhat">
+        Red Hat Enterprise Linux 7
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Juju Charms" href="http://tigera-docs.appspot.com//v2.3/getting-started/openstack/installation/juju">
+        Juju Charms
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Fuel" href="http://tigera-docs.appspot.com//v2.3/getting-started/openstack/installation/fuel">
+        Fuel
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="DevStack" href="http://tigera-docs.appspot.com//v2.3/getting-started/openstack/installation/devstack">
+        DevStack
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Chef" href="http://tigera-docs.appspot.com//v2.3/getting-started/openstack/installation/chef">
+        Chef
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Upgrade" href="http://tigera-docs.appspot.com//v2.3/getting-started/openstack/upgrade">
+        Upgrade
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Tutorials" href="http://tigera-docs.appspot.com//v2.3/getting-started/openstack/tutorials">
+        Tutorials
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Troubleshooting" href="http://tigera-docs.appspot.com//v2.3/getting-started/openstack/verification">
+        Troubleshooting
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="IP Addressing and Connectivity" href="http://tigera-docs.appspot.com//v2.3/getting-started/openstack/connectivity">
+        IP Addressing and Connectivity
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Use of the Neutron API" href="http://tigera-docs.appspot.com//v2.3/getting-started/openstack/neutron-api">
+        Use of the Neutron API
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-rkt" aria-expanded="false" aria-controls="nav-rkt">
+          rkt
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-rkt">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.3/getting-started/rkt/">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-rkt-installation" aria-expanded="false" aria-controls="nav-rkt-installation">
+          Installation
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-rkt-installation">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Manual Installation" href="http://tigera-docs.appspot.com//v2.3/getting-started/rkt/installation/manual">
+        Manual Installation
+      </a>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Vagrant/VirtualBox: CoreOS" href="http://tigera-docs.appspot.com//v2.3/getting-started/rkt/installation/vagrant-coreos/">
+        Vagrant/VirtualBox: CoreOS
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-rkt-tutorials" aria-expanded="false" aria-controls="nav-rkt-tutorials">
+          Tutorials
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-rkt-tutorials">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Basic Network Isolation" href="http://tigera-docs.appspot.com//v2.3/getting-started/rkt/tutorials/basic">
+        Basic Network Isolation
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Troubleshooting" href="http://tigera-docs.appspot.com//v2.3/getting-started/rkt/troubleshooting">
+        Troubleshooting
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-hostprotection" aria-expanded="false" aria-controls="nav-hostprotection">
+          Host Protection
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-hostprotection">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Overview" href="http://tigera-docs.appspot.com//v2.3/getting-started/bare-metal/bare-metal">
+        Overview
+      </a>
+    </div>
+  
+
+  
+    
+    <div>
+      <div class="link">
+        <span class="glyphicon glyphicon-chevron-right navbar-arrow"></span>
+        <a role="button" data-toggle="collapse" href="#nav-hostprotection-installation" aria-expanded="false" aria-controls="nav-hostprotection-installation">
+          Installation
+        </a>
+      </div>
+      <div class="section">
+        <div class="collapse" id="nav-hostprotection-installation">
+          
+
+  
+    
+    
+    <div class="link">
+      <a class="item" data-title="Installing Felix as a static binary" href="http://tigera-docs.appspot.com//v2.3/getting-started/bare-metal/bare-metal-install">
+        Installing Felix as a static binary
+      </a>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+
+        </div>
+      </div>
+    </div>
+  
+
+
+			</div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9">
+            <div id="content-main">
+              <!-- TOP DOCUMENTATION PAGE NAVBAR -->
+              <div style="text-align: left; padding: 18px 0 9px 0; min-width: 500px; overflow-x: hidden;">
+              
+              <a data-proofer-ignore href="https://github.com/projectcalico/calico/tree/master/v2.3/getting-started/kubernetes/tutorials/advanced-policy.md" style="color: #999; text-decoration: none; float: right;" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Edit this page</a></div>
+              <!-- END TOP DOCUMENTATION PAGE NAVBAR -->
+              
+  <div class="alert alert-warning" role="alert">
+    <strong>Warning:</strong> You are viewing the v2.3 docs. <a href="http://tigera-docs.appspot.com//latest">Click here to view the docs for the latest release.</a>
+  </div>
+
+
+              <h1>Going Beyond `NetworkPolicy` with Calico</h1>
+              <p>The Kubernetes NetworkPolicy API allows users to express ingress policy to Kubernetes pods
+based on labels and ports.  Calico implements this API, but also supports a number of
+policy features which are not currently expressble through the NetworkPolicy API such as CIDR
+and egress policy.</p>
+
+<p>This guide walks through using the Calico APIs directly in conjunction with Kubernetes NetworkPolicy
+in order to define more complex network policies.</p>
+
+<h3 id="requirements">Requirements</h3>
+
+<ul>
+  <li>This guide assumes you have a working Kubernetes cluster with Calico for policy. (See: <a href="http://tigera-docs.appspot.com//v2.3/getting-started/kubernetes/installation">installation</a> for help)</li>
+  <li>This guide assumes that your pods have connectivity to the public internet.</li>
+  <li>This guide assumes you are familiar with <a href="simple-policy">Kubernetes NetworkPolicy</a></li>
+  <li>This guide assumes you are using etcdv2 (or v3) as the Calico backend datastore.</li>
+  <li>You must have configured kubectl access to the cluster.</li>
+  <li>You must have installed and <a href="http://tigera-docs.appspot.com//v2.3/reference/calicoctl/setup/etcdv2">configured the calicoctl tool</a></li>
+</ul>
+
+<h3 id="setup">Setup</h3>
+
+<h4 id="create-the-namespace">Create the Namespace</h4>
+
+<p>We’ll use a new namespace for this guide.  Run the following command to create it.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl create ns advanced-policy-demo
+</code></pre></div></div>
+
+<p>And then enable isolation on the Namespace.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl annotate ns advanced-policy-demo "net.beta.kubernetes.io/network-policy={\"ingress\":{\"isolation\":\"DefaultDeny\"}}"
+</code></pre></div></div>
+
+<h4 id="run-an-nginx-service">Run an nginx Service</h4>
+
+<p>We’ll run an nginx Service in the Namespace.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl run <span class="nt">--namespace</span><span class="o">=</span>advanced-policy-demo nginx <span class="nt">--replicas</span><span class="o">=</span>2 <span class="nt">--image</span><span class="o">=</span>nginx
+kubectl expose <span class="nt">--namespace</span><span class="o">=</span>advanced-policy-demo deployment nginx <span class="nt">--port</span><span class="o">=</span>80
+</code></pre></div></div>
+
+<h4 id="check-using-calicoctl">Check using calicoctl</h4>
+
+<blockquote>
+  <p><strong>Note:</strong></p>
+
+  <p>This requires the <a href="http://tigera-docs.appspot.com//v2.3/reference/calicoctl/setup/etcdv2">calicoctl tool to be configured</a>.
+For example: <code class="highlighter-rouge">export ETCD_ENDPOINTS=http://10.96.232.136:6666</code></p>
+</blockquote>
+
+<p>Now that we’ve created a Namespace and a set of pods, we should see those objects show up in the
+Calico API using <code class="highlighter-rouge">calicoctl</code>.</p>
+
+<p>We can see that the Namespace has a corresponding <a href="http://tigera-docs.appspot.com//v2.3/reference/calicoctl/resources/profile">Profile</a>.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>calicoctl get profile <span class="nt">-o</span> wide
+NAME                          TAGS
+k8s_ns.advanced-policy-demo   k8s_ns.advanced-policy-demo
+k8s_ns.default                k8s_ns.default
+k8s_ns.kube-system            k8s_ns.kube-system
+</code></pre></div></div>
+
+<p>Because we’ve enabled isolation on the Namespace, the profile denies all ingress
+traffic and allows all egress traffic.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ calicoctl get profile k8s_ns.advanced-policy-demo -o yaml
+- apiVersion: v1
+  kind: profile
+  metadata:
+    name: k8s_ns.advanced-policy-demo
+    tags:
+    - k8s_ns.advanced-policy-demo
+  spec:
+    egress:
+    - action: allow
+      destination: {}
+      source: {}
+    ingress:
+    - action: deny
+      destination: {}
+      source: {}
+</code></pre></div></div>
+
+<p>We can see that this is the case by running another pod in the Namespace and attempting to
+access the nginx Service.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ kubectl run --namespace=advanced-policy-demo access --rm -ti --image busybox /bin/sh
+Waiting for pod advanced-policy-demo/access-472357175-y0m47 to be running, status is Pending, pod ready: false
+
+If you don't see a command prompt, try pressing enter.
+
+/ # wget -q --timeout=5 nginx -O -
+wget: download timed out
+/ #
+</code></pre></div></div>
+
+<p>We can also see that the two nginx pods are represented as <a href="http://tigera-docs.appspot.com//v2.3/reference/calicoctl/resources/workloadendpoint">WorkloadEndpoints</a> in the Calico API.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calicoctl get workloadendpoint
+
+NODE          ORCHESTRATOR   WORKLOAD                                     NAME
+k8s-node-01   k8s            advanced-policy-demo.nginx-701339712-x1uqe   eth0
+k8s-node-02   k8s            advanced-policy-demo.nginx-701339712-xeeay   eth0
+k8s-node-01   k8s            kube-system.kube-dns-v19-mjd8x               eth0
+</code></pre></div></div>
+
+<p>Taking a closer look, we can see that they reference the correct profile for the Namespace,
+and that the correct label information has been filled in.  Notice that the endpoint also
+includes a special label <code class="highlighter-rouge">calico/k8s_ns</code>, which is automatically populated with the
+pod’s Kubernetes Namespace.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ calicoctl get wep --workload advanced-policy-demo.nginx-701339712-x1uqe -o yaml
+- apiVersion: v1
+  kind: workloadEndpoint
+  metadata:
+    labels:
+      calico/k8s_ns: advanced-policy-demo
+      pod-template-hash: "701339712"
+      run: nginx
+    name: eth0
+    node: k8s-node-01
+    orchestrator: k8s
+    workload: advanced-policy-demo.nginx-701339712-x1uqe
+  spec:
+    interfaceName: cali347609b8bd7
+    ipNetworks:
+    - 192.168.44.65/32
+    mac: 56:b5:54:be:b2:a2
+    profiles:
+    - k8s_ns.advanced-policy-demo
+</code></pre></div></div>
+
+<h3 id="define-kubernetes-policy">Define Kubernetes policy</h3>
+
+<p>We’ll define some network policy through the Kubernetes API.  Run the following to create
+a NetworkPolicy which allows traffic to nginx pods from any pods in the advanced-policy-demo Namespace.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl create <span class="nt">-f</span> - <span class="o">&lt;&lt;</span><span class="no">EOF</span><span class="sh">
+kind: NetworkPolicy
+apiVersion: extensions/v1beta1
+metadata:
+  name: access-nginx
+  namespace: advanced-policy-demo
+spec:
+  podSelector:
+    matchLabels:
+      run: nginx
+  ingress:
+    - from:
+      - podSelector:
+          matchLabels: {}
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<p>It now shows up as a <a href="http://tigera-docs.appspot.com//v2.3/reference/calicoctl/resources/policy">Policy</a> object in the Calico API.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>calicoctl get policy <span class="nt">-o</span> wide
+NAME                                ORDER   SELECTOR
+advanced-policy-demo.access-nginx   1000    calico/k8s_ns <span class="o">==</span> <span class="s1">'advanced-policy-demo'</span> <span class="o">&amp;&amp;</span> run <span class="o">==</span> <span class="s1">'nginx'</span>
+k8s-policy-no-match                 2000    has<span class="o">(</span>calico/k8s_ns<span class="o">)</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>NOTE</strong></p>
+
+  <p>The <code class="highlighter-rouge">k8s-policy-no-match</code> policy is used to send all unmatched traffic to the corresponding per-namespace Profile.  This policy is created automatically by the calico/kube-policy-controller.</p>
+</blockquote>
+
+<p>After creating the policy, we can now access the nginx Service.  We also see that the pod can
+access google.com on the public internet.  This is because we have not defined any egress policy.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ kubectl run --namespace=advanced-policy-demo access --rm -ti --image busybox /bin/sh
+Waiting for pod advanced-policy-demo/access-472357175-y0m47 to be running, status is Pending, pod ready: false
+
+If you don't see a command prompt, try pressing enter.
+
+/ # wget -q --timeout=5 nginx -O -
+...
+/ # ping google.com
+PING google.com (216.58.219.206): 56 data bytes
+64 bytes from 216.58.219.206: seq=0 ttl=61 time=14.365 ms
+</code></pre></div></div>
+
+<h3 id="prevent-outgoing-connections-from-pods">Prevent outgoing connections from pods</h3>
+
+<p>Kubernetes NetworkPolicy does not provide a way to prevent outgoing connections from pods.  However,
+Calico does. In this section we’ll create a Policy using <code class="highlighter-rouge">calicoctl</code> which prevents all outgoing
+connections from Kubernetes pods in the advanced-policy-demo Namespace.</p>
+
+<p>To do this, we’ll need to create a Policy which selects all pods in the Namespace, and denies
+traffic that doesn’t match another Pod in the Namespace.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calicoctl apply -f - &lt;&lt;EOF
+apiVersion: v1
+kind: policy
+metadata:
+  name: advanced-policy-demo.deny-egress
+spec:
+  selector: calico/k8s_ns == 'advanced-policy-demo'
+  order: 500
+  egress:
+  - action: deny
+    destination:
+      notSelector: calico/k8s_ns == 'advanced-policy-demo'
+EOF
+</code></pre></div></div>
+
+<p>Notice that we’ve specified an order of 500.  This means that this policy will be applied before any
+of the Kubernetes policies.</p>
+
+<p>We also need to create a policy which allows traffic to access kube-dns.  Let’s create a policy which
+applies to the entire cluster, and allows it to access kube-dns pods in the kube-system Namespace.
+We’ll specify an order of 400 so that it takes precendent over other policies.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calicoctl apply -f - &lt;&lt;EOF
+apiVersion: v1
+kind: policy
+metadata:
+  name: advanced-policy-demo.allow-dns
+spec:
+  selector: has(calico/k8s_ns)
+  order: 400
+  egress:
+  - action: allow
+    protocol: udp
+    destination:
+      selector: calico/k8s_ns == 'kube-system' &amp;&amp; k8s-app == 'kube-dns'
+      ports: [53]
+EOF
+</code></pre></div></div>
+
+<p>We should see now that traffic still works for pods within the Namespace, but we can no longer
+access the public internet.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ kubectl run --namespace=advanced-policy-demo access --rm -ti --image busybox /bin/sh
+Waiting for pod advanced-policy-demo/access-472357175-y0m47 to be running, status is Pending, pod ready: false
+
+If you don't see a command prompt, try pressing enter.
+
+/ # wget -q --timeout=5 nginx -O -
+...
+/ # ping google.com
+PING google.com (216.58.219.206): 56 data bytes
+</code></pre></div></div>
+
+<h2 id="teardown">Teardown</h2>
+
+<p>You can clean up after this guide by deleteing the advanced policy demo Namespace.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl delete ns advanced-policy-demo
+</code></pre></div></div>
+
+<p>You will also need to delete the Calico policies that were created.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calicoctl delete policy advanced-policy-demo.deny-egress
+calicoctl delete policy advanced-policy-demo.allow-dns
+</code></pre></div></div>
+
+              
+              <!-- BOTTOM DOCUMENTATION PAGE NAVBAR -->
+              <div style="margin-top: 60px; margin-bottom: 40px; padding-top: 20px; border-top: 1px solid #999; text-align: left; color: #999;">Rate this Page: <div class="rw-ui-container" style="margin-top: -5px;"></div> <a href="https://www.projectcalico.org/contact?type=docs&file=v2.3/getting-started/kubernetes/tutorials/advanced-policy.md" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> Provide Feedback</a> <a href="https://www.projectcalico.org/community#slack" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-slack" aria-hidden="true"></i> Get Help via Slack</a> <a href="https://www.projectcalico.org/mvp" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-trophy" aria-hidden="true"></i> Ask our MVPs</a> <a href="https:/tigera.io/training" style="margin-left: 30px; color: #999; text-decoration: none;" target="_blank"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Training</a></div>
+              <!-- END BOTTOM DOCUMENTATION PAGE NAVBAR -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Start Visual Website Optimizer Asynchronous Code -->
+    <script type='text/javascript'>
+      var _vwo_code=(function(){
+      var account_id=287573,
+      settings_tolerance=2000,
+      library_tolerance=2500,
+      use_existing_jquery=false,
+      /* DO NOT EDIT BELOW THIS LINE */
+      f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+    </script>
+    <!-- End Visual Website Optimizer Asynchronous Code -->
+    <!-- DOCUMENTATION RATING ANALYTICS -->
+   <script type="text/javascript">(function(d, t, e, m){
+    // Async Rating-Widget initialization.
+    window.RW_Async_Init = function(){
+        RW.init({
+            huid: "368439",
+            uid: "33da22c0dff384767b5074aaf10ebc50",
+            source: "website",
+            options: {
+                "advanced": {
+					"font": {
+						"color": "#999999"
+					},
+                    "layout": {
+                        "align": {
+                            "hor": "left"
+                        }
+                    },
+                    "text": {
+                        "rateThis": "Rate this"
+                    }
+                },
+				"label": {
+					"background": "#FFFFFF"
+				},
+				"reVote": true,
+				"showInfo": false,
+				/*"showTooltip": false,*/
+				"hideRecommendations": false,
+				"showReport": false,
+				"showLoader": false,
+                "style": "oxygen",
+                "isDummy": false
+            } 
+        });
+        RW.render();
+    };
+        // Append Rating-Widget JavaScript library.
+    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
+        l = d.location, ck = "Y" + t.getFullYear() + 
+        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
+        f = ((l.search.indexOf("DBG=") > -1) ? "" : ".min"),
+        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
+    if (d.getElementById(id)) return;              
+    rw = d.createElement(e);
+    rw.id = id; rw.async = true; rw.type = "text/javascript";
+    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
+    s.parentNode.insertBefore(rw, s);
+    }(document, new Date(), "script", "rating-widget.com/"));</script>
+    <!-- END DOCUMENTATION RATING ANALYTICS -->
+  </body>
+</html>
