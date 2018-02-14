@@ -11,6 +11,11 @@ handlers:
   static_files: _site/\1
   upload: _site/(.*\.js)
 
+- url: /(.*\.txt)
+  mime_type: text/plain
+  static_files: _site/\1
+  upload: _site/(.*\.txt)
+
 - url: /(.*\.(jpg|png|ico))
   static_files: _site/\1
   upload: _site/(.*\.img)
